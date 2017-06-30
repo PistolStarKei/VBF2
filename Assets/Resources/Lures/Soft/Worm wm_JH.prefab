@@ -1,0 +1,1650 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000013763279362}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010505809358
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010437037386}
+  - 114: {fileID: 114000013350075134}
+  m_Layer: 0
+  m_Name: Str Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012701462058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012124519902}
+  - 33: {fileID: 33000011531773282}
+  - 23: {fileID: 23000013059292352}
+  - 114: {fileID: 114000012390113220}
+  m_Layer: 0
+  m_Name: Soft_Streight (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013763279362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011532847456}
+  - 33: {fileID: 33000011947492488}
+  - 23: {fileID: 23000010770603958}
+  - 114: {fileID: 114000011908581426}
+  - 114: {fileID: 114000012161293840}
+  m_Layer: 0
+  m_Name: Worm wm_JH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010437037386
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010505809358}
+  m_LocalRotation: {x: -0.0035490943, y: -0.6661776, z: 0.008844985, w: 0.7457323}
+  m_LocalPosition: {x: -0.24374923, y: -0.00079087727, z: 0.000000066963494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012124519902}
+  m_RootOrder: 0
+--- !u!4 &4000011532847456
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013763279362}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+  m_LocalPosition: {x: 0.00069999695, y: -0.05340004, z: 0.022700071}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 5.1060004}
+  m_Children:
+  - {fileID: 4000012124519902}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &4000012124519902
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701462058}
+  m_LocalRotation: {x: 0.000000009425648, y: -0.00000011883608, z: -0.079068065, w: 0.99686927}
+  m_LocalPosition: {x: -0.0364, y: 0.0047, z: -0.0012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000010437037386}
+  m_Father: {fileID: 4000011532847456}
+  m_RootOrder: 0
+--- !u!23 &23000010770603958
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013763279362}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: bd437d8644fac480a8e6475241bb4ad2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &23000013059292352
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701462058}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 66a4c499bf161a949a1d3fb5ffdd4a85, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000011531773282
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701462058}
+  m_Mesh: {fileID: 43000010607636902, guid: 33405b18a126d334785bfa9ccd74bc9f, type: 2}
+--- !u!33 &33000011947492488
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013763279362}
+  m_Mesh: {fileID: 4300000, guid: 2d96d526492c740d98c1a97959a27a3a, type: 3}
+--- !u!114 &114000011908581426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013763279362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977962e3eecf24b4f854529dd75a7ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureParamsData:
+    sinkingSpeed: 0.5
+    sinkingDepth: 10
+    kubiSpeed: 10
+    kubiRotMax: 30
+    kubiRotdownMax: 30
+    DragTeikou: 0.5
+    isShugyozai: 0
+    isReactionByteEnabled: 0
+    appealScale_still: 5
+    appealScale_move: 2
+    appealScale_float: 1
+    appealScale_sinking: 10
+    appealScale_splash: 1
+    appealScale_reaction: 5
+    lookLike: 00000000
+  buoParams:
+    buoyancyFactor: 3
+    buoyancyOffset: 0.2
+    underwaterMass: 1
+    underwaterDrag: 4
+    underwaterADrag: 1
+    keepAwake: 0
+  keepAwake: 0
+  spawnPosInLocal: {x: 0.0007, y: -0.0577, z: 0.0243}
+--- !u!114 &114000012161293840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013763279362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca653a19f11da4e45b1080815b2a8cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureController: {fileID: 0}
+  minSpeedWhenTention: 0.02
+  lookDirection: {x: 0, y: 0, z: 0}
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
+  suimenOffset: 0.5
+  SinkingObj: 0
+  isMovedOnce: 0
+  tempVec: {x: 0, y: 0, z: 0}
+  minPower: 0.02
+  maxPower: 2
+  rodBendingOnReel: 0.2
+  reelingPower: 0.25
+  rotationSpeedOnTention: 100
+  rotationSpeedOnNoTention: 80
+  defaultLureObjRot: {x: -900, y: -900, z: -900}
+  rotationSpeed_OBJOnNoTention: 5
+  rotationSpeed_OBJOnTention: 5
+  isLookingDownOnFall: 1
+  rotationOnBottm: {x: 1, y: 1, z: 1}
+  sinkingRot: 30
+  offSetSuimenEffect: 0.05
+  isKubihuri: 1
+  HonMuchNearToCulSinking: 15
+--- !u!114 &114000012390113220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701462058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000b62482df0b064da5f449c29977db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: VertExmotion
+  m_params:
+    usePaintDataFromMeshColors: 1
+    version: 1.4.6
+  m_mesh: {fileID: 43000010607636902, guid: 33405b18a126d334785bfa9ccd74bc9f, type: 2}
+  m_VertExmotionSensors:
+  - {fileID: 114000013350075134}
+  m_vertexColors:
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 16777216
+  - serializedVersion: 2
+    rgba: 16777216
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 16777216
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 83886080
+  - serializedVersion: 2
+    rgba: 83886080
+  - serializedVersion: 2
+    rgba: 50331648
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 201326592
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 234881024
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 50331648
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 201326592
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4144026112
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4127249408
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194346496
+  - serializedVersion: 2
+    rgba: 4127250176
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4144028160
+  - serializedVersion: 2
+    rgba: 4093695232
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194360320
+  - serializedVersion: 2
+    rgba: 4194364672
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194362368
+  - serializedVersion: 2
+    rgba: 4043365120
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4043368448
+  - serializedVersion: 2
+    rgba: 4177584896
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4144029440
+  - serializedVersion: 2
+    rgba: 4127252480
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4093703168
+  - serializedVersion: 2
+    rgba: 4093695744
+  - serializedVersion: 2
+    rgba: 4177583104
+  - serializedVersion: 2
+    rgba: 4127258112
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 3892366336
+  - serializedVersion: 2
+    rgba: 3892363008
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 3909143296
+  - serializedVersion: 2
+    rgba: 4144027136
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194346496
+  - serializedVersion: 2
+    rgba: 201326592
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 234881024
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 33554432
+  - serializedVersion: 2
+    rgba: 67108864
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 134217728
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 167772160
+  - serializedVersion: 2
+    rgba: 100663296
+  - serializedVersion: 2
+    rgba: 201326592
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4093703168
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4127258112
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4144035584
+  - serializedVersion: 2
+    rgba: 4160813056
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4177590528
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 4194368000
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  m_initialShaders:
+  - {fileID: 4800000, guid: 92bfe8f323fccea4db145f3bd5f0d59c, type: 3}
+  m_shareMesh: 0
+  m_meshCopy: 0
+  m_shaderSensorPos:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderMotionDirection:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderRCT:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderSquashStrech:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderSpeed:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderMotionAxis:
+  - {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114000013350075134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010505809358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698fbf4fce2fab744bfa4e75c8ef9346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: VertExmotionSensor
+  m_parent: {fileID: 4000012124519902}
+  m_parentSensor: {fileID: 0}
+  m_envelopRadius: 0.100880094
+  m_center: {x: 0, y: 0, z: 0}
+  m_motionDirection: {x: 0, y: 0, z: 0}
+  m_motionTorqueForce: 0
+  m_torqueAxis: {x: 0, y: 0, z: 0}
+  m_centripetalForce: 0
+  m_collision: {x: 0, y: 0, z: 0}
+  m_params:
+    translation:
+      amplitudeMultiplier: 1
+      outerMaxDistance: 0.1
+      innerMaxDistance: 0.1
+      worldOffset: {x: 0, y: 0, z: 0}
+      localOffset: {x: 0, y: 0, z: 0}
+      gravityInOut: {x: 0, y: 0}
+    torque:
+      amplitude: 0
+      smooth: 0
+      max: 0
+      damping: 0
+      bouncing: 0
+    fx:
+      stretch: 0
+      stretchMax: 1
+      stretchMinSpeed: 0
+      squash: 0
+    inflate: 0
+    damping: 5
+    bouncing: 20
+    globalSmooth: 0
+  m_pidTime: 2
+  m_pid:
+    m_target: {x: 0, y: 0, z: 0}
+    m_params:
+      kp: 5
+      ki: 20
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidX:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidY:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidZ:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_sensorDirection: {x: 0, y: 0, z: 0}
+  m_lastPosition: {x: 0, y: 0, z: 0}
+  m_lastMotionDirection: {x: 0, y: 0, z: 0}
+  m_torqueForcePID:
+    lastTime: 0
+    m_target: 0
+    m_timeScale: 1
+    m_params:
+      kp: 1
+      ki: 0.5
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_torqueAxisPID:
+    m_target: {x: 0, y: 0, z: 0}
+    m_params:
+      kp: 1
+      ki: 0.5
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidX:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidY:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidZ:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_speed: {x: 0, y: 0, z: 0}
+  m_lastSpeed: {x: 0, y: 0, z: 0}
+  m_speedStrech: {x: 0, y: 0, z: 0}
+  m_accStretch: {x: 0, y: 0, z: 0}
+  m_stretch: 0

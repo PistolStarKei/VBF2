@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010488831044}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010488831044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013198888198}
+  - 114: {fileID: 114000012774671054}
+  m_Layer: 0
+  m_Name: FishingStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013305317754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012956924930}
+  - 114: {fileID: 114000011477422504}
+  m_Layer: 0
+  m_Name: LineManager
+  m_TagString: LineManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012956924930
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013305317754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.973602, y: 0, z: -36.097992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013198888198}
+  m_RootOrder: 0
+--- !u!4 &4000013198888198
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010488831044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.973602, y: 0, z: 36.097992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000012956924930}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011477422504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013305317754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c28ec12849647479b4995de3c8faed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineTention: 0
+  lineMeter: 0
+  lineColor: {r: 0.78676474, g: 0.78676474, b: 0.78676474, a: 0.69411767}
+  lineSize: 1
+  LurePosition: {fileID: 0}
+  Length: 2.5
+  lineSlack: 0
+  isFukeMode: 0
+  timeSinceFuke: 0
+  fukeTime: 2
+  linePowerMeter: {fileID: 0}
+--- !u!114 &114000012774671054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010488831044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7498a7926d341e4b1cc000e23758f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castMoveBtn: {fileID: 0}
+  isDebugMode: 1
+  bassMatInWater: {fileID: 2100000, guid: 8330710dfa0894917bef6c30dea78a5d, type: 2}
+  bassMatFight: {fileID: 2100000, guid: b22a140224a254cdf8ac1e0e0250e43b, type: 2}
+  rodBar: {fileID: 0}
+  currentChasingBass: {fileID: 0}
+  currentFightingBass: {fileID: 0}
+  currentMode: 0
+  debugLure: crank bp
+  debugRig: 0
+  debugIsSoft: 0
+  tackleBtn: {fileID: 0}
+  tackleMenu: {fileID: 0}
+  isShowedFightToUser: 0

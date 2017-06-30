@@ -1,0 +1,75 @@
+KEY,Japanese,English
+Flag,Flag-JP,Flag-US
+Language,Japanese,English
+MatchHeavy,最適,Best
+TotalLureParams_Tittles,飛距離;感度;適合サイズ;フッキング;強度,Distance;Sensitivity;Fish Size;Foocking;Strength
+PointParams_Tittles,水深;サイズ;数;クリアネス;根掛かり,Depth;Size;Stock;Clearness;Obstacle
+LineParams_Tittles,風の耐性;飛距離;強度;フッキング;感度,Wind Avoid;Distance;Strength;Foocking;Sensitivity
+RodsParams_Tittles,硬さ;飛距離;強度;フッキング;感度,Hardness;Distance;Strength;Foocking;Sensitivity
+LureParams_Tittles,カバー耐性;飛距離;最低サイズ;フッキング;アピール,Avoidance;Distance;Min Size;Foocking;Appeal
+LureParams_Tittles_Short,カ耐;飛距;適サ;フッキ;アピ,Av;Di;Si;Fc;Ap
+LureParams_SPAvils,コンタクト;根掛かり回避;ラトル;スプラッシュ;サスペンド;集魚剤,Contact;Avoidance;Rattle;Splash;Suspend;Smell
+Invite,友達を誘う,Invite
+LureNotAvaillable,使用できません,Not Availlable
+Shoikin,賞金,Prize
+InfoEquipped,装備完了　,Equipped 
+Entry,参戦中,Entry
+MainRod,デフォルト,Default
+Equipped,装備中,EQUIPPED
+Equippable,装備可,EQUIPP
+NotAvaillable,未購入,N/A
+Equip,使用する,Equip
+WarningLostLure,根掛かりによりルアーをロスト\n[FF9933]（重要）ロストしたルアーは、釣り場を出ると全回復します[-],You've lost the lure temporarily\n[FF9933] unavaillable within this fishing [-]
+WarningNoLure,ルアーが装備されていません。\n[FF9933]タックルメニュー[-]からルアーを装備してください。,No lure equipped. \nNeed to equip one from the Tackle menu.
+PurchaseFailled,エラーにより購入は完了しませんでした。電波状況や端末の設定を確認のうえ、再度トライしてください。,Purchase failled due to some reasons.Please try agein.
+PurchaseSucceed,購入は正常に完了し、 ,Purcahse succeeded  Added 
+PurchaseSucceed2,が追加されました。\nご購入いただきありがとうございます。,
+TittleLoginBonus,ログインボーナス,LOGIN BONUS
+DescLoginBonus,アプリを開くと毎日もらえる\n連続ログインでチャンスアップ,Play Everyday\nLOGIN BONUS
+BtnLoginBonus,受け取る,RECEIVE
+OfferLoginBonus,日連続,Day
+TittleFB,いいね！する,Like Us
+DescFB,Facebookページをいいね！\nしてお得な情報をGET,Like fan page to\nreceive VBF infos
+BtnFB,受け取る,RECEIVE
+TittlePV,動画を観る,Watch PV
+DescPV,約１５秒間ゲームのコマーシャル\nを観るともらえる,About 15 sec
+BtnPV,受け取る,WATCH
+TittleTJ,タップジョイ,TAPJOY
+DescTJ,TAPJOYの審査済み無料\nアプリをお試しする,Earn by \ncompleteing offers
+BtnTJ,見るだけ,OK
+OfferTJ,大量獲得\nオススメ,hUGE\nGOLD
+DescItemNC,ストアに接続できませんでした,Cannot connect\nto store server
+TittleItem1,330 G,330 G
+DescItem1,,
+OfferItem1,,
+TittleItem2,1200 G,1200 G
+DescItem2,+8%ボーナス\nポップアップ広告ブロック,Bonus +8%\nBlock Pop-up Ad
+OfferItem2,,
+TittleItem3,2500 G,2500 G
+DescItem3,+15%ボーナス\nポップアップ広告ブロック,Bonus +15%\nBlock Pop-up Ad
+OfferItem3,大人気,Top\nSell
+TittleItem4,6500 G,6500 G
+DescItem4,+22%ボーナス\nポップアップ広告ブロック,Bonus +22%\nBlock Pop-up Ad
+OfferItem4,お買い得,Good\nBuy
+Open,開く,Yes
+Cancel,やめる,No
+TittleLike,Facebookページをいいね！する,Like Fan Page
+DescLike,別アプリのブラウザからFacebookページを開きますか？,Open Facebook Fan Page on browser app?
+LoginB,Bonus,Bonus
+FreeG,Free G,Free G
+Info_Buy,購入完了　,Purchased 
+Info_Equip,装備完了　,Equipped 
+Rank_Up,ランクアップ=>Rank  ,Rank Up=>Rank 
+TittleNoRankingData,アプリは最新ではありません,Update Required
+DescNoRankingData,今年のトーナメントに参加するため、ストアからアップデートを行ってください。,Update app to new version,to be able to participate in World Tournament.
+Store,ストアへ,Open
+Quit,閉じる,Quit
+FatalError,致命的なエラー,FatalError
+DescFatalError,エラーにより、操作を完了できませんでした。早急な解消のため、不具合の報告にご協力ください。, error occurs. Please report this bug for immediate fixes.
+Report,報告する,Report
+NCError,コネクトできませんでした,No Network Connection
+DescNCError,端末がインターネットに接続されていないか、不安定である可能性があります。状況を確認の上再度お試しください。, This app requires internet access.Please check your phone state and try again.
+Retry,再トライ,Retry
+TittleBuy,購入の確認　,Confirm Your Puchase
+DescBuy,以下のアイテムを購入してよろしいですか？　,Do you want to buy following product?
+Purchase,購入する,Yes

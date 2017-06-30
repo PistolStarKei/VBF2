@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010270517388}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010270517388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012324679360}
+  - 114: {fileID: 114000013489275470}
+  m_Layer: 0
+  m_Name: LineAtras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012324679360
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010270517388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000013489275470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010270517388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 02e7e4f33ee47469fb38bbec3b61b35d, type: 2}
+  mSprites:
+  - name: fl_b
+    x: 319
+    y: 381
+    width: 234
+    height: 206
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 78
+    paddingTop: 55
+    paddingBottom: 39
+  - name: fl_br
+    x: 554
+    y: 180
+    width: 226
+    height: 200
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 16
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fl_g
+    x: 319
+    y: 174
+    width: 234
+    height: 206
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 78
+    paddingTop: 55
+    paddingBottom: 39
+  - name: fl_w
+    x: 554
+    y: 381
+    width: 234
+    height: 206
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 78
+    paddingTop: 55
+    paddingBottom: 39
+  - name: fl_y
+    x: 789
+    y: 381
+    width: 234
+    height: 206
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 78
+    paddingTop: 55
+    paddingBottom: 39
+  - name: numSp
+    x: 957
+    y: 1002
+    width: 21
+    height: 22
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 8
+    paddingTop: 8
+    paddingBottom: 8
+  - name: ny_b
+    x: 0
+    y: 394
+    width: 241
+    height: 242
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 78
+    paddingRight: 81
+    paddingTop: 35
+    paddingBottom: 23
+  - name: ny_g
+    x: 0
+    y: 151
+    width: 241
+    height: 242
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 78
+    paddingRight: 81
+    paddingTop: 35
+    paddingBottom: 23
+  - name: ny_w
+    x: 319
+    y: 588
+    width: 241
+    height: 242
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 78
+    paddingRight: 81
+    paddingTop: 35
+    paddingBottom: 23
+  - name: ny_y
+    x: 561
+    y: 588
+    width: 241
+    height: 242
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 78
+    paddingRight: 81
+    paddingTop: 35
+    paddingBottom: 23
+  - name: pe_b
+    x: 0
+    y: 637
+    width: 318
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 41
+    paddingRight: 41
+    paddingTop: 58
+    paddingBottom: 49
+  - name: pe_g
+    x: 319
+    y: 831
+    width: 318
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 41
+    paddingRight: 41
+    paddingTop: 58
+    paddingBottom: 49
+  - name: pe_w
+    x: 0
+    y: 831
+    width: 318
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 41
+    paddingRight: 41
+    paddingTop: 58
+    paddingBottom: 49
+  - name: pe_y
+    x: 638
+    y: 831
+    width: 318
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 41
+    paddingRight: 41
+    paddingTop: 58
+    paddingBottom: 49
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []

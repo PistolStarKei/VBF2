@@ -1,0 +1,2864 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010302492930}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010293880176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011248519692}
+  - 33: {fileID: 33000010595244846}
+  - 23: {fileID: 23000011715374982}
+  - 114: {fileID: 114000011652898576}
+  m_Layer: 0
+  m_Name: Soft_Craw (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010302492930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011645708032}
+  - 33: {fileID: 33000014113541606}
+  - 23: {fileID: 23000014288092336}
+  - 114: {fileID: 114000013059420552}
+  - 114: {fileID: 114000011227791974}
+  m_Layer: 0
+  m_Name: Craw ns_NJ
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011887684944
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010440402952}
+  - 114: {fileID: 114000013101953118}
+  m_Layer: 0
+  m_Name: CrawSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010440402952
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011887684944}
+  m_LocalRotation: {x: -0.010802298, y: 0.7214412, z: -0.003258217, w: -0.69238377}
+  m_LocalPosition: {x: -0.15985857, y: -0.003887532, z: -0.0003435964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011248519692}
+  m_RootOrder: 0
+--- !u!4 &4000011248519692
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010293880176}
+  m_LocalRotation: {x: -0.0023618664, y: -0.0069571724, z: -0.00001643237, w: 0.99997306}
+  m_LocalPosition: {x: -0.003000001, y: -0.0143, z: 0.004900001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: -0.26700002, y: -0.77400005, z: -5.589}
+  m_Children:
+  - {fileID: 4000010440402952}
+  m_Father: {fileID: 4000011645708032}
+  m_RootOrder: 0
+--- !u!4 &4000011645708032
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302492930}
+  m_LocalRotation: {x: -0, y: -0.7071069, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: -0.00059998035, y: -0.022, z: 0.02399993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000011248519692}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &23000011715374982
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010293880176}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f00256c30546bc744b399ec3ca9cc519, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &23000014288092336
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302492930}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a573d84d8dd2c413aa80c416f39c33fc, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000010595244846
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010293880176}
+  m_Mesh: {fileID: 43000014151581214, guid: 46cc5f9c95d15544d8bb949b8b34f2bb, type: 2}
+--- !u!33 &33000014113541606
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302492930}
+  m_Mesh: {fileID: 4300000, guid: a9ccf5e44d2824e828b3980c46f04ec5, type: 3}
+--- !u!114 &114000011227791974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302492930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca653a19f11da4e45b1080815b2a8cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureController: {fileID: 0}
+  minSpeedWhenTention: 0.02
+  lookDirection: {x: 30, y: 180.81557, z: -0.0000047674216}
+  moveDirection: {x: -0.016431604, y: 0.24419247, z: -0.9695877}
+  moveSpeed: 0.02
+  suimenOffset: 0.5
+  SinkingObj: 0
+  isMovedOnce: 1
+  tempVec: {x: 0, y: 0, z: 0}
+  minPower: 0.02
+  maxPower: 2
+  rodBendingOnReel: 0.2
+  reelingPower: 0.25
+  rotationSpeedOnTention: 120
+  rotationSpeedOnNoTention: 30
+  defaultLureObjRot: {x: 0, y: 270, z: 0}
+  rotationSpeed_OBJOnNoTention: 30
+  rotationSpeed_OBJOnTention: 30
+  isLookingDownOnFall: 1
+  rotationOnBottm: {x: 0, y: 0, z: 0}
+  sinkingRot: 30
+  offSetSuimenEffect: 0.05
+  isKubihuri: 1
+  HonMuchNearToCulSinking: 15
+--- !u!114 &114000011652898576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010293880176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000b62482df0b064da5f449c29977db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: VertExmotion
+  m_params:
+    usePaintDataFromMeshColors: 1
+    version: 1.4.6
+  m_mesh: {fileID: 43000014151581214, guid: 46cc5f9c95d15544d8bb949b8b34f2bb, type: 2}
+  m_VertExmotionSensors:
+  - {fileID: 114000013101953118}
+  m_vertexColors:
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4286348412
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4288059030
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4288059030
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4283190348
+  - serializedVersion: 2
+    rgba: 4283058762
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4283190348
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4281808695
+  - serializedVersion: 2
+    rgba: 4282861383
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4281808695
+  - serializedVersion: 2
+    rgba: 4278387459
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4281019179
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4288059030
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4288059030
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4286348412
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4287532686
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4287532686
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4282466625
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4283453520
+  - serializedVersion: 2
+    rgba: 4282861383
+  - serializedVersion: 2
+    rgba: 4283914071
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4283716692
+  - serializedVersion: 2
+    rgba: 4282861383
+  - serializedVersion: 2
+    rgba: 4283190348
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278848010
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278848010
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278848010
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4288256409
+  - serializedVersion: 2
+    rgba: 4285887861
+  - serializedVersion: 2
+    rgba: 4285887861
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4285887861
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4288256409
+  - serializedVersion: 2
+    rgba: 4288256409
+  - serializedVersion: 2
+    rgba: 4286085240
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282269246
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282269246
+  - serializedVersion: 2
+    rgba: 4282466625
+  - serializedVersion: 2
+    rgba: 4282466625
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282664004
+  - serializedVersion: 2
+    rgba: 4282532418
+  - serializedVersion: 2
+    rgba: 4280756007
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4279045389
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4286874756
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4286151033
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4285887861
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4286414205
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4286414205
+  - serializedVersion: 2
+    rgba: 4282269246
+  - serializedVersion: 2
+    rgba: 4282269246
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282269246
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4282071867
+  - serializedVersion: 2
+    rgba: 4281808695
+  - serializedVersion: 2
+    rgba: 4281019179
+  - serializedVersion: 2
+    rgba: 4282861383
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4283914071
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4283453520
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4282400832
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4291414473
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4288980132
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4292335575
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288980132
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288980132
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4287795858
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288585374
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4289639342
+  - serializedVersion: 2
+    rgba: 4287733137
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4290494395
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4290493371
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4288980132
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4287733137
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4288782753
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4290494395
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4292664540
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4291941585
+  - serializedVersion: 2
+    rgba: 4292138196
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4292072403
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4288980132
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4292138196
+  - serializedVersion: 2
+    rgba: 4292072403
+  - serializedVersion: 2
+    rgba: 4289177511
+  - serializedVersion: 2
+    rgba: 4292598747
+  - serializedVersion: 2
+    rgba: 4292664540
+  - serializedVersion: 2
+    rgba: 4292138196
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4288914339
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4289572269
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278253568
+  - serializedVersion: 2
+    rgba: 4281070891
+  - serializedVersion: 2
+    rgba: 4286445949
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4292737501
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4286874756
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4280098077
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4289440683
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4290968770
+  - serializedVersion: 2
+    rgba: 4286771842
+  - serializedVersion: 2
+    rgba: 4279499795
+  - serializedVersion: 2
+    rgba: 4278253568
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4288124823
+  - serializedVersion: 2
+    rgba: 4288387995
+  - serializedVersion: 2
+    rgba: 4279103245
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4282576962
+  - serializedVersion: 2
+    rgba: 4292664540
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4294638330
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291217094
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4280032284
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4293783021
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4294243572
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4293783021
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4282970952
+  - serializedVersion: 2
+    rgba: 4293256677
+  - serializedVersion: 2
+    rgba: 4289967027
+  - serializedVersion: 2
+    rgba: 4278581253
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4290690750
+  - serializedVersion: 2
+    rgba: 4278581253
+  - serializedVersion: 2
+    rgba: 4289967027
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4280492835
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4279834905
+  - serializedVersion: 2
+    rgba: 4292138196
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4293914607
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294638330
+  - serializedVersion: 2
+    rgba: 4286445949
+  - serializedVersion: 2
+    rgba: 4290639293
+  - serializedVersion: 2
+    rgba: 4278580997
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4294638330
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4282576962
+  - serializedVersion: 2
+    rgba: 4279103245
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4285032552
+  - serializedVersion: 2
+    rgba: 4286874756
+  - serializedVersion: 2
+    rgba: 4279834905
+  - serializedVersion: 2
+    rgba: 4279045389
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4289440683
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4293914607
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4286771842
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278253568
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4294243572
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4293585642
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4290756543
+  - serializedVersion: 2
+    rgba: 4290098613
+  - serializedVersion: 2
+    rgba: 4293256677
+  - serializedVersion: 2
+    rgba: 4281070891
+  - serializedVersion: 2
+    rgba: 4292737501
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4278253568
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4292796126
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4290098613
+  - serializedVersion: 2
+    rgba: 4292664540
+  - serializedVersion: 2
+    rgba: 4288519581
+  - serializedVersion: 2
+    rgba: 4279499795
+  - serializedVersion: 2
+    rgba: 4283495760
+  - serializedVersion: 2
+    rgba: 4291752398
+  - serializedVersion: 2
+    rgba: 4290968770
+  - serializedVersion: 2
+    rgba: 4278253568
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4292269782
+  - serializedVersion: 2
+    rgba: 4294835709
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278581253
+  - serializedVersion: 2
+    rgba: 4282970952
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4287203721
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4280427042
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4280690214
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291414473
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4285624689
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4281348144
+  - serializedVersion: 2
+    rgba: 4283716692
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4280558628
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291151301
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278252544
+  - serializedVersion: 2
+    rgba: 4279957786
+  - serializedVersion: 2
+    rgba: 4294507768
+  - serializedVersion: 2
+    rgba: 4294441463
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4287269514
+  - serializedVersion: 2
+    rgba: 4286874756
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4280098077
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4289440683
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4292148436
+  - serializedVersion: 2
+    rgba: 4286050935
+  - serializedVersion: 2
+    rgba: 4278254592
+  - serializedVersion: 2
+    rgba: 4278252800
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4285427310
+  - serializedVersion: 2
+    rgba: 4288124823
+  - serializedVersion: 2
+    rgba: 4279692054
+  - serializedVersion: 2
+    rgba: 4292927712
+  - serializedVersion: 2
+    rgba: 4280742950
+  - serializedVersion: 2
+    rgba: 4287163528
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4294638330
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291217094
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4286743170
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4280032284
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4293783021
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4294243572
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4293783021
+  - serializedVersion: 2
+    rgba: 4288474268
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4281398576
+  - serializedVersion: 2
+    rgba: 4278646278
+  - serializedVersion: 2
+    rgba: 4290230199
+  - serializedVersion: 2
+    rgba: 4290493371
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4289967027
+  - serializedVersion: 2
+    rgba: 4278646278
+  - serializedVersion: 2
+    rgba: 4279637526
+  - serializedVersion: 2
+    rgba: 4280492835
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4287006342
+  - serializedVersion: 2
+    rgba: 4287401100
+  - serializedVersion: 2
+    rgba: 4279834905
+  - serializedVersion: 2
+    rgba: 4292138196
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4293914607
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294507768
+  - serializedVersion: 2
+    rgba: 4279957786
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4278253824
+  - serializedVersion: 2
+    rgba: 4294638330
+  - serializedVersion: 2
+    rgba: 4294769916
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4292269782
+  - serializedVersion: 2
+    rgba: 4287664272
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4292927712
+  - serializedVersion: 2
+    rgba: 4288453788
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4279834905
+  - serializedVersion: 2
+    rgba: 4286874756
+  - serializedVersion: 2
+    rgba: 4285032552
+  - serializedVersion: 2
+    rgba: 4279045389
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4289440683
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4294440951
+  - serializedVersion: 2
+    rgba: 4293914607
+  - serializedVersion: 2
+    rgba: 4288322202
+  - serializedVersion: 2
+    rgba: 4286050935
+  - serializedVersion: 2
+    rgba: 4288215448
+  - serializedVersion: 2
+    rgba: 4278252800
+  - serializedVersion: 2
+    rgba: 4278908426
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4294243572
+  - serializedVersion: 2
+    rgba: 4293717228
+  - serializedVersion: 2
+    rgba: 4288474268
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278646278
+  - serializedVersion: 2
+    rgba: 4281398576
+  - serializedVersion: 2
+    rgba: 4278252544
+  - serializedVersion: 2
+    rgba: 4280416545
+  - serializedVersion: 2
+    rgba: 4290903233
+  - serializedVersion: 2
+    rgba: 4294441463
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4292796126
+  - serializedVersion: 2
+    rgba: 4294309365
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4287163528
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4280742950
+  - serializedVersion: 2
+    rgba: 4279692054
+  - serializedVersion: 2
+    rgba: 4278254592
+  - serializedVersion: 2
+    rgba: 4292148436
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4294046193
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4292269782
+  - serializedVersion: 2
+    rgba: 4294835709
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4294572537
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4293783021
+  - serializedVersion: 2
+    rgba: 4290098613
+  - serializedVersion: 2
+    rgba: 4278254080
+  - serializedVersion: 2
+    rgba: 4289967027
+  - serializedVersion: 2
+    rgba: 4293519849
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4287203721
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4280427042
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4280690214
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291414473
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4285624689
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4281348144
+  - serializedVersion: 2
+    rgba: 4283716692
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4280558628
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291151301
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4287203721
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4280427042
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4280690214
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291414473
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4285624689
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4281348144
+  - serializedVersion: 2
+    rgba: 4280558628
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4283716692
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291151301
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4287203721
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4286808963
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4292401368
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4280427042
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4289703855
+  - serializedVersion: 2
+    rgba: 4289374890
+  - serializedVersion: 2
+    rgba: 4280690214
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4291875024
+  - serializedVersion: 2
+    rgba: 4291414473
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4285756275
+  - serializedVersion: 2
+    rgba: 4285624689
+  - serializedVersion: 2
+    rgba: 4282927176
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291085508
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291611852
+  - serializedVersion: 2
+    rgba: 4291743438
+  - serializedVersion: 2
+    rgba: 4291348680
+  - serializedVersion: 2
+    rgba: 4281348144
+  - serializedVersion: 2
+    rgba: 4280558628
+  - serializedVersion: 2
+    rgba: 4287927444
+  - serializedVersion: 2
+    rgba: 4283716692
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4278190080
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4288716960
+  - serializedVersion: 2
+    rgba: 4291546059
+  - serializedVersion: 2
+    rgba: 4291151301
+  m_initialShaders:
+  - {fileID: 4800000, guid: 92bfe8f323fccea4db145f3bd5f0d59c, type: 3}
+  m_shareMesh: 0
+  m_meshCopy: 0
+  m_shaderSensorPos:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderMotionDirection:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderRCT:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderSquashStrech:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderSpeed:
+  - {x: 0, y: 0, z: 0, w: 0}
+  m_shaderMotionAxis:
+  - {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114000013059420552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302492930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977962e3eecf24b4f854529dd75a7ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureParamsData:
+    sinkingSpeed: 1
+    sinkingDepth: 10
+    kubiSpeed: 10
+    kubiRotMax: 30
+    kubiRotdownMax: 30
+    DragTeikou: 0.5
+    isShugyozai: 1
+    isReactionByteEnabled: 0
+    appealScale_still: 0.5
+    appealScale_move: 1
+    appealScale_float: 0
+    appealScale_sinking: 1
+    appealScale_splash: 0
+    appealScale_reaction: 0
+    lookLike: 0000000001000000
+  buoParams:
+    buoyancyFactor: 3
+    buoyancyOffset: 0.2
+    underwaterMass: 1
+    underwaterDrag: 4
+    underwaterADrag: 1
+    keepAwake: 0
+  keepAwake: 0
+  spawnPosInLocal: {x: 0.0014000196, y: -0.022, z: 0.023999931}
+--- !u!114 &114000013101953118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011887684944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698fbf4fce2fab744bfa4e75c8ef9346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: VertExmotionSensor
+  m_parent: {fileID: 4000011248519692}
+  m_parentSensor: {fileID: 0}
+  m_envelopRadius: 0.10281624
+  m_center: {x: 0, y: 0, z: 0}
+  m_motionDirection: {x: 0, y: 0, z: 0}
+  m_motionTorqueForce: 0
+  m_torqueAxis: {x: 0, y: 0, z: 0}
+  m_centripetalForce: 0
+  m_collision: {x: 0, y: 0, z: 0}
+  m_params:
+    translation:
+      amplitudeMultiplier: 0.5
+      outerMaxDistance: 0.1
+      innerMaxDistance: 0.13
+      worldOffset: {x: 0, y: 0, z: 0}
+      localOffset: {x: 0, y: 0, z: 0}
+      gravityInOut: {x: 0, y: 0}
+    torque:
+      amplitude: 0
+      smooth: 0
+      max: 0
+      damping: 0
+      bouncing: 0
+    fx:
+      stretch: 0
+      stretchMax: 1
+      stretchMinSpeed: 0
+      squash: 0
+    inflate: 0
+    damping: 20
+    bouncing: 3
+    globalSmooth: 0
+  m_pidTime: 2
+  m_pid:
+    m_target: {x: 0, y: 0, z: 0}
+    m_params:
+      kp: 20
+      ki: 3
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidX:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidY:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidZ:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_sensorDirection: {x: 0, y: 0, z: 0}
+  m_lastPosition: {x: 0, y: 0, z: 0}
+  m_lastMotionDirection: {x: 0, y: 0, z: 0}
+  m_torqueForcePID:
+    lastTime: 0
+    m_target: 0
+    m_timeScale: 1
+    m_params:
+      kp: 1
+      ki: 0.5
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_torqueAxisPID:
+    m_target: {x: 0, y: 0, z: 0}
+    m_params:
+      kp: 1
+      ki: 0.5
+      kd: 0
+      deltaMax: 1
+      limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidX:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidY:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+    m_pidZ:
+      lastTime: 0
+      m_target: 0
+      m_timeScale: 1
+      m_params:
+        kp: 1
+        ki: 0.5
+        kd: 0
+        deltaMax: 1
+        limits: {x: -3.4028235e+38, y: 3.4028235e+38}
+  m_speed: {x: 0, y: 0, z: 0}
+  m_lastSpeed: {x: 0, y: 0, z: 0}
+  m_speedStrech: {x: 0, y: 0, z: 0}
+  m_accStretch: {x: 0, y: 0, z: 0}
+  m_stretch: 0

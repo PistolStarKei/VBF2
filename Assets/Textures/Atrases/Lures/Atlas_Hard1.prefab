@@ -1,0 +1,696 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000014193308554}
+  m_IsPrefabParent: 1
+--- !u!1 &1000014193308554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010127912886}
+  - 114: {fileID: 114000012238544246}
+  m_Layer: 0
+  m_Name: Atlas_Hard1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010127912886
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014193308554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000012238544246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014193308554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 037e63eae15f44bf7a71d900486cfcc5, type: 2}
+  mSprites:
+  - name: Bive1
+    x: 1260
+    y: 1850
+    width: 411
+    height: 198
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 77
+    paddingRight: 46
+    paddingTop: 147
+    paddingBottom: 39
+  - name: Bive2
+    x: 404
+    y: 1331
+    width: 404
+    height: 191
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 78
+    paddingRight: 52
+    paddingTop: 149
+    paddingBottom: 44
+  - name: Bive3
+    x: 858
+    y: 1843
+    width: 401
+    height: 205
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 81
+    paddingRight: 52
+    paddingTop: 148
+    paddingBottom: 31
+  - name: Bive4
+    x: 0
+    y: 1507
+    width: 403
+    height: 199
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 80
+    paddingRight: 51
+    paddingTop: 148
+    paddingBottom: 37
+  - name: Bive5
+    x: 0
+    y: 1707
+    width: 394
+    height: 341
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 80
+    paddingRight: 60
+    paddingTop: 39
+    paddingBottom: 4
+  - name: Bive6
+    x: 0
+    y: 1159
+    width: 383
+    height: 172
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 87
+    paddingRight: 64
+    paddingTop: 146
+    paddingBottom: 66
+  - name: DBive1
+    x: 404
+    y: 12
+    width: 210
+    height: 106
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 96
+    paddingRight: 94
+    paddingTop: 130
+    paddingBottom: 64
+  - name: DBive2
+    x: 404
+    y: 119
+    width: 212
+    height: 108
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 108
+    paddingRight: 80
+    paddingTop: 131
+    paddingBottom: 61
+  - name: DBive3
+    x: 1672
+    y: 1708
+    width: 216
+    height: 112
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 103
+    paddingRight: 81
+    paddingTop: 129
+    paddingBottom: 59
+  - name: DBive4
+    x: 404
+    y: 228
+    width: 215
+    height: 107
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 100
+    paddingRight: 85
+    paddingTop: 131
+    paddingBottom: 62
+  - name: DBived5
+    x: 404
+    y: 336
+    width: 221
+    height: 121
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 94
+    paddingRight: 85
+    paddingTop: 130
+    paddingBottom: 49
+  - name: Dcrank1
+    x: 0
+    y: 693
+    width: 390
+    height: 150
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 6
+    paddingTop: 88
+    paddingBottom: 62
+  - name: Dcrank2
+    x: 395
+    y: 1711
+    width: 394
+    height: 153
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 4
+    paddingTop: 89
+    paddingBottom: 58
+  - name: Dcrank3
+    x: 0
+    y: 999
+    width: 395
+    height: 159
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 5
+    paddingTop: 87
+    paddingBottom: 54
+  - name: Dcrank4
+    x: 0
+    y: 844
+    width: 390
+    height: 154
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 2
+    paddingTop: 87
+    paddingBottom: 59
+  - name: Dcrank5
+    x: 836
+    y: 1524
+    width: 412
+    height: 182
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 70
+    paddingRight: 63
+    paddingTop: 120
+    paddingBottom: 57
+  - name: Dcrank6
+    x: 404
+    y: 1523
+    width: 431
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 57
+    paddingRight: 57
+    paddingTop: 115
+    paddingBottom: 61
+  - name: Dcrank7
+    x: 1249
+    y: 1531
+    width: 419
+    height: 175
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 75
+    paddingTop: 120
+    paddingBottom: 64
+  - name: Dcrank8
+    x: 395
+    y: 1865
+    width: 462
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 33
+    paddingTop: 112
+    paddingBottom: 64
+  - name: dMinor1
+    x: 1129
+    y: 1096
+    width: 371
+    height: 111
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 13
+    paddingTop: 140
+    paddingBottom: 49
+  - name: dMinor2
+    x: 1501
+    y: 1098
+    width: 375
+    height: 109
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 12
+    paddingTop: 139
+    paddingBottom: 52
+  - name: dMinor3
+    x: 758
+    y: 1091
+    width: 370
+    height: 116
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 15
+    paddingRight: 15
+    paddingTop: 138
+    paddingBottom: 46
+  - name: dMinor4
+    x: 758
+    y: 985
+    width: 367
+    height: 105
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 15
+    paddingTop: 139
+    paddingBottom: 56
+  - name: Flog1
+    x: 404
+    y: 458
+    width: 315
+    height: 91
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 46
+    paddingRight: 39
+    paddingTop: 128
+    paddingBottom: 81
+  - name: Flog2
+    x: 404
+    y: 981
+    width: 318
+    height: 97
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 46
+    paddingRight: 36
+    paddingTop: 127
+    paddingBottom: 76
+  - name: Flog3
+    x: 0
+    y: 18
+    width: 316
+    height: 169
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 45
+    paddingRight: 39
+    paddingTop: 127
+    paddingBottom: 4
+  - name: Flog4
+    x: 404
+    y: 660
+    width: 315
+    height: 95
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 43
+    paddingRight: 42
+    paddingTop: 125
+    paddingBottom: 80
+  - name: Jitter1
+    x: 1260
+    y: 1708
+    width: 393
+    height: 141
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 113
+    paddingBottom: 46
+  - name: Jitter2
+    x: 0
+    y: 188
+    width: 395
+    height: 139
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 114
+    paddingBottom: 47
+  - name: Jitter3
+    x: 0
+    y: 1332
+    width: 399
+    height: 174
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 79
+    paddingBottom: 47
+  - name: Jitter4
+    x: 0
+    y: 548
+    width: 393
+    height: 144
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 0
+    paddingTop: 110
+    paddingBottom: 46
+  - name: Minor1
+    x: 758
+    y: 894
+    width: 388
+    height: 90
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 5
+    paddingTop: 139
+    paddingBottom: 71
+  - name: Minor2
+    x: 858
+    y: 1710
+    width: 381
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 3
+    paddingTop: 140
+    paddingBottom: 28
+  - name: Minor3
+    x: 1126
+    y: 994
+    width: 387
+    height: 96
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 7
+    paddingTop: 135
+    paddingBottom: 69
+  - name: Minor4
+    x: 1514
+    y: 998
+    width: 390
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 5
+    paddingTop: 136
+    paddingBottom: 72
+  - name: Popper1
+    x: 1548
+    y: 1385
+    width: 358
+    height: 137
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 30
+    paddingRight: 12
+    paddingTop: 102
+    paddingBottom: 61
+  - name: Popper2
+    x: 404
+    y: 1192
+    width: 353
+    height: 138
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 20
+    paddingTop: 95
+    paddingBottom: 67
+  - name: Popper3
+    x: 809
+    y: 1381
+    width: 351
+    height: 141
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 26
+    paddingTop: 95
+    paddingBottom: 64
+  - name: Popper4
+    x: 1669
+    y: 1568
+    width: 359
+    height: 138
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 21
+    paddingRight: 20
+    paddingTop: 97
+    paddingBottom: 65
+  - name: Scrank1
+    x: 404
+    y: 1079
+    width: 281
+    height: 112
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 79
+    paddingTop: 142
+    paddingBottom: 68
+  - name: Scrank2
+    x: 404
+    y: 867
+    width: 269
+    height: 113
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 95
+    paddingRight: 84
+    paddingTop: 141
+    paddingBottom: 68
+  - name: Scrank3
+    x: 404
+    y: 756
+    width: 274
+    height: 110
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 92
+    paddingRight: 82
+    paddingTop: 142
+    paddingBottom: 70
+  - name: Scrank4
+    x: 404
+    y: 550
+    width: 272
+    height: 109
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 92
+    paddingRight: 84
+    paddingTop: 138
+    paddingBottom: 75
+  - name: Shad1
+    x: 1137
+    y: 1211
+    width: 379
+    height: 119
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 12
+    paddingRight: 9
+    paddingTop: 117
+    paddingBottom: 64
+  - name: Shad2
+    x: 1517
+    y: 1210
+    width: 370
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 16
+    paddingTop: 116
+    paddingBottom: 64
+  - name: Shad3
+    x: 758
+    y: 1208
+    width: 378
+    height: 122
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 5
+    paddingTop: 116
+    paddingBottom: 62
+  - name: Shad4
+    x: 1161
+    y: 1394
+    width: 386
+    height: 128
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 11
+    paddingRight: 3
+    paddingTop: 115
+    paddingBottom: 57
+  - name: Spinner1
+    x: 0
+    y: 328
+    width: 257
+    height: 219
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 58
+    paddingRight: 85
+    paddingTop: 58
+    paddingBottom: 23
+  - name: Spinner2
+    x: 1672
+    y: 1821
+    width: 259
+    height: 227
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 59
+    paddingRight: 82
+    paddingTop: 55
+    paddingBottom: 18
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []

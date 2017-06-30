@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: WaterMat
+  m_Shader: {fileID: 4800000, guid: b09284667968f3742add9f869761c9ea, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _BumpMap
+      second:
+        m_Texture: {fileID: 2800000, guid: a22eee008653d5a41ad13609546d50dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _BumpMap1
+      second:
+        m_Texture: {fileID: 2800000, guid: 36c8f44431efc314580976e678c4e976, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _BumpMap2
+      second:
+        m_Texture: {fileID: 2800000, guid: aba1021ff2c7a004ebeaf4a5e6ac9908, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0.5, y: 0.3}
+    - first:
+        name: _Cube
+      second:
+        m_Texture: {fileID: 8900000, guid: 95cc120be84057e4181b06bed011ff37, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _CubeReflection
+      second:
+        m_Texture: {fileID: 8900000, guid: 95cc120be84057e4181b06bed011ff37, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _CubeTex
+      second:
+        m_Texture: {fileID: 8900000, guid: ddfaa8ff248bcd54187baeec6ddf23ae, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DisplacementMap
+      second:
+        m_Texture: {fileID: 2800000, guid: fec47a050e9dd854cad5e0c9871282b6, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DistortionMap
+      second:
+        m_Texture: {fileID: 2800000, guid: fec47a050e9dd854cad5e0c9871282b6, type: 3}
+        m_Scale: {x: 20, y: 20}
+        m_Offset: {x: 0.3, y: 0.3}
+    - first:
+        name: _FoamTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _FresnelTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 8c7eda9c9cf1102419394358216f4d51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 8c7eda9c9cf1102419394358216f4d51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Reflection
+      second:
+        m_Texture: {fileID: 8900000, guid: add2f0e1f7eadb0469742a8697c28e11, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _ReflectionTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SecTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 111d92ef2c4e5ec41a673a112bfdbc00, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0.3, y: 0.3}
+    - first:
+        name: _Spec_Gloss_Reflec_Masks
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Texture1
+      second:
+        m_Texture: {fileID: 2800000, guid: 8c7eda9c9cf1102419394358216f4d51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Texture2
+      second:
+        m_Texture: {fileID: 2800000, guid: 8c7eda9c9cf1102419394358216f4d51, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0.5, y: 0.3}
+    - first:
+        name: _WaveTex
+      second:
+        m_Texture: {fileID: 2800000, guid: f4acc160db11c4b48a5a31c5967f1274, type: 3}
+        m_Scale: {x: 8, y: 8}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _reflectTex
+      second:
+        m_Texture: {fileID: 2800000, guid: ab3d7df9284ac7a41b9c9760e945736c, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _reflection
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Add
+      second: 4.8076925
+    - first:
+        name: _Angulo
+      second: 3.4230769
+    - first:
+        name: _Bump1Speed
+      second: 0.2
+    - first:
+        name: _Bump2Speed
+      second: -0.2
+    - first:
+        name: _BumpForce
+      second: 0.3653846
+    - first:
+        name: _Cutoff
+      second: 0.5
+    - first:
+        name: _DistortPower
+      second: 0.003076923
+    - first:
+        name: _DistortSpeed
+      second: 0.017307693
+    - first:
+        name: _DistortionPower
+      second: 0.019615384
+    - first:
+        name: _DistortionSpeed
+      second: 0.31
+    - first:
+        name: _EdgeAlpha
+      second: 0
+    - first:
+        name: _FresnelBias
+      second: 0
+    - first:
+        name: _FresnelPower
+      second: 1
+    - first:
+        name: _FrezFalloff
+      second: 4
+    - first:
+        name: _FrezPow
+      second: 0.25
+    - first:
+        name: _Gloss
+      second: 1.0377358
+    - first:
+        name: _MainTexSpeed
+      second: 0.2
+    - first:
+        name: _Metalics
+      second: 0.5
+    - first:
+        name: _Opacidade
+      second: 0.4134615
+    - first:
+        name: _Opacity
+      second: -0.1
+    - first:
+        name: _OverallOpacity
+      second: 0.28846154
+    - first:
+        name: _Range
+      second: 5
+    - first:
+        name: _RangeX
+      second: 0.5
+    - first:
+        name: _RangeZ
+      second: 10
+    - first:
+        name: _Rangew
+      second: 1
+    - first:
+        name: _ReflFresnel
+      second: 0.115384616
+    - first:
+        name: _ReflUV
+      second: 1.2692307
+    - first:
+        name: _ReflUVadd
+      second: 0
+    - first:
+        name: _ReflectPower
+      second: 0.5576923
+    - first:
+        name: _Reflection
+      second: 0.1826923
+    - first:
+        name: _Refraction
+      second: 1
+    - first:
+        name: _Shininess
+      second: 4.2568374
+    - first:
+        name: _Specular
+      second: 0.13461539
+    - first:
+        name: _Teste2
+      second: 0
+    - first:
+        name: _Teste3
+      second: 0
+    - first:
+        name: _Texture2Speed
+      second: -0.2
+    - first:
+        name: _WaveAmount
+      second: 0.25
+    - first:
+        name: _WaveHeight
+      second: 0.2
+    - first:
+        name: _WaveSpeed
+      second: 0.0182
+    - first:
+        name: _teste
+      second: 0
+    - first:
+        name: _testeRefl
+      second: 0.1923077
+    - first:
+        name: _testeW
+      second: -0.076923065
+    - first:
+        name: _testeX
+      second: 0.036923077
+    - first:
+        name: _testeY
+      second: 0.018461538
+    - first:
+        name: _testeZ
+      second: 0.1923077
+    - first:
+        name: _testeadd
+      second: 5
+    m_Colors:
+    - first:
+        name: _Add
+      second: {r: 1, g: 1, b: 0, a: 0}
+    - first:
+        name: _Animations
+      second: {r: 0.1, g: -0.01, b: 0.01, a: -0.005}
+    - first:
+        name: _Color
+      second: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 1}
+    - first:
+        name: _LightDir
+      second: {r: -0.35102764, g: -0.76604444, b: -0.53847516, a: 0}
+    - first:
+        name: _Mult
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Speeds
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _Sub
+      second: {r: 1, g: 90, b: 1, a: 1}
+    - first:
+        name: _Teste
+      second: {r: 1.07, g: 1.1, b: -0.52, a: -0.15}
+    - first:
+        name: _TextureSpeed
+      second: {r: 0.05, g: -0.01, b: 0.01, a: -0.003}
+    - first:
+        name: _teste
+      second: {r: -1, g: -1, b: -1, a: -5}

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010500595034}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010500595034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012648735752}
+  - 114: {fileID: 114000012994882596}
+  m_Layer: 0
+  m_Name: GpgListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012648735752
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010500595034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000012994882596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010500595034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584ce8905acfe40c2af31f6e63291ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readerboadIDs:
+  - 43676b4970593257374f4945454149514477
+  - 43676b4970593257374f4945454149514151
+  - 43676b4970593257374f4945454149514167
+  - 43676b4970593257374f4945454149514177
+  - 43676b4970593257374f4945454149514241
+  - 43676b4970593257374f4945454149514251
+  - 43676b4970593257374f4945454149514267
+  - 43676b4970593257374f4945454149514277
+  - 43676b4970593257374f4945454149514341
+  displayCollection: 0
+  displayTime: 2
+  loadedLeaderBoard:
+    IsOpen: 0
+    _id: 
+    _name: 
+    _description: 
+    _Texture: {fileID: 0}
+    SocsialCollection: {}
+    GlobalCollection: {}
+    CurrentPlayerScore: []
+  userID: 
+  userName_string: 

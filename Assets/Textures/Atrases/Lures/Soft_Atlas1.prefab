@@ -1,0 +1,397 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011730896734}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011730896734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010314521148}
+  - 114: {fileID: 114000011438511706}
+  m_Layer: 0
+  m_Name: Soft_Atlas1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010314521148
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011730896734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011438511706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011730896734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: e301dac99715641e7852fc864119769a, type: 2}
+  mSprites:
+  - name: Curly1
+    x: 375
+    y: 1263
+    width: 372
+    height: 154
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 14
+    paddingTop: 74
+    paddingBottom: 72
+  - name: Curly2
+    x: 379
+    y: 1423
+    width: 366
+    height: 158
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 11
+    paddingTop: 64
+    paddingBottom: 78
+  - name: Curly3
+    x: 0
+    y: 1418
+    width: 378
+    height: 163
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 8
+    paddingTop: 62
+    paddingBottom: 75
+  - name: Curly4
+    x: 0
+    y: 1253
+    width: 374
+    height: 164
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 10
+    paddingTop: 61
+    paddingBottom: 75
+  - name: rig_foock1
+    x: 674
+    y: 1612
+    width: 214
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 102
+    paddingRight: 84
+    paddingTop: 128
+    paddingBottom: 94
+  - name: rig_foock2
+    x: 748
+    y: 1325
+    width: 262
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 62
+    paddingRight: 76
+    paddingTop: 128
+    paddingBottom: 80
+  - name: Rig_Jighead
+    x: 748
+    y: 1259
+    width: 222
+    height: 65
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 84
+    paddingRight: 94
+    paddingTop: 128
+    paddingBottom: 107
+  - name: Rig_Jighead2
+    x: 746
+    y: 1481
+    width: 244
+    height: 100
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 68
+    paddingRight: 88
+    paddingTop: 107
+    paddingBottom: 93
+  - name: rig_Jighead3
+    x: 750
+    y: 1169
+    width: 251
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 79
+    paddingRight: 70
+    paddingTop: 116
+    paddingBottom: 101
+  - name: Rig_RubberJig
+    x: 674
+    y: 1691
+    width: 231
+    height: 115
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 81
+    paddingRight: 88
+    paddingTop: 110
+    paddingBottom: 75
+  - name: rod1
+    x: 689
+    y: 1828
+    width: 332
+    height: 220
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 41
+    paddingRight: 27
+    paddingTop: 58
+    paddingBottom: 22
+  - name: rod2
+    x: 336
+    y: 1586
+    width: 337
+    height: 220
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 45
+    paddingRight: 18
+    paddingTop: 55
+    paddingBottom: 25
+  - name: rod3
+    x: 0
+    y: 1582
+    width: 335
+    height: 224
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 27
+    paddingTop: 55
+    paddingBottom: 21
+  - name: rod4
+    x: 0
+    y: 1807
+    width: 346
+    height: 241
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 27
+    paddingTop: 43
+    paddingBottom: 16
+  - name: rod5
+    x: 347
+    y: 1823
+    width: 341
+    height: 225
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 36
+    paddingTop: 54
+    paddingBottom: 21
+  - name: Shad1
+    x: 0
+    y: 896
+    width: 338
+    height: 61
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 25
+    paddingTop: 140
+    paddingBottom: 99
+  - name: Shad2
+    x: 373
+    y: 1068
+    width: 348
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 32
+    paddingRight: 20
+    paddingTop: 138
+    paddingBottom: 96
+  - name: Shad3
+    x: 0
+    y: 958
+    width: 347
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 32
+    paddingRight: 21
+    paddingTop: 140
+    paddingBottom: 94
+  - name: Shad4
+    x: 348
+    y: 960
+    width: 349
+    height: 64
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 31
+    paddingRight: 20
+    paddingTop: 141
+    paddingBottom: 95
+  - name: Streight1
+    x: 339
+    y: 898
+    width: 366
+    height: 28
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 20
+    paddingTop: 163
+    paddingBottom: 109
+  - name: Streight2
+    x: 339
+    y: 927
+    width: 367
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 12
+    paddingRight: 21
+    paddingTop: 161
+    paddingBottom: 109
+  - name: Streight3
+    x: 0
+    y: 866
+    width: 368
+    height: 29
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 19
+    paddingTop: 162
+    paddingBottom: 109
+  - name: Streight4
+    x: 369
+    y: 867
+    width: 366
+    height: 28
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 21
+    paddingTop: 163
+    paddingBottom: 109
+  - name: Zari1
+    x: 0
+    y: 1025
+    width: 372
+    height: 109
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 0
+    paddingTop: 116
+    paddingBottom: 75
+  - name: Zari2
+    x: 0
+    y: 1135
+    width: 377
+    height: 117
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 0
+    paddingTop: 111
+    paddingBottom: 72
+  - name: Zari3
+    x: 378
+    y: 1140
+    width: 371
+    height: 112
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 29
+    paddingRight: 0
+    paddingTop: 112
+    paddingBottom: 76
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []

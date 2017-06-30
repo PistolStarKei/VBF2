@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 268923189, guid: 7a733192861394a809dfa9977ebf7f6c, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  androidSettings:
+    sdkKey: eeOJdXkoRiWbTGtiK570oAEC0pBN4W3iY6et6UOraxdRWNTY9IKiT3uwRy3y
+    pushKey: 
+    disableAdvertisingId: 0
+    disablePersistentIds: 0
+    fyberSettings:
+      appId: 
+      appToken: 
+      userId: 
+  iosSettings:
+    sdkKey: 2wnxC2RSRs2JJIuG2XyGiQEB4dJp9UgPnpZQ6Ol0Ge8Q-61w6JV61qx7repf
+    pushKey: 
+    disableAdvertisingId: 0
+    disablePersistentIds: 0
+    fyberSettings:
+      appId: 
+      appToken: 
+      userId: 
+  autoConnectEnabled: 0
+  debugEnabled: 0
+  tjCallbacks: {fileID: 0}
+  hostURL: 
+  eventURL: 

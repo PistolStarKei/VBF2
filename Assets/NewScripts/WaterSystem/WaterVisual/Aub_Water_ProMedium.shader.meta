@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b09284667968f3742add9f869761c9ea
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {fileID: 2800000, guid: 1130c61754ce0eb40a56f106c48d9c1f, type: 3}
+  - _WaveTex: {fileID: 2800000, guid: b9a01407e0d4053459b06e97a3dc6837, type: 3}
+  - _FresnelTex: {fileID: 2800000, guid: dd009de095192824aaa0872b48971758, type: 3}
+  - _CubeTex: {fileID: 8900000, guid: ddfaa8ff248bcd54187baeec6ddf23ae, type: 2}
+  userData: 

@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Metal atlas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 267029a09f1e0024db1fc74ca62f1343, type: 2}
+  mSprites: []
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites:
+  - name: button1-center
+    outer:
+      serializedVersion: 2
+      x: 687
+      y: 822
+      width: 203
+      height: 202
+    inner:
+      serializedVersion: 2
+      x: 687
+      y: 822
+      width: 203
+      height: 202
+    rotated: 0
+    paddingLeft: 0.14285715
+    paddingRight: 0.1182266
+    paddingTop: 0.13366337
+    paddingBottom: 0.13366337
+  - name: button2-center
+    outer:
+      serializedVersion: 2
+      x: 482
+      y: 820
+      width: 204
+      height: 204
+    inner:
+      serializedVersion: 2
+      x: 482
+      y: 820
+      width: 204
+      height: 204
+    rotated: 0
+    paddingLeft: 0.13235295
+    paddingRight: 0.12254902
+    paddingTop: 0.12745099
+    paddingBottom: 0.12745099
+  - name: button2-joystick
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 542
+      width: 481
+      height: 482
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 542
+      width: 481
+      height: 482
+    rotated: 0
+    paddingLeft: 0.031185031
+    paddingRight: 0.033264033
+    paddingTop: 0.031120332
+    paddingBottom: 0.031120332
+  - name: button1-joystick
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 63
+      width: 474
+      height: 478
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 63
+      width: 474
+      height: 478
+    rotated: 0
+    paddingLeft: 0.05485232
+    paddingRight: 0.025316456
+    paddingTop: 0.025104603
+    paddingBottom: 0.046025105
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
