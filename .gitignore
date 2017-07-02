@@ -27,3 +27,24 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Unity Plugins
+/Assets/AudioToolkit/
+/Assets/DynamicFog/
+/Assets/DynamicWater/
+/Assets/Easy Save 2/
+/Assets/Gizmos/
+/Assets/Graph_Maker/
+/Assets/Mega-Fiers/
+/Assets/MEP/
+/Assets/Nature Pack Mobile/
+/Assets/NGUI/
+/Assets/PoolManagerExampleFiles/
+/Assets/Standard Assets/
+/Assets/T4M/
+/Assets/Tapjoy/
+/Assets/TapjoySample/
+/Assets/VertExmotion/
+/Assets/Water Pack/
+/Assets/water plants/
+/Assets/Weighted Random Numbers/
