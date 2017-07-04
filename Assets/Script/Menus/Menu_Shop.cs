@@ -65,11 +65,11 @@ public class Menu_Shop : MenuContents  {
         
         //PV
         freeItems[2].SetItem(Localization.Get("TittlePV"),Localization.Get("DescPV"),Localization.Get("BtnPV")
-            ,PS_Plugin.Instance.isConnected_TJ?true:false,Constants.Params.PVBonus.ToString()+"\n"+"GOLD",this);
+            ,false,Constants.Params.PVBonus.ToString()+"\n"+"GOLD",this);
 
         //TJ
         freeItems[3].SetItem(Localization.Get("TittleTJ"),Localization.Get("DescTJ"),Localization.Get("BtnTJ")
-            , PS_Plugin.Instance.isConnected_TJ?true:false,Constants.Params.PVBonus.ToString()+"\n"+"GOLD",this);
+            ,false,Constants.Params.PVBonus.ToString()+"\n"+"GOLD",this);
 
         if(StoreListener.Instance.IsStoreAvaillable()){
             paidItems[0].SetItem(Localization.Get("TittleItem1"),Localization.Get("DescItem1"), StoreListener.Instance.items.prices[0]

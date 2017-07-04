@@ -330,7 +330,7 @@ namespace Constants
             "0;1;2;3;4;5","0;1;2;3;4;5", "0;1;2;3;4;5", "0;1;2;3;4;5",
             "0;3;4;5","0;3;4;5", "0;3;4;5",
             "0;1;2;3","0;1;2;3", "0;1;2;3", "0;1;2;3",
-            "0;1;2;3;4;5","0;1;2;3;4;5", "0;1;2;3;4;5", "0;1;2;3;4;5",};
+            "0;1;2;3;4;5","0;1;2;3;4;5", "0;1;2;3;4;5", "0;1;2;3;4;5"};
         public static readonly int[] itemNumsMax = new int[15]{2,2,2,2,2,2,2,2,2,3,3,3,2,2,2};
         public static readonly string[] itemTittles = new string[15]{"Curly wm","Curly y","Curly g","Curly w","S-tail mb","S-tail w","S-tail p","S-tail by","Worm bg","Worm pr","Worm wm","Worm ns","Craw n","Craw sp","Craw ns"};
         public static readonly string[] itemSprites = new string[15]{"Curly1","Curly2","Curly3","Curly4","Shad1","Shad2","Shad3","Shad4","Streight1","Streight2","Streight3","Streight4","Zari1","Zari2","Zari3"};

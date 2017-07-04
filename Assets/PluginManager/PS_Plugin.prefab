@@ -59,24 +59,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000012810241592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013039767616}
-  - 114: {fileID: 114000013481754986}
-  - 114: {fileID: 114000012478698558}
-  - 114: {fileID: 114000013989935448}
-  m_Layer: 0
-  m_Name: TapjoyUnity
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000013963493426
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +70,24 @@ GameObject:
   - 114: {fileID: 114000012725927514}
   m_Layer: 0
   m_Name: IAP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000014234955796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012419275294}
+  - 114: {fileID: 114000011331966994}
+  - 114: {fileID: 114000013003363220}
+  - 114: {fileID: 114000012645458684}
+  m_Layer: 0
+  m_Name: Tapjoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013304897558}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &4000011932869356
 Transform:
   m_ObjectHideFlags: 1
@@ -118,20 +118,20 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013304897558}
-  m_RootOrder: 1
---- !u!4 &4000013039767616
+  m_RootOrder: 2
+--- !u!4 &4000012419275294
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012810241592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1000014234955796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013304897558}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!4 &4000013304897558
 Transform:
   m_ObjectHideFlags: 1
@@ -143,10 +143,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 4000012419275294}
   - {fileID: 4000010865759706}
   - {fileID: 4000011932869356}
   - {fileID: 4000013764928430}
-  - {fileID: 4000013039767616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000013764928430
@@ -161,7 +161,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013304897558}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &114000010800985790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +260,18 @@ MonoBehaviour:
   howManyRankToLoad: 20
   userName_string: 
   isDebugLog: 0
+--- !u!114 &114000011331966994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014234955796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 150346617, guid: 7a733192861394a809dfa9977ebf7f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 0}
 --- !u!114 &114000012094129320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,18 +290,20 @@ MonoBehaviour:
   logInType: 0
   isDebugLog: 0
   isLiked: 0
---- !u!114 &114000012478698558
+--- !u!114 &114000012645458684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012810241592}
+  m_GameObject: {fileID: 1000014234955796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 150346617, guid: 7a733192861394a809dfa9977ebf7f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: a8e03e22597884e7ebdc0eba612a0700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 8617dab13ef3043a79606645ef09b34c, type: 2}
+  isInitted: 0
+  loadVideoAdOnInit: 1
+  loadVideoAdOnWatched: 1
 --- !u!114 &114000012725927514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,20 +321,17 @@ MonoBehaviour:
     descs: []
     isConsumable: 
   isDebugLog: 1
---- !u!114 &114000013481754986
+--- !u!114 &114000013003363220
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012810241592}
+  m_GameObject: {fileID: 1000014234955796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e03e22597884e7ebdc0eba612a0700, type: 3}
+  m_Script: {fileID: 11500000, guid: d3ac9173a253f4c48b18fc5eabc211ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInitted: 0
-  loadVideoAdOnInit: 1
-  loadVideoAdOnWatched: 1
 --- !u!114 &114000013985311490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,17 +354,6 @@ MonoBehaviour:
   readerboadListener: {fileID: 114000010800985790}
   isInitted_Readerboad: 0
   isConnected_Readerboad: 0
-  tjListener: {fileID: 114000013481754986}
+  tjListener: {fileID: 114000012645458684}
   isInitted_TJ: 0
   isConnected_TJ: 0
---- !u!114 &114000013989935448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012810241592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ac9173a253f4c48b18fc5eabc211ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

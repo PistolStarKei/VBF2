@@ -597,7 +597,7 @@ public class DataManger : PS_SingletonBehaviour<DataManger> {
 
 
         yield return new WaitForSeconds(2.5f);
-        if(Application.isEditor && isLoadMain)PS_Plugin.Instance.LoadScene("Main");
+        if(Application.isEditor && isLoadMain)PS_Plugin.Instance.LoadScene("MainScene");
     }
 
 

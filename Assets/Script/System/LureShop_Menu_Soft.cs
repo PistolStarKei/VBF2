@@ -334,7 +334,11 @@ public class LureShop_Menu_Soft : TackeMenuParent {
     public int GetEquippedRigID(int current){
 
         int[] adons=GetAvaillableAdons(current);
-        if(current<=adons.Length)Debug.LogError("GetEquippedRig Error length over");
+		if(GetEquippedRig(current)>=adons.Length){
+			Debug.LogError("GetEquippedRig Error length over");
+			Debug.LogError("current "+ current);
+			Debug.LogError("adons "+adons);
+		}
 
         return adons[GetEquippedRig(current)];
 
