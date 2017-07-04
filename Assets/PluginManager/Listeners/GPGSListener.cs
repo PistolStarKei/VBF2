@@ -253,9 +253,9 @@ public class GPGSListener:  PS_SingletonBehaviour<GPGSListener> {
 		}
 		#endif
 		#if  UNITY_IPHONE
-
+			return null;
 		#endif
-
+		return null;
 	}
 	
 	
