@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Volcano
-  m_Shader: {fileID: 4800000, guid: eef13f6703ba2d54bb721395c5b1c13f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6cc0a7bd8938d084d84fbee922c496be, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
