@@ -157,6 +157,9 @@ public class LureController :PS_SingletonBehaviour< LureController > {
 
     //Evenets
     public void OnReachedPlayer(){
+		//ルアーの回収イベントを呼ぶ
+		if(GameController.Instance!=null)GameController.Instance.OnLureKaishu();
+
         Debug.LogError("OnReachedPlayer");
         FishingStateManger.Instance.ChangeStateTo(GameMode.Cast);
     }

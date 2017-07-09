@@ -48,7 +48,7 @@ Material:
     m_Floats:
     - first:
         name: _Cutoff
-      second: 0.57462686
+      second: 0.5
     - first:
         name: _SecondaryFactor
       second: 2.5

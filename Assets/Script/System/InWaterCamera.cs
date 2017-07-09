@@ -3,13 +3,17 @@ using System.Collections;
 
 public class InWaterCamera : PS_SingletonBehaviour<InWaterCamera> {
 
-	public Camera cameraObj;
-
 	public void Activate(bool isActive){
 		if(isActive!=cameraObj.enabled)cameraObj.enabled=isActive;
 	}
 
-    public Transform target;
+
+	void Awake(){
+		target=GameObject.FindGameObjectWithTag("Rure").transform;
+		cameraObj=gameObject.GetComponent<Camera>();
+	}
+	Camera cameraObj;
+    Transform target;
     public float front=0f;
     public float right=0f;
     public float up=0f;

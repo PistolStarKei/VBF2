@@ -12,8 +12,10 @@ public class SplashTrigger : PS_SingletonBehaviour<SplashTrigger> {
         if( other.gameObject.layer==LayerMask.NameToLayer("Rure")){
             if(FishingStateManger.Instance.currentMode==GameMode.Throwing||FishingStateManger.Instance.currentMode==GameMode.ReelingOnLand)
                 SplashAt(other.gameObject.transform.position,other.gameObject.transform.localScale.x/2.0f);
+			
+			if(GameController.Instance!=null)GameController.Instance.OnLureInWater();
             
-            if(!FishingStateManger.Instance.isStateWithin(GameMode.Cast)) LureController.Instance.OnEnterWater();
+			if(!FishingStateManger.Instance.isStateWithin(GameMode.Cast)) LureController.Instance.OnEnterWater();
 		}
 
     }

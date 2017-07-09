@@ -11,39 +11,7 @@ public class WaveParames{
     public WAVETYPE waveType=WAVETYPE.NONE;
     public WAVETYPE_COLOR waveType_color=WAVETYPE_COLOR.CLEAR;
 }
-[System.Serializable]
-public class PARAMS_SKY{
-    public TimeOfDay time=TimeOfDay.DAY;
 
-    public void SetTimeOfDay(FieldTime ft,FogDensity fog){
-        fogDensity=FogDensity.NONE;
-        switch(ft){
-            case FieldTime.EMorning:
-                time=TimeOfDay.EMORNING;
-                fogDensity=fog;
-                break;
-            case FieldTime.Morning:
-                time=TimeOfDay.MORNIG;
-                break;
-            case FieldTime.Noon:
-                time=TimeOfDay.DAY;
-                break;
-            case FieldTime.AfterNoon:
-                time=TimeOfDay.DAY;
-                break;
-            case FieldTime.Evening:
-                time=TimeOfDay.YU;
-                break;
-            case FieldTime.Night:
-                time=TimeOfDay.NIGHT;
-                break;
-        }
-    }
-    public bool isCloudy=false;
-    public bool isRainy=false;
-    public float windSpeed=1.0f;
-    public FogDensity fogDensity=FogDensity.NONE;
-}
 public class EnvManager : PS_SingletonBehaviour<EnvManager> {
 
     //現在の深さ
@@ -57,30 +25,13 @@ public class EnvManager : PS_SingletonBehaviour<EnvManager> {
 
     public WeatherType currentWeather=WeatherType.Sunny;
         
-    public PARAMS_SKY skyParams;
-    public void UpdateSky(){
-        switch(currentWeather){
-        case WeatherType.Sunny:
-            break;
-        case WeatherType.Cloudy:
-            skyParams.isCloudy=true;
-            break;
-        case WeatherType.Rain:
-            skyParams.isRainy=true;
-            break;
-        case WeatherType.HeavyRain:
-            skyParams.isRainy=true;
-            break;
-        }
-        skyParams.windSpeed=0.1f;
-        SkyController.Instance.UpdateSky();
-    }
 
     //1-10
     public int GetEnvFactor(){
 
+
         //天候とルアーとの一致
-        if(skyParams.isRainy){
+		if(GameController.Instance.skyParams.isRainy){
             //雨の日
         }
         switch(waveParams.waveType){
@@ -113,7 +64,7 @@ public class EnvManager : PS_SingletonBehaviour<EnvManager> {
 
         //時間と天候　20％
         int num3=0;
-        switch(skyParams.time){
+		switch(GameController.Instance.skyParams.time){
         case TimeOfDay.MORNIG:
             //天気　10％ よければー　悪ければ＋に
             if(currentWeather==WeatherType.Sunny){

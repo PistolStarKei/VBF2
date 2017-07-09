@@ -41,10 +41,8 @@ public class FishingStateManger : SingletonStatefulObjectBase<FishingStateManger
         WaitAndCover.Instance.CoverAll(true);
         LakeEnvironmentalParamas.Instance.UpdateFieldTime();
         yield return null;
-        EnvManager.Instance.skyParams=new PARAMS_SKY();
-        EnvManager.Instance.skyParams.SetTimeOfDay(LakeEnvironmentalParamas.Instance.weather.fieldTime,PointParameters.Instance.FogOnMorning);
-        EnvManager.Instance.currentWeather=LakeEnvironmentalParamas.Instance.weather.GetTodayWeather();
-        EnvManager.Instance.UpdateSky();
+       
+      
         yield return null;
         //水をエフェクト
         int windPow=(int)((LakeEnvironmentalParamas.Instance.weather.WindDirection.x*PointParameters.Instance.WindMiness.x)
