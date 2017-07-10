@@ -39,7 +39,7 @@ public class LureMover : MonoBehaviour {
         //}
     }
     public void CheckHamon(){
-        if(WaterPlane.Instance.isOnSuime(lureController.transform.position.y,.7f)){
+        if(WaterController.Instance.isOnSuime(lureController.transform.position.y,.7f)){
             lureController.hamonEffect.Show(true);
             if( lureController.appeal.moveState==LureAction.still){
                 lureController.hamonEffect.OnStill();
@@ -59,7 +59,7 @@ public class LureMover : MonoBehaviour {
 
 
     public bool IsOnSuimen(){
-        return WaterPlane.Instance.isOnSuime(lureController.gameObject.transform.position.y,suimenOffset);}
+        return WaterController.Instance.isOnSuime(lureController.gameObject.transform.position.y,suimenOffset);}
 
     public virtual void MoveByRigidBody(){
         if (lureController.lureParams.buoParams.keepAwake && lureController.body.IsSleeping()){
@@ -69,7 +69,7 @@ public class LureMover : MonoBehaviour {
         }
         if (lureController.body.mass < 0.1f) lureController.body.mass = 0.1f;
         //水中かどうかで変える
-        if (WaterPlane.Instance.isUnderWater((lureController.transform.position.y-lureController.lureParams.buoParams.buoyancyOffset))){
+        if (WaterController.Instance.isUnderWater((lureController.transform.position.y-lureController.lureParams.buoParams.buoyancyOffset))){
             // 水中なので浮力を与える
             if (lureController.lureParams.buoParams.buoyancyFactor > 0.0f){
                 lureController.body.useGravity = false;
@@ -90,7 +90,7 @@ public class LureMover : MonoBehaviour {
     public void ApplyBuoyancy(){
         if (lureController.body.mass < 0.1f) lureController.body.mass = 0.1f;
 
-        if(!WaterPlane.Instance.isOnSuime(lureController.transform.position.y- lureController.lureParams.buoParams.buoyancyOffset,0.0f)){
+        if(!WaterController.Instance.isOnSuime(lureController.transform.position.y- lureController.lureParams.buoParams.buoyancyOffset,0.0f)){
             //underwaterDrag
             if (lureController.lureParams.buoParams.buoyancyFactor > 0.0f){
                 lureController.body.useGravity = false;

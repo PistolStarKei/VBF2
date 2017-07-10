@@ -328,7 +328,7 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
 
 
         int waterVisivility=0;//100ほど悪い
-        tParams.inwaterBrightNess=EnvManager.Instance.GetInWaterBrightness();
+        tParams.inwaterBrightNess=GameController.Instance.GetInWaterBrightness();
         waterVisivility=tParams.inwaterBrightNess;
 
         int miness=0;
@@ -340,9 +340,9 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         }
 
         //波の高さとスプラッシュ系 
-        if(EnvManager.Instance.waveParams.waveType==WAVETYPE.TALL){
+        if(GameController.Instance.waveParams.waveType==WAVETYPE.TALL){
             if(isLureHasAvility(3))waterVisivility+=5;
-        }else if(EnvManager.Instance.waveParams.waveType==WAVETYPE.STILL){
+        }else if(GameController.Instance.waveParams.waveType==WAVETYPE.STILL){
             if(isLureHasAvility(3))waterVisivility-=5;
         }
         waterVisivility=PSGameUtils.ClampInte( waterVisivility,0,100);
@@ -385,19 +385,19 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         //25-75
 
         //25% アースカラーほど強くなる
-        if(EnvManager.Instance.waveParams.waveType_color==WAVETYPE_COLOR.SAND){
+        if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.SAND){
             val-=(int)(25*GetDarkness());
             val-=(int)(25*GetBrightness());
             val+=(int)(25*GetNaturality());
-        }else if(EnvManager.Instance.waveParams.waveType_color==WAVETYPE_COLOR.GREEN){
+        }else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.GREEN){
             val-=(int)(25*GetDarkness());
             val-=(int)(25*GetBrightness());
             val+=(int)(25*GetNaturality());
-        }else if(EnvManager.Instance.waveParams.waveType_color==WAVETYPE_COLOR.BLUE){
+        }else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.BLUE){
             val-=(int)(25*GetDarkness());
             val-=(int)(25*GetBrightness());
             val+=(int)(25*GetNaturality());
-        }else if(EnvManager.Instance.waveParams.waveType_color==WAVETYPE_COLOR.CLEAR){
+        }else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.CLEAR){
             val+=(int)(25*GetDarkness());
             val+=(int)(25*GetBrightness());
             val-=(int)(25*GetNaturality());

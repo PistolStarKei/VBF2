@@ -188,7 +188,7 @@ public class BassAI :FishAiParent {
 
                 if(LureController.Instance.mover.IsOnSuimen()){
                     
-                    SplashTrigger.Instance.SplashAt(transform.position,transform.localScale.x);
+                    WaterController.Instance.SplashAt(transform.position,transform.localScale.x);
                     AudioController.Play("bite");
                     isReachedMovePosition=false;
                     fightState=FightState.Tukkomi;
@@ -640,7 +640,7 @@ public class BassAI :FishAiParent {
 			
 		transform.rotation=Quaternion.Lerp(transform.rotation,lookTarget,Time.deltaTime);
 
-        if(transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){
+        if(transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){
 			return;
 		}
            
@@ -779,7 +779,7 @@ public class BassAI :FishAiParent {
 				// parent lure and state to fight
             if(transform.position.y>-(transform.localScale.x*0.7f)){
                 AudioController.Play("jabajaba");
-                SplashTrigger.Instance.SplashAt(transform.position,transform.localScale.x);
+                WaterController.Instance.SplashAt(transform.position,transform.localScale.x);
             }
 			    ChangeState(BassState.Fight);
 				break;
@@ -845,9 +845,9 @@ public class BassAI :FishAiParent {
 		Vector3 cacheForward = transform.forward;
 		Vector3 cacheRight = transform.right;
 		//Up / Down avoidance
-        if (transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){          
+        if (transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){          
 
-            d = (posOffset -  Mathf.Abs(transform.position.y-(-(EnvManager.Instance.BottomDepth)+posOffset)))/posOffset;
+            d = (posOffset -  Mathf.Abs(transform.position.y-(-(GameController.Instance.BottomDepth)+posOffset)))/posOffset;
             ex.x -= _avoidSpeed*d*Time.deltaTime*(_speed +1);
             rx.eulerAngles = ex;
             transform.rotation = rx;
@@ -1083,7 +1083,7 @@ int sasoiNum=0;
     public void OnJumped(){
         Debug.Log("OnJumped");
         AudioController.Play("bassjump");
-        SplashTrigger.Instance.SplashAt(new Vector3(transform.position.x,0.0f,transform.position.z),transform.localScale.x);
+        WaterController.Instance.SplashAt(new Vector3(transform.position.x,0.0f,transform.position.z),transform.localScale.x);
         isJumping=false;
 
     }

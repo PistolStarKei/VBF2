@@ -151,17 +151,17 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
              parameters.spawnedPosiion=new Vector3(transform.position.x,0.0f-posOffset,transform.position.z);
             _territory_Height[1]=0.0f-posOffset;
             _territory_Height[0]=(0.0f-posOffset)-terrytorySize;
-            if(_territory_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_territory_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_territory_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_territory_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_territory_Height[1]<_territory_Height[0]){
                 _territory_Height[1]=_territory_Height[0]+0.2f;
             }
             break;
         case BassRange.Mid:
-             parameters.spawnedPosiion=new Vector3(transform.position.x,-Mathf.Abs(EnvManager.Instance.BottomDepth)/2.0f,transform.position.z);
+             parameters.spawnedPosiion=new Vector3(transform.position.x,-Mathf.Abs(GameController.Instance.BottomDepth)/2.0f,transform.position.z);
             _territory_Height[1]= parameters.spawnedPosiion.y+(terrytorySize/2.0f);
             if(_territory_Height[1]>-posOffset)_territory_Height[1]=0.0f-posOffset;
             _territory_Height[0]= parameters.spawnedPosiion.y-(terrytorySize/2.0f);
-            if(_territory_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_territory_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_territory_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_territory_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_territory_Height[1]<_territory_Height[0]){
                 _territory_Height[0]=0.0f-posOffset;
                 _territory_Height[1]=_territory_Height[0]+0.2f;
@@ -169,7 +169,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             }
             break;
         case BassRange.Bottom:
-             parameters.spawnedPosiion=new Vector3(transform.position.x,-EnvManager.Instance.BottomDepth+posOffset,transform.position.z);
+             parameters.spawnedPosiion=new Vector3(transform.position.x,-GameController.Instance.BottomDepth+posOffset,transform.position.z);
             _territory_Height[1]= parameters.spawnedPosiion.y+terrytorySize;
             if(_territory_Height[1]>-posOffset)_territory_Height[1]=0.0f-posOffset;
             _territory_Height[0]= parameters.spawnedPosiion.y;
@@ -211,7 +211,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
 
     public SkinnedMeshRenderer _model;
     public void CheckVisible(){
-        if(transform.position.y> EnvManager.Instance.BassVisibleDepth){
+        if(transform.position.y> GameController.Instance.BassVisibleDepth){
             if(!_model.enabled)_model.enabled=true;
         }else{
             if(_model.enabled)_model.enabled=false;
@@ -313,9 +313,9 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         Vector3 cacheForward = transform.forward;
         Vector3 cacheRight = transform.right;
         //Up / Down avoidance
-        if (transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){          
+        if (transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){          
 
-            d = (posOffset -  Mathf.Abs(transform.position.y-(-(EnvManager.Instance.BottomDepth)+posOffset)))/posOffset;
+            d = (posOffset -  Mathf.Abs(transform.position.y-(-(GameController.Instance.BottomDepth)+posOffset)))/posOffset;
             ex.x -= _avoidSpeed*d*Time.deltaTime*(_speed +1);
             rx.eulerAngles = ex;
             transform.rotation = rx;
@@ -682,7 +682,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
 
             owner.transform.rotation=Quaternion.Lerp(owner.transform.rotation,owner.lookTarget,Time.deltaTime);
 
-            if(owner.transform.position.y<-(EnvManager.Instance.BottomDepth)+owner.posOffset){
+            if(owner.transform.position.y<-(GameController.Instance.BottomDepth)+owner.posOffset){
                 return;
             }
 
@@ -936,7 +936,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             owner.lookTarget=Quaternion.LookRotation(LureController.Instance.gameObject.transform.position-owner.transform.position);
             owner.transform.rotation=Quaternion.Lerp(owner.transform.rotation,owner.lookTarget,Time.deltaTime);
 
-            if(owner.transform.position.y<-(EnvManager.Instance.BottomDepth)+owner.posOffset){
+            if(owner.transform.position.y<-(GameController.Instance.BottomDepth)+owner.posOffset){
                 return;
             }
 
@@ -1040,7 +1040,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             float num=TackleParams.Instance.tParams.LureApealPower*20.0f;
 
             //3-30%を追加
-            biteRitsu+=EnvManager.Instance.GetEnvFactor()*3;
+            biteRitsu+=GameController.Instance.GetEnvFactor()*3;
 
             //最大４０％減
              biteRitsu-=owner.parameters.SURELEVEL*4;
@@ -1111,7 +1111,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             }
             owner.transform.rotation=Quaternion.Lerp(owner.transform.rotation,owner.lookTarget,Time.deltaTime);
 
-            if(owner.transform.position.y<-(EnvManager.Instance.BottomDepth)+owner.posOffset){
+            if(owner.transform.position.y<-(GameController.Instance.BottomDepth)+owner.posOffset){
                 return;
             }
 
@@ -1155,7 +1155,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         public override void OnReachedTarget() {
             if(owner.transform.position.y>-(owner.transform.localScale.x*0.7f)){
                 AudioController.Play("jabajaba");
-                SplashTrigger.Instance.SplashAt(owner.transform.position,owner.transform.localScale.x);
+				WaterController.Instance.SplashAt(owner.transform.position,owner.transform.localScale.x);
             }
             Debug.Break();
             owner.ChangeState(BassState.Fight);
@@ -1204,7 +1204,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             }
             owner.transform.rotation=Quaternion.Lerp( owner.transform.rotation, owner.lookTarget,Time.deltaTime);
 
-            if( owner.transform.position.y<-(EnvManager.Instance.BottomDepth)+ owner.posOffset){
+            if( owner.transform.position.y<-(GameController.Instance.BottomDepth)+ owner.posOffset){
                 return;
             }
 

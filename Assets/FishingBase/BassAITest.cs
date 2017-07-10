@@ -57,7 +57,7 @@ public class BassAITest : MonoBehaviour {
     public void OnJumped(){
         Debug.Log("OnJumped");
         AudioController.Play("bassjump");
-        SplashTrigger.Instance.SplashAt(new Vector3(transform.position.x,0.0f,transform.position.z),transform.localScale.x);
+        WaterController.Instance.SplashAt(new Vector3(transform.position.x,0.0f,transform.position.z),transform.localScale.x);
         isJumping=false;
         if(!isJumpKaihi){
             Debug.Log("Foock Offed");
@@ -164,7 +164,7 @@ public class BassAITest : MonoBehaviour {
             ChangeFightState(FightState.Tukkomi);
         }else{
             if(LureController.Instance.mover.IsOnSuimen()){
-                SplashTrigger.Instance.SplashAt(transform.position,transform.localScale.x);
+                WaterController.Instance.SplashAt(transform.position,transform.localScale.x);
                 AudioController.Play("bite");
                 isWithinTargetBounds=false;
                 ChangeFightState(FightState.Tukkomi);
@@ -414,7 +414,7 @@ public class BassAITest : MonoBehaviour {
                     lookTarget=Quaternion.LookRotation(transform.position+(2.0f*moveAt)-transform.position);
 
                     transform.rotation=Quaternion.Lerp(transform.rotation,lookTarget,Time.deltaTime*10.0f);
-                    if(transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){
+                    if(transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){
                         
                         moveAt=Player.Instance.gameObject.transform.transform.forward;
                     }
@@ -802,7 +802,7 @@ public class BassAITest : MonoBehaviour {
         transform.rotation=Quaternion.Lerp(transform.rotation,lookTarget,Time.deltaTime);
 
        
-        if(transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){
+        if(transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){
             return;
         }
         if(transform.position.y>0.0f-posOffset){
@@ -1053,7 +1053,7 @@ public class BassAITest : MonoBehaviour {
         //down up 
         string str="";
         string str2="";
-        if (transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){          
+        if (transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){          
             str2+=" : near bottom";
             directions[0]=false;
         }else{
@@ -1162,7 +1162,7 @@ public class BassAITest : MonoBehaviour {
         //Up / Down avoidance -10 -9
         if(Player.Instance.gameObject.transform.transform.InverseTransformDirection(moveAt).y<0.0f){
             //moving down
-            if (transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){          
+            if (transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){          
                 //if downWard
                 Debug.Log("Found Avaidance bottom down move");
                 return true;
@@ -1218,10 +1218,10 @@ public class BassAITest : MonoBehaviour {
         Vector3 cacheForward = transform.forward;
         Vector3 cacheRight = transform.right;
         //Up / Down avoidance -10 -9
-        if (transform.position.y<-(EnvManager.Instance.BottomDepth)+posOffset){          
+        if (transform.position.y<-(GameController.Instance.BottomDepth)+posOffset){          
 
            
-            d = (posOffset -  Mathf.Abs(transform.position.y-(-(EnvManager.Instance.BottomDepth)+posOffset)))/posOffset;
+            d = (posOffset -  Mathf.Abs(transform.position.y-(-(GameController.Instance.BottomDepth)+posOffset)))/posOffset;
             ex.x -= _avoidSpeed*d*Time.deltaTime*(_speed +1);
             rx.eulerAngles = ex;
             transform.rotation = rx;
@@ -1458,17 +1458,17 @@ public class BassAITest : MonoBehaviour {
             _spawnBox_Height[1]=0.0f-posOffset;
             Debug.Log("Create territory top"+_spawnBox_Height[1]);
             _spawnBox_Height[0]=(0.0f-posOffset)-terrytorySize;
-            if(_spawnBox_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_spawnBox_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_spawnBox_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_spawnBox_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_spawnBox_Height[1]<_spawnBox_Height[0]){
                 _spawnBox_Height[1]=_spawnBox_Height[0]+0.2f;
             }
             break;
         case BassRange.Mid:
-            posCenter=new Vector3(transform.position.x,-Mathf.Abs(EnvManager.Instance.BottomDepth)/2.0f,transform.position.z);
+            posCenter=new Vector3(transform.position.x,-Mathf.Abs(GameController.Instance.BottomDepth)/2.0f,transform.position.z);
             _spawnBox_Height[1]=posCenter.y+(terrytorySize/2.0f);
             if(_spawnBox_Height[1]>-posOffset)_spawnBox_Height[1]=0.0f-posOffset;
             _spawnBox_Height[0]=posCenter.y-(terrytorySize/2.0f);
-            if(_spawnBox_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_spawnBox_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_spawnBox_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_spawnBox_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_spawnBox_Height[1]<_spawnBox_Height[0]){
                 _spawnBox_Height[0]=0.0f-posOffset;
                 _spawnBox_Height[1]=_spawnBox_Height[0]+0.2f;
@@ -1476,7 +1476,7 @@ public class BassAITest : MonoBehaviour {
             }
             break;
         case BassRange.Bottom:
-            posCenter=new Vector3(transform.position.x,-EnvManager.Instance.BottomDepth+posOffset,transform.position.z);
+            posCenter=new Vector3(transform.position.x,-GameController.Instance.BottomDepth+posOffset,transform.position.z);
             _spawnBox_Height[1]=posCenter.y+terrytorySize;
             if(_spawnBox_Height[1]>-posOffset)_spawnBox_Height[1]=0.0f-posOffset;
             _spawnBox_Height[0]=posCenter.y;

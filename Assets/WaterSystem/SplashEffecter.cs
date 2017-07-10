@@ -53,9 +53,6 @@ void Start(){
 		ringFoamSystem = GameObject.Find("splash_ringsFoam_prefab").gameObject.GetComponent<ParticleSystem>();
 		splashSystem = GameObject.Find("splash_prefab").gameObject.GetComponent<ParticleSystem>();
 		splashDropSystem = GameObject.Find("splash_droplets_prefab").gameObject.GetComponent<ParticleSystem>();
-
-
-	
 }
 
 

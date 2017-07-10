@@ -20,7 +20,7 @@ public class PointStructures : PS_SingletonBehaviour<PointStructures> {
         }
     }
     void Start(){
-        EnvManager.Instance.BottomDepth=this.depth;
+        GameController.Instance.BottomDepth=this.depth;
         Debug.LogWarning("ここでクリアねすなどから、水とバスが見える深さをセットすること");
 
         SortByEnv();

@@ -88,7 +88,7 @@ public class PS_Buoy_Obj : MonoBehaviour {
     private bool CheckIsUnderWater(){
         //Check for underwater
 
-        if( WaterPlane.Instance.isUnderWater((transform.position.y-buoParams.buoyancyOffset))){
+		if( WaterController.Instance.isUnderWater((transform.position.y-buoParams.buoyancyOffset))){
 
             return true;
         }else{

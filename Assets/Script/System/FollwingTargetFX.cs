@@ -37,7 +37,7 @@ public class FollwingTargetFX : MonoBehaviour {
             vec.y=0.0f+yOffset;
             vec.z=target.transform.position.z;
             transform.position=vec;
-            if(target.transform.position.y+offset<WaterPlane.Instance.transform.position.y)
+			if(target.transform.position.y+offset<WaterController.Instance.transform.position.y)
             {
                 Debug.Log("たまサイドう");
                 if(Time.timeSinceLevelLoad-time> mintimeToDead){

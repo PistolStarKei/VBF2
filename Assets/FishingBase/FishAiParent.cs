@@ -148,17 +148,17 @@ public class FishAiParent : MonoBehaviour {
             _territory_Height[1]=0.0f-posOffset;
             Debug.Log("Create territory top"+_territory_Height[1]);
             _territory_Height[0]=(0.0f-posOffset)-terrytorySize;
-            if(_territory_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_territory_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_territory_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_territory_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_territory_Height[1]<_territory_Height[0]){
                 _territory_Height[1]=_territory_Height[0]+0.2f;
             }
             break;
         case BassRange.Mid:
-             parameters.spawnedPosiion=new Vector3(transform.position.x,-Mathf.Abs(EnvManager.Instance.BottomDepth)/2.0f,transform.position.z);
+             parameters.spawnedPosiion=new Vector3(transform.position.x,-Mathf.Abs(GameController.Instance.BottomDepth)/2.0f,transform.position.z);
             _territory_Height[1]= parameters.spawnedPosiion.y+(terrytorySize/2.0f);
             if(_territory_Height[1]>-posOffset)_territory_Height[1]=0.0f-posOffset;
             _territory_Height[0]= parameters.spawnedPosiion.y-(terrytorySize/2.0f);
-            if(_territory_Height[0]<-(EnvManager.Instance.BottomDepth)+posOffset)_territory_Height[0]=-EnvManager.Instance.BottomDepth+posOffset;
+            if(_territory_Height[0]<-(GameController.Instance.BottomDepth)+posOffset)_territory_Height[0]=-GameController.Instance.BottomDepth+posOffset;
             if(_territory_Height[1]<_territory_Height[0]){
                 _territory_Height[0]=0.0f-posOffset;
                 _territory_Height[1]=_territory_Height[0]+0.2f;
@@ -166,7 +166,7 @@ public class FishAiParent : MonoBehaviour {
             }
             break;
         case BassRange.Bottom:
-             parameters.spawnedPosiion=new Vector3(transform.position.x,-EnvManager.Instance.BottomDepth+posOffset,transform.position.z);
+             parameters.spawnedPosiion=new Vector3(transform.position.x,-GameController.Instance.BottomDepth+posOffset,transform.position.z);
             _territory_Height[1]= parameters.spawnedPosiion.y+terrytorySize;
             if(_territory_Height[1]>-posOffset)_territory_Height[1]=0.0f-posOffset;
             _territory_Height[0]= parameters.spawnedPosiion.y;

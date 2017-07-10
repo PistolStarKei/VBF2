@@ -88,7 +88,7 @@ public class LureMover_Soft_RJ : LureMover {
 
         //ここでソフトボディを定義する
 
-        if(WaterPlane.Instance.isOnSuime(lureController.transform.position.y, offSetSuimenEffect)){
+        if(WaterController.Instance.isOnSuime(lureController.transform.position.y, offSetSuimenEffect)){
 
             if(movingBodyPow>0.0f){
                 lureController.hamonBladeEffect.Show(false);
@@ -118,7 +118,7 @@ public class LureMover_Soft_RJ : LureMover {
         lureController.dummyTrans.localRotation=lureController.lureOBJ.transform.localRotation;
         tempVec=movetargetPos;
 
-        if(WaterPlane.Instance.isOnSuime(lureController.transform.position.y,0.0f)){
+        if(WaterController.Instance.isOnSuime(lureController.transform.position.y,0.0f)){
             lureController.body.velocity=new Vector3(lureController.body.velocity.x,0.0f,lureController.body.velocity.z);
             if(lureController.transform.position.y>0.0f)lureController.transform.position=new Vector3(lureController.transform.position.x,0.0f,lureController.transform.position.z);
             tempVec.y=0.0f;

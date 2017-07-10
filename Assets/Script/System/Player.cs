@@ -145,7 +145,7 @@ public class Player : PS_SingletonBehaviour<Player> {
             ray = new Ray(trans.position, -Vector3.up);
             if (Physics.Raycast(ray, out hit, 1,layerMask_ForLureHitBottom))if(hit.distance<distanceToHitBottom)return true;
         }else{
-            if(-trans.position.y>EnvManager.Instance.BottomDepth)return true;
+            if(-trans.position.y>GameController.Instance.BottomDepth)return true;
         }
         return false;
     }

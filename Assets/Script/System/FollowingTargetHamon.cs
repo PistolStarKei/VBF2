@@ -48,7 +48,7 @@ public class FollowingTargetHamon : MonoBehaviour {
             vec.z=target.transform.position.z;
             transform.position=vec;
             SetHamonRot(  0.0172f* transform.eulerAngles.y);
-            if(target.transform.position.y+offset<WaterPlane.Instance.transform.position.y)
+			if(target.transform.position.y+offset<WaterController.Instance.transform.position.y)
             {
                 Debug.Log("たまサイドう");
                 if(Time.timeSinceLevelLoad-time> mintimeToDead){

@@ -42,26 +42,6 @@ public class FishingStateManger : SingletonStatefulObjectBase<FishingStateManger
         LakeEnvironmentalParamas.Instance.UpdateFieldTime();
         yield return null;
        
-      
-        yield return null;
-        //水をエフェクト
-        int windPow=(int)((LakeEnvironmentalParamas.Instance.weather.WindDirection.x*PointParameters.Instance.WindMiness.x)
-            +(LakeEnvironmentalParamas.Instance.weather.WindDirection.z*PointParameters.Instance.WindMiness.z));
-        if(windPow>8)windPow=8;
-        EnvManager.Instance.waveParams.waveType=getWaveType(windPow);
-
-        //still normal tall none
-        EnvManager.Instance.waveParams.waveClearness=GetWaterCleaness();
-        //透明度が高いほど、見える -4 - 0
-        if(PointParameters.Instance.depth>-1.0f){
-            EnvManager.Instance.BassVisibleDepth=-1.0f;
-        }else{
-            if(PointParameters.Instance.depth<-7.0f){
-                EnvManager.Instance.waveParams.waveType_color=WAVETYPE_COLOR.BLUE;
-            }
-            EnvManager.Instance.BassVisibleDepth=(0.4f*(EnvManager.Instance.waveParams.waveClearness*10.0f))-4.0f;
-        }
-        EnvManager.Instance.UpdateWater();
         yield return null;
     }
     IEnumerator CreateEnvironment(){
@@ -130,7 +110,7 @@ public class FishingStateManger : SingletonStatefulObjectBase<FishingStateManger
         float val=PointParameters.Instance.baseWaterCleaness;
 
         //基本はクリア
-        EnvManager.Instance.waveParams.waveType_color=WAVETYPE_COLOR.CLEAR;
+		GameController.Instance.waveParams.waveType_color=WAVETYPE_COLOR.CLEAR;
 
         if(rainy>0.0f){
             val+=rainy/((int)PointParameters.Instance.Bottom+1);
@@ -138,14 +118,14 @@ public class FishingStateManger : SingletonStatefulObjectBase<FishingStateManger
 
         if(PointParameters.Instance.Bottom==BottomType.Mud || PointParameters.Instance.Bottom==BottomType.Sand){
 
-            if(val>0.6f)EnvManager.Instance.waveParams.waveType_color=WAVETYPE_COLOR.SAND;
+			if(val>0.6f)GameController.Instance.waveParams.waveType_color=WAVETYPE_COLOR.SAND;
         }
 
         //青子発生
         if(LakeEnvironmentalParamas.Instance.weather.Kion>28 && waterHeat>0.4f){
             
             if(val>(0.6f-((int)PointParameters.Instance.waterFlow*0.1f))){
-                EnvManager.Instance.waveParams.waveType_color=WAVETYPE_COLOR.GREEN;
+				GameController.Instance.waveParams.waveType_color=WAVETYPE_COLOR.GREEN;
             }
         }
 

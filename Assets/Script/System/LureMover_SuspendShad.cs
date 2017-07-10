@@ -21,7 +21,7 @@ public class LureMover_SuspendShad : LureMover {
 
                 Debug.Log("ステイ");
 
-                if(WaterPlane.Instance.isOnSuime(lureController.transform.position.y- lureController.lureParams.buoParams.buoyancyOffset,0.0f)){
+                if(WaterController.Instance.isOnSuime(lureController.transform.position.y- lureController.lureParams.buoParams.buoyancyOffset,0.0f)){
                     //on water
                     lureController.body.useGravity = true;
                 }else{
@@ -91,7 +91,7 @@ public class LureMover_SuspendShad : LureMover {
         tempVec.z=-(GetLureParams().kubiRotdownMax*Mathf.Clamp(-movingBodyPow/5.0f,.1f,.6f));
 
         //空中なので前傾させない
-        if( GetLureParams().kubiRotdownMax==0.0f || WaterPlane.Instance.isOnSuime(lureController.transform.position.y,0.2f))tempVec.z=0.0f;
+        if( GetLureParams().kubiRotdownMax==0.0f || WaterController.Instance.isOnSuime(lureController.transform.position.y,0.2f))tempVec.z=0.0f;
 
         lureController.lureOBJ.transform.localRotation=Quaternion.Euler(tempVec);
         //交互に動かす

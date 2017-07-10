@@ -14,8 +14,9 @@ public enum FogDensity {NONE,LIGHT,HEAVY};
 
 public class SkyController : PS_SingletonBehaviour<SkyController> {
 
-	public bool isRainy=false;
-	public FogDensity fogDensity;
+	bool isRainy=false;
+	FogDensity fogDensity;
+
 	public void SetSky(TimeOfDay timeOfDay,bool isCloudySky,bool isRainy,FogDensity fogType){
 		//空のテクスチャをアプライ
 		SetSkyTexture(timeOfDay,isCloudySky);
@@ -140,7 +141,7 @@ public class SkyController : PS_SingletonBehaviour<SkyController> {
 		}
 
     }
-	public bool isRainEffect=false;
+	bool isRainEffect=false;
     void SetRain(){
 		if(current==null) {
 	        current = PoolManager.Pools[poolName].Spawn(pre_rain);
