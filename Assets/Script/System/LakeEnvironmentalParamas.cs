@@ -134,7 +134,7 @@ public class LakeEnvironmentalParamas : PS_SingletonBehaviour<LakeEnvironmentalP
     }
 
   
-    //マップ画面に入るたびにも呼ぶこと
+    //マップ画面に入るたびに呼ぶこと
     public void UpdateFieldTime(){
         TimeManager.Instance.UpdateTime();
 

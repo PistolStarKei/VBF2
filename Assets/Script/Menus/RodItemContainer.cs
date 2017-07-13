@@ -19,7 +19,7 @@ public class RodItemContainer : MonoBehaviour {
     public int itemNum=0;
     public bool isSelected=false;
     public void SetItems(int id,string tittle,int num,int maxhas,string itemSp,bool isAvaillable,string markSp,UIAtlas at,Callback_OnTappedItem tapEvent){
-        Debug.Log(""+isAvaillable);
+        //Debug.Log(""+isAvaillable);
         this.OnTappedItem+=tapEvent;
         itemNum=id;
         this.isAvaillable=isAvaillable;
@@ -36,7 +36,7 @@ public class RodItemContainer : MonoBehaviour {
     public UILabel lbls;
     public void SetItems(int id,string tittle,int num,int maxhas,string itemSp,bool isAvaillable,string markSp,string extra,UIAtlas at,Callback_OnTappedItem tapEvent){
 
-        Debug.Log(""+isAvaillable);
+        //Debug.Log(""+isAvaillable);
         this.OnTappedItem+=tapEvent;
         itemNum=id;
         this.isAvaillable=isAvaillable;
@@ -56,7 +56,7 @@ public class RodItemContainer : MonoBehaviour {
     public UISprite extraBg;
     public void SetExtraDesc(string str){
 
-        Debug.Log("SetExtraDesc"+str);
+        //Debug.Log("SetExtraDesc"+str);
         if(str==""){
             if(lbls.gameObject.activeSelf!=false)
                 NGUITools.SetActive(lbls.gameObject,false);

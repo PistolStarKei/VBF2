@@ -55,7 +55,14 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
     public bool useObstacleAvoidance=false;
     //kasseiLevel 0.0-1.0 cautiouslevel=0.0f -1.0f
     public void Init(BassParameters parameters){
-        if(_model.material!=FishingStateManger.Instance.bassMatInWater)_model.material=FishingStateManger.Instance.bassMatInWater;
+
+		//プール以外ではバスのテクスチャをLowResにする
+		if(GameController.Instance.isPoolMode){
+			if(_model.material!=GameController.Instance.bassMatFight)_model.material=GameController.Instance.bassMatFight;
+		}else{
+			if(_model.material!=GameController.Instance.bassMatInWater)_model.material=GameController.Instance.bassMatInWater;
+		}
+
         isBassActive=false;
         this.parameters=parameters;
         float size=parameters.size* Constants.BassBihaviour.sizeScallingFactor;
@@ -812,13 +819,13 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
 
                 //delayEveryで結果を出すので、早くする。
                 if(owner.isDebugMode){
-                    FishingStateManger.Instance.BassIsChasing(true,owner.gameObject.transform);
+					GameController.Instance.BassIsChasing(true,owner.gameObject.transform);
                     isUpState=true;
                 }else{
                     
-                    if(FishingStateManger.Instance.currentChasingBass==null && owner.parameters.StateChangeToChase()){
+					if(GameController.Instance.currentChasingBass==null && owner.parameters.StateChangeToChase()){
                         isUpState=true;
-                        FishingStateManger.Instance.BassIsChasing(true,owner.gameObject.transform);
+						GameController.Instance.BassIsChasing(true,owner.gameObject.transform);
                     }else{
                         isUpState=false;
                     }
@@ -854,7 +861,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         float byteRitsu=0.0f;
         float ridatsuRitsu=0.0f;
         public override void Enter() {
-            FishingStateManger.Instance.BassIsChasing(true,owner.gameObject.transform);
+			GameController.Instance.BassIsChasing(true,owner.gameObject.transform);
             if(owner.timeEvery!=0.0f)owner.timeEvery=0.0f;
             moveFrequency_still=owner.parameters.GetMoveFrequency_Still();
             owner.SetMinMaxSpeed(Constants.BassBihaviour.bassSpeed_Chase[0],Constants.BassBihaviour.bassSpeed_Chase[1],Constants.BassBihaviour.bassSpeed_Chase[2],Constants.BassBihaviour.bassSpeed_Chase[3]);
@@ -994,7 +1001,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
            
         }
         public void OnChusenBite() {
-            if(FishingStateManger.Instance.currentChasingBass==owner.gameObject.transform){
+			if(GameController.Instance.currentChasingBass==owner.gameObject.transform){
                 
 
                 lureActionFactor=Constants.BassBihaviour.lureApealFactor[(int)owner.CheckRureMoveGetAppealled()];
@@ -1002,12 +1009,17 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
 
                 if(lureActionFactor<0.1f && LureController.Instance.lureParams.lureParamsData.isShugyozai)lureActionFactor=0.05f;
 
-                if(PSGameUtils.Chusen(chusenRitsu*lureActionFactor)){
-                    Debug.Log("バイトへ");
-                    owner.ChangeState(BassState.Bite);
-                }else{
-                    
-                }
+				if(!GameController.Instance.isPoolMode){
+					if(PSGameUtils.Chusen(chusenRitsu*lureActionFactor)){
+						Debug.Log("バイトへ");
+						owner.ChangeState(BassState.Bite);
+					}else{
+
+					}
+				}else{
+					Debug.Log("プールモードなので、バイトしない");
+				}
+               
 
 
             }else{
@@ -1083,7 +1095,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
             if(owner.timeEvery!=0.0f)owner.timeEvery=0.0f;
             owner.ResetElapsedTime();
             owner.bassState=BassState.Bite;
-            FishingStateManger.Instance.BassIsChasing(true,owner.gameObject.transform);
+			GameController.Instance.BassIsChasing(true,owner.gameObject.transform);
             owner.SetMinMaxSpeed(Constants.BassBihaviour.bassSpeed_Bite[0],Constants.BassBihaviour.bassSpeed_Bite[1],Constants.BassBihaviour.bassSpeed_Bite[2],Constants.BassBihaviour.bassSpeed_Bite[3]);
             owner.howLongToDetectReached=owner.transform.lossyScale.x*1.3f;
             owner.GetNewPoint(LureController.Instance.gameObject.transform.position,true,0.0f,4.0f,0.0f,false);  
@@ -1098,7 +1110,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         }
         void ExitBite(){
             Debug.LogError("バイトやめ");
-            FishingStateManger.Instance.BassIsChasing(false,null);
+			GameController.Instance.BassIsChasing(false,null);
             owner.ChangeState(BassState.Back);
         }
         // このステートである間、毎フレーム呼ばれる
@@ -1172,8 +1184,8 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         public stateBack(Bass owner) : base(owner) {}
 
         public override void Enter() {
-            if(owner._model.material!=FishingStateManger.Instance.bassMatInWater)owner._model.material=FishingStateManger.Instance.bassMatInWater;
-            FishingStateManger.Instance.BassIsChasing(false,null);
+            if(owner._model.material!=GameController.Instance.bassMatInWater)owner._model.material=GameController.Instance.bassMatInWater;
+            GameController.Instance.BassIsChasing(false,null);
             Debug.Log("Enter Back");
             owner.isReachedMovePosition=false;
             owner.SetMinMaxSpeed(Constants.BassBihaviour.bassSpeed_Back[0],Constants.BassBihaviour.bassSpeed_Back[1],Constants.BassBihaviour.bassSpeed_Back[2],Constants.BassBihaviour.bassSpeed_Back[3]);
@@ -1257,7 +1269,7 @@ public class Bass : StatefulObjectBase<Bass, BassState> {
         public stateFight(Bass owner) : base(owner) {}
 
         public override void Enter() {
-            owner._model.material=FishingStateManger.Instance.bassMatFight;
+            owner._model.material=GameController.Instance.bassMatFight;
 
             Debug.Log("Enter Fight");
             if(owner.timeEvery!=0.0f)owner.timeEvery=0.0f;

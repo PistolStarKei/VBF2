@@ -96,13 +96,13 @@ public class LureController :PS_SingletonBehaviour< LureController > {
     void FixedUpdate(){  
        
 
-        if(FishingStateManger.Instance.isStateWithin(GameMode.Cast) || lureOBJ==null){
+        if(GameController.Instance.isStateWithin(GameMode.Cast) || lureOBJ==null){
             transform.position=Player.Instance.lureDefaultPos.position;
             transform.rotation=Player.Instance.lureDefaultPos.rotation;
             if(mover!=null)mover.SetPreviousRodPosition(RodController.Instance.rodTip.position);
             return;
         }
-        if(FishingStateManger.Instance.GetisNegakariOrFoockingState()){
+        if(GameController.Instance.GetisNegakariOrFoockingState()){
             if(mover!=null)mover.SetPreviousRodPosition(RodController.Instance.rodTip.position);
             return;
         }
@@ -112,14 +112,14 @@ public class LureController :PS_SingletonBehaviour< LureController > {
             //プレイヤとルアーの距離を更新する
             Player.Instance.SetDistancePlayer(transform);
             //ルアー回収判定する
-            if(!FishingStateManger.Instance.isStateWithin(GameMode.Throwing) &&  Player.Instance.GetDistanceoPlayer()<Constants.Params.kaishuDistance){
+            if(!GameController.Instance.isStateWithin(GameMode.Throwing) &&  Player.Instance.GetDistanceoPlayer()<Constants.Params.kaishuDistance){
                 OnReachedPlayer();return;
             }
 
              HandleByRod();
 
         }else{
-            if(FishingStateManger.Instance.currentMode==GameMode.Throwing)mover.MoveByRigidBody();
+            if(GameController.Instance.currentMode==GameMode.Throwing)mover.MoveByRigidBody();
         }
 
         if(mover!=null)mover.SetPreviousRodPosition(RodController.Instance.rodTip.position);
@@ -161,7 +161,7 @@ public class LureController :PS_SingletonBehaviour< LureController > {
 		if(GameController.Instance!=null)GameController.Instance.OnLureKaishu();
 
         Debug.LogError("OnReachedPlayer");
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Cast);
+        GameController.Instance.ChangeStateTo(GameMode.Cast);
     }
     public void OnWater(bool isOnWater){
         if(isOnWater){
@@ -193,16 +193,16 @@ public class LureController :PS_SingletonBehaviour< LureController > {
         */
         if(collision.gameObject.layer==LayerMask.NameToLayer("Terrain")){
 
-            if(FishingStateManger.Instance.currentMode!=GameMode.Reeling)FishingStateManger.Instance.OnTerrain();
+            if(GameController.Instance.currentMode!=GameMode.Reeling)GameController.Instance.OnTerrain();
         }
         if(collision.gameObject.layer==LayerMask.NameToLayer("ReflectSubstanceCanLand")){
             AudioManager.Instance.Equip();
-            if( FishingStateManger.Instance.currentMode==GameMode.ReelingOnLand)return;
+            if( GameController.Instance.currentMode==GameMode.ReelingOnLand)return;
             AudioManager.Instance.Contact();
-            FishingStateManger.Instance.ChangeStateTo(GameMode.ReelingOnLand);
+            GameController.Instance.ChangeStateTo(GameMode.ReelingOnLand);
         }
 
-        if(FishingStateManger.Instance.currentMode!=GameMode.Reeling && FishingStateManger.Instance.currentMode!=GameMode.ReelingOnLand){
+        if(GameController.Instance.currentMode!=GameMode.Reeling && GameController.Instance.currentMode!=GameMode.ReelingOnLand){
             return;
         }
         if(collision.gameObject.layer==LayerMask.NameToLayer("Bass")){
@@ -217,10 +217,10 @@ public class LureController :PS_SingletonBehaviour< LureController > {
    
 
     public void OnEnterWater(){
-        if( FishingStateManger.Instance.currentMode==GameMode.Reeling)return;
+        if( GameController.Instance.currentMode==GameMode.Reeling)return;
         isOnLand=false;
         AudioController.Play("chapun");
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Reeling);
+        GameController.Instance.ChangeStateTo(GameMode.Reeling);
     }
 
 	public void OnSplash(bool isReactionByte){

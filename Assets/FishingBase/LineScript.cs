@@ -73,7 +73,7 @@ public class LineScript :  PS_SingletonBehaviour<LineScript> {
 		myLine.joins=Joins.Fill;
 		myLine.material=lineMat;
         if(lineMat==null){
-            Debug.Log("zline ==null");
+			Debug.LogError("lineMaterial ==null");
         }
 		SetLineWidth (lineSize,lineColor);
 		myLine.Resize(N);
@@ -83,6 +83,7 @@ public class LineScript :  PS_SingletonBehaviour<LineScript> {
 
 
 	public void SetLineWidth(int width,Color col){
+			Debug.LogError(" SetLineWidth"+width+" col"+col);
             this.lineColor=col;
             this.lineSize=width;
     		myLine.lineWidth = lineSize;
@@ -127,7 +128,7 @@ public class LineScript :  PS_SingletonBehaviour<LineScript> {
 			}else{
 				distance=(P2 - P1).magnitude;
           
-            if(   FishingStateManger.Instance.currentMode==GameMode.Throwing){
+			if(   GameController.Instance.currentMode==GameMode.Throwing){
 					Length=distance;
 			}else{
 				if(isFukeMode){

@@ -54,7 +54,7 @@ public class EquipMenu_Rod : TackeMenuParent {
         //currentSelect=0;
         OnTappedItem(currentSelect,true);
         yield return new WaitForSeconds(0.5f);
-        Debug.LogError("Init  ");
+        //Debug.LogError("Init  ");
         soubiBtn.Show(Localization.Get("Equip"));
         WaitAndCover.Instance.StopWait();
         WaitAndCover.Instance.UnCoverAll();
@@ -96,13 +96,13 @@ public class EquipMenu_Rod : TackeMenuParent {
 
 
                 if(Constants.RodsDatas.itemTittles[num]==TackleParams.Instance.currentTackle.name){
-                    Debug.Log("使用中"+Constants.RodsDatas.itemTittles[num]);
+                    //Debug.Log("使用中"+Constants.RodsDatas.itemTittles[num]);
                         roditemList.items[i].SetItems(num, GetTittle(num), GetHasNum(num), 
                             GetMaxSlots(num), GetItemSprite(num),isHasOrAvaillable(num), GetItemMarkSprite(num), "USED",itemAtlas,OnTappedItem);
                 }else{
                     if(DataManger.Instance.IsMainRods(num)){
                         //メインロッド
-                        Debug.Log("メイン"+Constants.RodsDatas.itemTittles[num]);
+                        //Debug.Log("メイン"+Constants.RodsDatas.itemTittles[num]);
                         roditemList.items[i].SetItems(num, GetTittle(num), GetHasNum(num), 
                             GetMaxSlots(num), GetItemSprite(num),isHasOrAvaillable(num), GetItemMarkSprite(num), "Main",itemAtlas,OnTappedItem);
                     }else{
@@ -163,7 +163,7 @@ public class EquipMenu_Rod : TackeMenuParent {
 
 
     public  override void SetContents(int i){
-        Debug.Log(GetMethodName()+this.name);
+        //Debug.Log(GetMethodName()+this.name);
         //タイトル　画像　マーク
 
         affecter2.SetLureParams( GetTittle(i),GetItemSprite(i), GetItemMarkSprite(i),itemAtlas);
@@ -181,7 +181,8 @@ public class EquipMenu_Rod : TackeMenuParent {
             }else{
                 soubiBtn.SetEnabled(true);
             }
-            Debug.Log("持っている"+ TackleParams.Instance.currentTackle.name+" "+Constants.RodsDatas.itemTittles[i]);
+
+            //Debug.Log("持っている"+ TackleParams.Instance.currentTackle.name+" "+Constants.RodsDatas.itemTittles[i]);
             //持っているので、装備を表示する
 
             affecter2.guiSetter.OnRodSoubi();
@@ -749,7 +750,7 @@ public class EquipMenu_Rod : TackeMenuParent {
             Debug.LogError("やばいやつ");
             return vals;
         }
-        Debug.Log("ロッど＝ "+rod+"ライン "+line);
+       // Debug.Log("ロッど＝ "+rod+"ライン "+line);
         Constants.Heavy  lineHeavy=Constants.Heavy.h;
         Constants.Heavy rodHeavy=Constants.Heavy.h;
         //Heavy{ul,l,ml,m,mh,h,xh}
@@ -759,8 +760,8 @@ public class EquipMenu_Rod : TackeMenuParent {
 
         //飛距離;感度;適合サイズ;フッキング;強度
         int  aishouTemp=GetHeavyAishou(rodHeavy,lineHeavy);
-        Debug.Log("ロッドの重さ＝ "+rodHeavy.ToString()+"ラインの重さ＝ "+lineHeavy.ToString());
-        Debug.Log("相性 "+aishouTemp);
+        //Debug.Log("ロッドの重さ＝ "+rodHeavy.ToString()+"ラインの重さ＝ "+lineHeavy.ToString());
+       // Debug.Log("相性 "+aishouTemp);
         switch(Mathf.Abs(aishouTemp)){
         case 0:
             vals=-0.0f;
@@ -784,7 +785,7 @@ public class EquipMenu_Rod : TackeMenuParent {
             vals=-0.4f;
             break;
         }
-        Debug.Log("＝ "+vals);
+        //Debug.Log("＝ "+vals);
         return vals;
     }
 
@@ -801,7 +802,7 @@ public class EquipMenu_Rod : TackeMenuParent {
         Constants.Heavy rodHeavy=Constants.Heavy.h;
         //Heavy{ul,l,ml,m,mh,h,xh}
 
-        Debug.Log("GetAishouLure "+rod+" ルアー "+lure+" "+isSoft);
+       // Debug.Log("GetAishouLure "+rod+" ルアー "+lure+" "+isSoft);
 
 
         rodHeavy=Constants.RodsDatas.heavyCategory[rod];
@@ -810,7 +811,7 @@ public class EquipMenu_Rod : TackeMenuParent {
         lureHeavy=!isSoft? Constants.LureDatas.heavyCategory[lure]:Constants.RigDatas.heavyCategory[rigNum];
 
 
-        Debug.Log("ロッドの重さ＝ "+rodHeavy.ToString()+"ルアーの重さ＝ "+lureHeavy.ToString());
+        //Debug.Log("ロッドの重さ＝ "+rodHeavy.ToString()+"ルアーの重さ＝ "+lureHeavy.ToString());
         //飛距離;感度;適合サイズ;フッキング;強度
         int  aishouTemp=GetHeavyAishou(rodHeavy,lureHeavy);
 

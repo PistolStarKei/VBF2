@@ -4,7 +4,9 @@ using System.Collections;
 public class SoubiBtn : MonoBehaviour {
 
 
-    public void SetEnabled(bool isEnable){
+	public void SetEnabled(bool isEnable){
+		isEnableBtn=isEnable;
+		isSetEnable=true;
         Debug.LogError("SetEnable "+isEnable);
         this.col.enabled=isEnable;
         this.color.SetState(isEnable?UIButtonColor.State.Normal:  UIButtonColor.State.Disabled,true);
@@ -37,17 +39,20 @@ public class SoubiBtn : MonoBehaviour {
     public UILabel yeslbl;
 
 
-
+	bool isEnableBtn=false;
+	bool isSetEnable=false;
     public void Hide(){
         if(isInvoing)return;
         isInvoing=true;
+
         if(!isOn)return;
         col.enabled=false;
         Debug.Log("Show cast Hide()");
 
         isOn=false;
+
         if(yeslbl.text!=""){
-            yeslbl.gameObject.gameObject.GetComponent<TweenScale>().PlayReverse();
+			yeslbl.gameObject.gameObject.GetComponent<TweenScale>().PlayReverse();
         }
         gameObject.GetComponent<TweenPosition>().PlayReverse();
     }
@@ -56,13 +61,19 @@ public class SoubiBtn : MonoBehaviour {
         if(gameObject.GetComponent<TweenPosition>().direction==AnimationOrTween.Direction.Forward){
             Debug.Log("Show cast OnShowed　見せた");
             isOn=true;
-            col.enabled=true;
+            
             isInvoing=false;
 
 
-            if(yeslbl.text!=""){
-                yeslbl.gameObject.gameObject.GetComponent<TweenScale>().PlayForward();
-            }
+			if(isSetEnable){
+				this.color.SetState(isEnableBtn?UIButtonColor.State.Normal:  UIButtonColor.State.Disabled,true);
+				isSetEnable=false;
+
+			}else{
+				col.enabled=true;
+
+			}
+			if(yeslbl.text!="")yeslbl.gameObject.gameObject.GetComponent<TweenScale>().PlayForward();
         }else{
             isInvoing=false;
             NGUITools.SetActive(gameObject,false);

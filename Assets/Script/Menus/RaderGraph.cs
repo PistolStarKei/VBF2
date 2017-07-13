@@ -19,7 +19,7 @@ public class RaderGraph : MonoBehaviour {
     }
 
     public void SetRaderData(float[] data){
-        Debug.Log("SetRaderData"+data.Length);
+        //Debug.Log("SetRaderData"+data.Length);
         if(tittleData.Count!=data.Length){
             return;
         }

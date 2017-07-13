@@ -31,12 +31,12 @@ public class BassAITest : MonoBehaviour {
     float posOffsetWhenScaleOne=1.3f;
 
     void Start(){
-        FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+        GameController.Instance.BassIsChasing(true,gameObject.transform);
 
         testDir=Player.Instance.gameObject.transform.forward;
         moveAt=transform.position;
 
-        if(FishingStateManger.Instance.isDebugMode){
+        if(GameController.Instance.isDebugMode){
             Init(100.0f,transform.position,bassRange);
         }
 
@@ -110,14 +110,14 @@ public class BassAITest : MonoBehaviour {
     public bool testIsJyosou=true;
     public bool testIsTurning=true;
     public void Test(){
-        FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+        GameController.Instance.BassIsChasing(true,gameObject.transform);
        
         if(transform.localScale.x>1.0f){
             rodPowerMax=0.8f;
         }else{
             rodPowerMax=0.5f+(0.3f*transform.localScale.x);
         }
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Fight);
+        GameController.Instance.ChangeStateTo(GameMode.Fight);
         fightState=FightState.Tukkomi;
         LureController.Instance.gameObject.SetActive(false);
         LureController.Instance.gameObject.transform.parent=rureFoockPosition;
@@ -155,9 +155,9 @@ public class BassAITest : MonoBehaviour {
             isWithinTargetBounds=true;
 
         }*/
-        FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+        GameController.Instance.BassIsChasing(true,gameObject.transform);
         SetMinMaxSpeed(0.05f,0.1f,7.0f,20.0f);
-        if(FishingStateManger.Instance.isDebugMode){
+        if(GameController.Instance.isDebugMode){
             isWithinTargetBounds=false;
            
             //ChangeFightState(FightState.Monkey);
@@ -186,7 +186,7 @@ public class BassAITest : MonoBehaviour {
         }else{
             rodPowerMax=0.5f+(0.3f*transform.localScale.x);
         }
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Fight);
+        GameController.Instance.ChangeStateTo(GameMode.Fight);
 
                 LureController.Instance.gameObject.SetActive(false);
                 LureController.Instance.gameObject.transform.parent=rureFoockPosition;
@@ -202,7 +202,7 @@ public class BassAITest : MonoBehaviour {
         if(LineScript.Instance.lineTention>=0.0f){
             LineScript.Instance.Length+=LineScript.Instance.lineTention+1.0f;
         }
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Reeling);
+        GameController.Instance.ChangeStateTo(GameMode.Reeling);
         LureController.Instance.gameObject.transform.parent=null;
         LureController.Instance.gameObject.SetActive(true);
 
@@ -260,7 +260,7 @@ public class BassAITest : MonoBehaviour {
 
                 if(fightState==FightState.NotFoocked){
                    
-                    if(FishingStateManger.Instance.isShowedFightToUser){
+                    if(GameController.Instance.isShowedFightToUser){
                             ChangeFightState(FightState.Tukkomi);
                         }else{
                         
@@ -276,7 +276,7 @@ public class BassAITest : MonoBehaviour {
                     if(ShipControls.Instance.gameObject.transform.InverseTransformPoint(transform.position).z<1.0f){
                         //close to player
                         bassState=BassState.Result;
-                        FishingStateManger.Instance.ChangeStateTo(GameMode.Result);
+                        GameController.Instance.ChangeStateTo(GameMode.Result);
 
                     }
                     if(isJumping)return;

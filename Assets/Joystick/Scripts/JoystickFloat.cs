@@ -52,14 +52,14 @@ public class JoystickFloat : PS_SingletonBehaviour<JoystickFloat>
         if(delta.x<-1.0f)delta.x=-1.0f;
        
         if(guiMode==GUIMODE.ROD){
-            if(FishingStateManger.Instance.currentMode==GameMode.Fight) FishingStateManger.Instance.SetCurrentBassJump();
+            if(GameController.Instance.currentMode==GameMode.Fight) GameController.Instance.SetCurrentBassJump();
 
             if(delta==Vector2.zero){
                 preVDelata=delta;
                 isRodMoveToTention=false;
                 return;
             }
-            if(FishingStateManger.Instance.GetisNegakariOrFoockingState()){
+            if(GameController.Instance.GetisNegakariOrFoockingState()){
                 if( !isNegakariState){
                     OnFoockingJoyStick(delta);
                 }else{
@@ -104,7 +104,7 @@ public class JoystickFloat : PS_SingletonBehaviour<JoystickFloat>
             preVDelata=delta;
             prevDist=culDist;
         }else{
-            if(FishingStateManger.Instance.currentMode==GameMode.Move){
+            if(GameController.Instance.currentMode==GameMode.Move){
                 Player.Instance.gameObject.
                 transform.Rotate(Vector3.up * (delta.x*Time.deltaTime*20.0f), Space.World);
                 preVDelata=delta;
@@ -341,8 +341,8 @@ public class JoystickFloat : PS_SingletonBehaviour<JoystickFloat>
 
     public float foockedPower=0.0f;
    void SetFoockTimeStateToDefault(){
-        if( FishingStateManger.Instance.GetisNegakariOrFoockingState()){
-            FishingStateManger.Instance.OnFoocked();
+        if( GameController.Instance.GetisNegakariOrFoockingState()){
+            GameController.Instance.OnFoocked();
         }
     }
 

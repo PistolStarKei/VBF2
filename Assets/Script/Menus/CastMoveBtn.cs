@@ -6,7 +6,7 @@ public class CastMoveBtn : MonoBehaviour {
    
     public void OnClicks(){
         if(isOn){
-            FishingStateManger.Instance.OnCast(isMove?false:true);
+            GameController.Instance.OnCast(isMove?false:true);
             SetState(isMove?false:true);
            
         }

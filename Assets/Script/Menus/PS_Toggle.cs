@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class PS_Toggle : MonoBehaviour {
 
     public void SetActive(bool isOn,bool isActive){
-        Debug.Log("PS_Toggle SetActive"+isOn+" "+isActive);
+        //Debug.Log("PS_Toggle SetActive"+isOn+" "+isActive);
         PSGameUtils.ActiveNGUIObject(gameObject,isOn);
         if(isOn){
             if(isActive){

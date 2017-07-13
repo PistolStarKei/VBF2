@@ -103,7 +103,7 @@ public class NegakariMeter : PS_SingletonBehaviour<NegakariMeter> {
     void FoockOff(){
         isTimerOn=false;
         AudioManager.Instance.LevelUp2();
-        FishingStateManger.Instance.OnNegakariKaihi();
+        GameController.Instance.OnNegakariKaihi();
         Hide();
     }
 
@@ -117,7 +117,7 @@ public class NegakariMeter : PS_SingletonBehaviour<NegakariMeter> {
     void OnTimeUp(){
         isTimerOn=false;
        
-        FishingStateManger.Instance.OnNegakariKaihiTimeOver();
+        GameController.Instance.OnNegakariKaihiTimeOver();
         Hide();
 
     }

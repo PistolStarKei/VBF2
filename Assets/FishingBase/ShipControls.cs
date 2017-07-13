@@ -84,7 +84,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 				transform.parent.position,
 				Quaternion.Euler(0, OrbitDegrees * Time.deltaTime, 0));*/
 
-        if( FishingStateManger.Instance.currentMode==GameMode.Move){
+        if( GameController.Instance.currentMode==GameMode.Move){
 			if (Mathf.Abs(thrust) > 0.01F)
 			{
 				if (GetComponent<Rigidbody>().velocity.sqrMagnitude > sqrdSpeedThresholdForDrag)
@@ -166,7 +166,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 	}
 	void Update ()
 	{
-        if( FishingStateManger.Instance.currentMode==GameMode.Move){
+        if( GameController.Instance.currentMode==GameMode.Move){
 			if(GetComponent<Rigidbody>().isKinematic)GetComponent<Rigidbody>().isKinematic=false;
 			theThrust = thrust;
 

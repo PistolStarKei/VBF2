@@ -169,7 +169,7 @@ public class WaitAndCover : PS_SingletonBehaviour<WaitAndCover>  {
     }
     public void UnCoverAll(){
         if(!isCovering)return;
-        Debug.Log("UnCoverAll");
+        //Debug.Log("UnCoverAll");
         if(faderOBJ.gameObject.activeSelf) ShowCoverNoneTween(false);
         if(faderTween.gameObject.activeSelf)ShowTweenCover(false);
     }

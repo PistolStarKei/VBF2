@@ -69,7 +69,7 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
 
 	void Update(){	
 	
-        isRodEnable=FishingStateManger.Instance.isRodEnabled()? true:false;
+        isRodEnable=GameController.Instance.isRodEnabled()? true:false;
           
         if(isRodEnable ){
             
@@ -106,8 +106,8 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
 
 
     private void BendRod(float bendAngle,float max){
-        if(FishingStateManger.Instance.currentMode==GameMode.Fight){
-            FishingStateManger.Instance.SetLineDamageOnMax(bendAngle,max);
+        if(GameController.Instance.currentMode==GameMode.Fight){
+            GameController.Instance.SetLineDamageOnMax(bendAngle,max);
         }
         if(bendAngle>=max){
             isMax=true;
@@ -141,7 +141,7 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
     }
     Vector3 preVRodPos=Vector3.zero;
     private void OnNoTention(){
-        if( FishingStateManger.Instance.currentMode==GameMode.Fight){
+        if( GameController.Instance.currentMode==GameMode.Fight){
             Debug.LogWarning("実装する　テンションない場合のペナ");
         }
         if(bend.angle!=0.0f){

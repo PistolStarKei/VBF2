@@ -101,7 +101,7 @@ public class CastBtn : PS_SingletonBehaviour<CastBtn>  {
         Debug.Log("Cast"+power);
 
         if(power<0.1f)power=0.1f;
-        FishingStateManger.Instance.ChangeStateTo(GameMode.Throwing);
+		GameController.Instance.ChangeStateTo(GameMode.Throwing);
 
         castPow=power* (TackleParams.Instance.tParams.Cast_Range* ((4500.0f-700.0f)/(40.0f-3.0f)));
 

@@ -83,12 +83,12 @@ public class WaterController : PS_SingletonBehaviour<WaterController> {
 
 		Debug.Log("OnTriggerExit"+other.gameObject.name);
 		if( other.gameObject.layer==LayerMask.NameToLayer("Rure")){
-			if(FishingStateManger.Instance.currentMode==GameMode.Throwing||FishingStateManger.Instance.currentMode==GameMode.ReelingOnLand)
+			if(GameController.Instance.currentMode==GameMode.Throwing||GameController.Instance.currentMode==GameMode.ReelingOnLand)
 				SplashAt(other.gameObject.transform.position,other.gameObject.transform.localScale.x/2.0f);
 
 			if(GameController.Instance!=null)GameController.Instance.OnLureInWater();
 
-			if(!FishingStateManger.Instance.isStateWithin(GameMode.Cast)) LureController.Instance.OnEnterWater();
+			if(!GameController.Instance.isStateWithin(GameMode.Cast)) LureController.Instance.OnEnterWater();
 		}
 
 	}

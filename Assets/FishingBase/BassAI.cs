@@ -117,7 +117,7 @@ public class BassAI :FishAiParent {
 		Debug.Log("ChangeState"+bassState.ToString()+" →"+state.ToString());
 		switch(state){
             case BassState.Result:
-                FishingStateManger.Instance.ChangeStateTo(GameMode.Result);
+                GameController.Instance.ChangeStateTo(GameMode.Result);
                  break;
 			case BassState.Stay:
 					if(bassState==BassState.Back){
@@ -143,7 +143,7 @@ public class BassAI :FishAiParent {
 				break;
 			case BassState.Chase:
 				if(bassState==BassState.Stay){
-                FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+                GameController.Instance.BassIsChasing(true,gameObject.transform);
                 SetMinMaxSpeed(0.05f,0.1f,7.0f,20.0f);
 				prevMove=LureController.Instance.appeal.moveState;
                 howLongToDetectReached=Random.Range(Constants.BassBihaviour.minDistanceWhenChaseScaleOne,Constants.BassBihaviour.maxDistanceWhenChaseScaleOne)*transform.lossyScale.x;
@@ -166,7 +166,7 @@ public class BassAI :FishAiParent {
 						Debug.Log("Inpossible State Change");
 						return;
 					}else{
-                FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+                GameController.Instance.BassIsChasing(true,gameObject.transform);
                 SetMinMaxSpeed(0.05f,0.1f,7.0f,20.0f);
                         howLongToDetectReached=transform.lossyScale.x;
                 GetNewPoint(LureController.Instance.gameObject.transform.position,true,true,0.0f,4.0f,0.0f);
@@ -221,7 +221,7 @@ public class BassAI :FishAiParent {
                 }
                 anime.OneShotAnime("bite");
                 delayStill=0.5f;
-                FishingStateManger.Instance.ChangeStateTo(GameMode.Fight);
+                GameController.Instance.ChangeStateTo(GameMode.Fight);
                 LureController.Instance.gameObject.SetActive(false);
                 LureController.Instance.gameObject.transform.parent=rureFoockPosition;
                 LureController.Instance.gameObject.transform.localPosition=Vector3.zero;
@@ -326,7 +326,7 @@ public class BassAI :FishAiParent {
                 //actioned
                  if(reveallBiteNum>=sasoiNum){
                     Debug.LogError("DelayEveried so I neeed to back");
-                    FishingStateManger.Instance.BassIsChasing(false,null);
+                    GameController.Instance.BassIsChasing(false,null);
 
         			ChangeState(BassState.Back);
 
@@ -335,7 +335,7 @@ public class BassAI :FishAiParent {
                         if(reveallBiteNum>=sasoiNum){
                             ChangeState(BassState.Bite);
                         }else{
-                        FishingStateManger.Instance.BassIsChasing(false,null);
+                        GameController.Instance.BassIsChasing(false,null);
                             ChangeState(BassState.Back);
                         }
 
@@ -344,12 +344,12 @@ public class BassAI :FishAiParent {
                         if(LureController.Instance.appeal.isReactionByte){
                         if(0.1f>=Random.value)ChangeState(BassState.Bite);
                         }else{
-                        FishingStateManger.Instance.BassIsChasing(false,null);
+                        GameController.Instance.BassIsChasing(false,null);
                             ChangeState(BassState.Back);
                         }
                     }
                 }else{
-                FishingStateManger.Instance.BassIsChasing(false,null);
+                GameController.Instance.BassIsChasing(false,null);
                     ChangeState(BassState.Back);
                 }
 
@@ -359,7 +359,7 @@ public class BassAI :FishAiParent {
 				ChangeState(BassState.Stay);
 				break;
 			case BassState.Bite:
-            FishingStateManger.Instance.BassIsChasing(false,null);
+            GameController.Instance.BassIsChasing(false,null);
                     ChangeState(BassState.Back);
 				break;
 			case BassState.Fight:
@@ -370,7 +370,7 @@ public class BassAI :FishAiParent {
                         isUpState=false;
 						Debug.LogError("Time up to change state to chase");
 						isAttentioned=false;
-                    FishingStateManger.Instance.BassIsChasing(true,gameObject.transform);
+                    GameController.Instance.BassIsChasing(true,gameObject.transform);
 						ChangeState(BassState.Chase);
 					}else{
 						Debug.LogError("Time up to back to terrytory");
@@ -461,12 +461,12 @@ public class BassAI :FishAiParent {
                         }else{
                             if(reveallBiteNum>=sasoiNum){
                                 Debug.Log("I'm back chusen ");
-                                FishingStateManger.Instance.BassIsChasing(false,null);
+                                GameController.Instance.BassIsChasing(false,null);
                                 ChangeState(BassState.Back);
                             }else{
                                 if(parameters.SURELEVEL*0.5f>=Random.value){
                                     Debug.Log("I'm back chusen ");
-                                    FishingStateManger.Instance.BassIsChasing(false,null);
+                                    GameController.Instance.BassIsChasing(false,null);
                                     ChangeState(BassState.Back);
                                 }
                             }
@@ -477,7 +477,7 @@ public class BassAI :FishAiParent {
                 }else{
                     if(parameters.SURELEVEL*0.5f>=Random.value){
                             Debug.Log("I'm back chusen ");
-                        FishingStateManger.Instance.BassIsChasing(false,null);
+                        GameController.Instance.BassIsChasing(false,null);
                             ChangeState(BassState.Back);
                         }
                     
@@ -501,12 +501,12 @@ public class BassAI :FishAiParent {
                     }else{
                         if(reveallBiteNum>=sasoiNum){
                             Debug.Log("I'm back chusen ");
-                            FishingStateManger.Instance.BassIsChasing(false,null);
+                            GameController.Instance.BassIsChasing(false,null);
                             ChangeState(BassState.Back);
                         }else{
                             if(parameters.SURELEVEL*0.5f>=Random.value){
                                 Debug.Log("I'm back chusen ");
-                                FishingStateManger.Instance.BassIsChasing(false,null);
+                                GameController.Instance.BassIsChasing(false,null);
                                 ChangeState(BassState.Back);
                             }
                         }
@@ -607,7 +607,7 @@ public class BassAI :FishAiParent {
             if(stillTimeMax>timeBassIsBoring){
                 stillTimeMax=0.0f;
                 Debug.LogError("I'm back to terrior it's not moving anymore boring");
-                FishingStateManger.Instance.BassIsChasing(false,null);
+                GameController.Instance.BassIsChasing(false,null);
                 ChangeState(BassState.Back);
              }
 			//lookTarget=Quaternion.LookRotation(LureController.Instance.gameObject.transform.position-transform.position);
@@ -626,7 +626,7 @@ public class BassAI :FishAiParent {
                 if(stillTimeMax>timeBassIsBoring){
                     stillTimeMax=0.0f;
                     Debug.LogError("I'm back to terrior it's not moving anymore boring");
-                    FishingStateManger.Instance.BassIsChasing(false,null);
+                    GameController.Instance.BassIsChasing(false,null);
                     ChangeState(BassState.Back);
                 }
 				lookTarget=Quaternion.Euler(new Vector3(0.0f,transform.rotation.eulerAngles.y,transform.rotation.eulerAngles.z));
@@ -667,7 +667,7 @@ public class BassAI :FishAiParent {
 				_stuckCounter=timeReached;
             if( Player.Instance.GetDistanceoPlayer()<Constants.Params.kaishuDistance){
 					Debug.LogError("very close player ");
-                FishingStateManger.Instance.BassIsChasing(false,null);
+                GameController.Instance.BassIsChasing(false,null);
 					ChangeState(BassState.Back);
 				}
 				moveTarget=LureController.Instance.gameObject.transform.position;
@@ -677,7 +677,7 @@ public class BassAI :FishAiParent {
 					//moving
             if( Player.Instance.GetDistanceoPlayer()<Constants.Params.kaishuDistance){
 						Debug.LogError("very close player ");
-                FishingStateManger.Instance.BassIsChasing(false,null);
+                GameController.Instance.BassIsChasing(false,null);
 						ChangeState(BassState.Back);
 					}
 							if(LureController.Instance.appeal.moveState==0){
@@ -718,7 +718,7 @@ public class BassAI :FishAiParent {
                
                 if( Player.Instance.GetDistanceoPlayer()<Constants.Params.kaishuDistance){
 						Debug.LogError("very close player ");
-                    FishingStateManger.Instance.BassIsChasing(false,null);
+                    GameController.Instance.BassIsChasing(false,null);
 						ChangeState(BassState.Back);
 					}
 						if(LureController.Instance.appeal.moveState==0){

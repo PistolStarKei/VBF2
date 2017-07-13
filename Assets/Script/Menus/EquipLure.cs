@@ -8,9 +8,9 @@ public class EquipLure :MenuContents {
     public override void Show(){
         Debug.Log("Show"+gameObject.name);
         if(!isShow){
-            current= FishingStateManger.Instance.currentMode;
-            Debug.Log("Show"+FishingStateManger.Instance.currentMode.ToString());
-            FishingStateManger.Instance.ChangeStateTo(GameMode.Menu);
+            current= GameController.Instance.currentMode;
+            Debug.Log("Show"+GameController.Instance.currentMode.ToString());
+            GameController.Instance.ChangeStateTo(GameMode.Menu);
             OnShowStart();
             isShow=true;
             MenuTPs.duration=tpsDuration[0];
@@ -50,14 +50,14 @@ public class EquipLure :MenuContents {
     GameMode current;
     public override void OnHideComplete(){
         TackleParams.Instance.OnEquiMenuClosed();
-        FishingStateManger.Instance.ChangeStateTo(current);
+        GameController.Instance.ChangeStateTo(current);
         NGUITools.SetActive(lureMenu.lurelistObj.gameObject,false);
         NGUITools.SetActive(lureMenu.rodlistObj.gameObject,false);
 
         base.OnHideComplete();
     }
     public override void OnShowComplete(){
-        Debug.Log("OnShowComplete"+FishingStateManger.Instance.currentMode.ToString());
+        Debug.Log("OnShowComplete"+GameController.Instance.currentMode.ToString());
         ShowContents();
     }
 

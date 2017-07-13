@@ -6,12 +6,12 @@ public class TackleBtn : MonoBehaviour {
     public void OnClicks(){
         if(isOn){
             if(isClose){
-                if(FishingStateManger.Instance.currentMode==GameMode.Menu){
-                    FishingStateManger.Instance.tackleMenu.Hide();
+                if(GameController.Instance.currentMode==GameMode.Menu){
+                    GameController.Instance.tackleMenu.Hide();
                 }
             }else{
-                if(FishingStateManger.Instance.currentMode==GameMode.Cast || FishingStateManger.Instance.currentMode==GameMode.Move){
-                    FishingStateManger.Instance.tackleMenu.Show();
+                if(GameController.Instance.currentMode==GameMode.Cast || GameController.Instance.currentMode==GameMode.Move){
+                    GameController.Instance.tackleMenu.Show();
                 }
             }
         }
@@ -93,7 +93,7 @@ public class TackleBtn : MonoBehaviour {
     public bool isInvoing=false;
     public void OnShowed(){
         if(gameObject.GetComponent<TweenPosition>().direction==AnimationOrTween.Direction.Forward){
-            Debug.Log("Show cast OnShowed　見せた");
+            //Debug.Log("Show cast OnShowed　見せた");
             isOn=true;
             col.enabled=true;
             isInited=true;
@@ -104,7 +104,7 @@ public class TackleBtn : MonoBehaviour {
             }
 
         }else{
-            Debug.Log("Show cast OnShowed　見せてない");
+           // Debug.Log("Show cast OnShowed　見せてない");
             if(isChange){
                 isChange=false;
                 gameObject.GetComponent<TweenPosition>().PlayForward();

@@ -36,15 +36,15 @@ public class NegakariTrigger : MonoBehaviour {
 
     void Update(){
         if(lure!=null ){
-            if(FishingStateManger.Instance.currentMode!=GameMode.Reeling && FishingStateManger.Instance.currentMode!=GameMode.ReelingOnLand){
+            if(GameController.Instance.currentMode!=GameMode.Reeling && GameController.Instance.currentMode!=GameMode.ReelingOnLand){
                 return;
             }
-                if(FishingStateManger.Instance.GetisNegakariOrFoockingState() || kakuritsu<=0.0f)return;
+                if(GameController.Instance.GetisNegakariOrFoockingState() || kakuritsu<=0.0f)return;
                 if(Player.Instance.distanceToLure-dist<-0.2f){
                     dist=Player.Instance.distanceToLure;
                    if(PSGameUtils.Chusen(kakuritsu)){
                         lure=null;
-                        FishingStateManger.Instance.OnNegakari();
+                        GameController.Instance.OnNegakari();
 
                         return;
                     }

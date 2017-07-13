@@ -376,7 +376,6 @@ public class DataManger : PS_SingletonBehaviour<DataManger> {
                 GAMEDATA.lureHas_Hard.Add(Constants.LureDatas.itemTittles[i],0);
             }
 
-
         }
 
         foreach (string value in GAMEDATA.lureHas_Hard.Keys) {
@@ -493,12 +492,6 @@ public class DataManger : PS_SingletonBehaviour<DataManger> {
                 Debug.Log("Error:NO ENTRY FAILURE 2");
             }
         }
-
-       
-
-
-
-
         isDataLoaded=true;
 	}
 

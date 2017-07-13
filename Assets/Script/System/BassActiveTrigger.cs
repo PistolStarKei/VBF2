@@ -8,7 +8,7 @@ public class BassActiveTrigger : MonoBehaviour {
 
     public void DisableAllBass(){
         foreach(Bass bs in bassList){
-            if(FishingStateManger.Instance.currentFightingBass!=bs)bs.SetActiveBass(false);
+            if(GameController.Instance.currentFightingBass!=bs)bs.SetActiveBass(false);
         }
     }
     public void AbleAllBass(){
@@ -18,7 +18,7 @@ public class BassActiveTrigger : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        //if(FishingStateManger.Instance.currentMode==GameMode.Move){
+        //if(GameController.Instance.currentMode==GameMode.Move){
             Debug.Log(""+other.name);
             if(other.gameObject.layer==LayerMask.NameToLayer("Bass")){
                 bassList.Add( other.gameObject.GetComponent<Bass>());
@@ -28,7 +28,7 @@ public class BassActiveTrigger : MonoBehaviour {
     }
     void OnTriggerExit(Collider other) {
         Debug.Log(""+other.name);
-        //if(FishingStateManger.Instance.currentMode==GameMode.Move){
+        //if(GameController.Instance.currentMode==GameMode.Move){
             if(other.gameObject.layer==LayerMask.NameToLayer("Bass")){
                 bassList.Remove( other.gameObject.GetComponent<Bass>());
                 other.gameObject.GetComponent<Bass>().OnEnterEnableTrigger(false);
