@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lureController: {fileID: 0}
-  minSpeedWhenTention: 0.02
+  minSpeedWhenTention: 0.05
   lookDirection: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   moveSpeed: 0

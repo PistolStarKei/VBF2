@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lureController: {fileID: 0}
-  minSpeedWhenTention: 0.02
+  minSpeedWhenTention: 0.03
   lookDirection: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   moveSpeed: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_params:
     usePaintDataFromMeshColors: 1
     version: 1.4.6
-  m_mesh: {fileID: 43000014151581214, guid: 46cc5f9c95d15544d8bb949b8b34f2bb, type: 2}
+  m_mesh: {fileID: 0}
   m_VertExmotionSensors:
   - {fileID: 114000010869308888}
   m_vertexColors:
