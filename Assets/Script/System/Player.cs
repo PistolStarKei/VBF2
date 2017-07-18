@@ -5,6 +5,17 @@ using RootMotion.FinalIK;
 
 public class Player : PS_SingletonBehaviour<Player> {
 
+	void Start(){
+		//FreePlayer
+		//rodParams.gameObject.transformをDespawn
+		//ロードして、rodParamsを得て設定する　
+		//RodRootを初期位置にセットする
+		//rodParams.gameObjectをRodRootの子供にして、rodParamsのStartTransに設定する
+		// UpdatePlayerConstrainsする
+		//Move か　Castに応じてPositionする
+		UpdatePlayerConstrains();
+	}
+
     public bool showPlayerModel =true;
     public FullBodyBipedIK playerIK;
     public HandPoser rightHandGrip;
@@ -112,16 +123,7 @@ public class Player : PS_SingletonBehaviour<Player> {
         WaitAndCover.Instance.UnCoverAll();
         AudioManager.Instance.Equip();
     }
-    void Start(){
-        //FreePlayer
-        //rodParams.gameObject.transformをDespawn
-        //ロードして、rodParamsを得て設定する　
-        //RodRootを初期位置にセットする
-        //rodParams.gameObjectをRodRootの子供にして、rodParamsのStartTransに設定する
-        // UpdatePlayerConstrainsする
-        //Move か　Castに応じてPositionする
-        UpdatePlayerConstrains();
-    }
+    
 
 
     public BassActiveTrigger bassEnable;

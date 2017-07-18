@@ -203,31 +203,31 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
 
 
     public IEnumerator AffectCurrrentTackle(bool isInit){
+		
         if(currentTackle.name==""){
             Debug.LogError("タックル装備なし");
             yield break; 
         }
-
 
         Debug.LogWarning("AffectCurrrentTackle ここでロッドを先にスポーンしろ");
 
         if(currentTackle.lureNum==-1){
             Debug.LogError("ルアー装備なし");
         }else{
-            
             if(currentTackle.isSoft){
+				//ワームがセットされている場合
                 int[] adons=PSGameUtils.StringToIntArray(Constants.SoftLureDatas.AvaillableRig[currentTackle.lureNum],new char[]{';'});
                 if(adons.Length<=0){
                     Debug.LogError("無効なデータ");
                 }else{
                     int outInt=0;
-
                     if(DataManger.Instance.GAMEDATA.SettedRig.TryGetValue(Constants.SoftLureDatas.itemTittles[currentTackle.lureNum],out outInt)){
                         if(outInt>=adons.Length){
                             Debug.LogError("無効なデータ");
                             LureSpawner.Instance.SpawnLure(Constants.SoftLureDatas.itemTittles[currentTackle.lureNum],
                                 0);
                         }else{
+							//ワームをスポーン
                             LureSpawner.Instance.SpawnLure(Constants.SoftLureDatas.itemTittles[currentTackle.lureNum],
                                 outInt);
                         }
@@ -237,14 +237,11 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
 
 
                 }
-
-
-
             }else{
-              
+				//ルアーをスポーン
                 LureSpawner.Instance.SpawnLure(Constants.LureDatas.itemTittles[currentTackle.lureNum]);
             }
-                
+			//アビリティを設定する
             UpdateLure();
         }
        
@@ -253,11 +250,11 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
             Debug.LogError("ライン装備なし");
         }else{
             Debug.LogError("ライン"+Constants.LineDatas.lineColor[currentTackle.lineNum]+" "+Constants.LineDatas.lineWidth[currentTackle.lineNum]);
-
+			//ラインを作成する
             if(isInit){
                 LineScript.Instance.CreateLine(lineColors[Constants.LineDatas.lineColor[currentTackle.lineNum]],Constants.LineDatas.lineWidth[currentTackle.lineNum]);
             }
-            //ラインをエフェクトする
+			//ラインの色と太さを設定する
             UpdateLine();
 
         }
@@ -275,6 +272,8 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
 
 
     }
+
+
    //パラメータを更新する
     public void UpdateLure(){
 
@@ -318,14 +317,12 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         return PSGameUtils.StringToIntArray(Constants.SoftLureDatas.AvaillableRig[current],new char[]{';'});
     }
 
-
     public void UpdateLine(){
         LineScript.Instance.SetLineWidth(Constants.LineDatas.lineWidth[currentTackle.lineNum],lineColors[Constants.LineDatas.lineColor[currentTackle.lineNum]]);
     }
 
     //0.3-1.0f
     public void UpdateScaleFactor(){
-
 
         int waterVisivility=0;//100ほど悪い
         tParams.inwaterBrightNess=GameController.Instance.GetInWaterBrightness();

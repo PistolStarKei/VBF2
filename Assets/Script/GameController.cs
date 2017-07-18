@@ -65,6 +65,11 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 	void Start () {
 		Debug.Log("Start ");
+
+		WaitAndCover.Instance.ShowWait();
+		WaitAndCover.Instance.CoverAll(true);
+
+
 		if(isDebugMode){
 
 			//データのロードをする
@@ -158,8 +163,8 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		stateMachine = new StateMachineMode<GameController>();
 
-		//ここで環境の設定をしている
-		StartCoroutine( CreateEnvironment());
+		//フィールド一般の時刻　時間　気温　コンディションを設定
+		LakeEnvironmentalParamas.Instance.UpdateFieldTime();
 
 		//水中カメラの無効化
 		if(isPoolMode)InWaterCamera.Instance.Activate(false);
@@ -167,14 +172,23 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		//タイムリミットの設定 (マルチプレイヤの時だけ)
 		//SetTimeLimit();
 
+		Debug.LogWarning("ここまでにポイントを設定しておく");
 
 		//空の設定
+		if(!isDebugMode){
+			skyParams.time=LakeEnvironmentalParamas.Instance.GetTimeOfDayForSky();
+			skyParams.isCloudy=LakeEnvironmentalParamas.Instance.GetIsCloudyForSky();
+			skyParams.isRainy=LakeEnvironmentalParamas.Instance.GetIsRainyForSky();
+			skyParams.fogDensity=FogDensity.NONE;
+		}
 
-		//EnvManager.Instance.skyParams.SetTimeOfDay(LakeEnvironmentalParamas.Instance.weather.fieldTime,PointParameters.Instance.FogOnMorning);
-		//EnvManager.Instance.currentWeather=LakeEnvironmentalParamas.Instance.weather.GetTodayWeather();
-
-		Debug.LogError("ここで空のパラメータをまずは設定すること ");
 		SkyController.Instance.SetSky(skyParams.time,skyParams.isCloudy,skyParams.isRainy,skyParams.fogDensity);
+
+		if(!isDebugMode){
+			Debug.LogWarning("Fogは釣り場に応じて設定する");
+			//こっちを変更するだけで、勝手に変えてくれる
+			skyParams.fogDensity=FogDensity.NONE;
+		}
 
 		//水質の初期設定
 		Debug.LogError("ここで水のパラメータをまずは設定すること ");
@@ -196,7 +210,26 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
             EnvManager.Instance.BassVisibleDepth=(0.4f*(EnvManager.Instance.waveParams.waveClearness*10.0f))-4.0f;
         }
 		 */
+
 		WaterController.Instance.SetWater(waveParams.waveClearness,waveParams.waveType_color, waveParams.waveSpeed, waveParams.waveType);
+
+		//現在のタックルを
+		StartCoroutine(TackleParams.Instance.AffectCurrrentTackle(true));
+
+		Debug.LogWarning("ここでプレイヤをボートに乗せる");
+		if(isPoolMode){
+			Player.Instance.SetPlayerState(true);
+		}else{
+			Player.Instance.SetPlayerState(true);
+		}
+		Debug.Log("終わり");
+		//プレイヤの腕にロッドを設置する
+
+
+		//Moveステートへ移行する
+		ChangeStateTo(GameMode.Move);
+		WaitAndCover.Instance.StopWait();
+		WaitAndCover.Instance.UnCoverAll();
 	}
 
 
@@ -325,37 +358,6 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		}else{
 			ChangeStateTo(GameMode.Move);
 		}
-	}
-
-
-	IEnumerator UpdateTimeAndEnvironment(){
-		
-		LakeEnvironmentalParamas.Instance.UpdateFieldTime();
-		yield return null;
-	}
-
-	IEnumerator CreateEnvironment(){
-		WaitAndCover.Instance.ShowWait();
-		WaitAndCover.Instance.CoverAll(true);
-
-		//時間と天候を進める
-		Coroutine tine=StartCoroutine(UpdateTimeAndEnvironment());
-		yield return tine;
-
-		//現在のタックルを反映させる
-		tine=StartCoroutine(TackleParams.Instance.AffectCurrrentTackle(true));
-		yield return tine;
-
-
-
-		Debug.Log("終わり");
-		//プレイヤの腕にロッドを設置する
-		Player.Instance.SetPlayerState(true);
-
-		//Moveステートへ移行する
-		ChangeStateTo(GameMode.Move);
-		WaitAndCover.Instance.StopWait();
-		WaitAndCover.Instance.UnCoverAll();
 	}
 
 	WAVETYPE getWaveType(int wind){
@@ -706,6 +708,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 				case GameMode.Cast:
 					break;
 			}
+			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
 			owner.SetControllers(false,false,false,false,false);
 			owner.tackleBtn.SetState(true);

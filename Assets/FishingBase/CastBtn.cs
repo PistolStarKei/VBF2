@@ -114,8 +114,7 @@ public class CastBtn : PS_SingletonBehaviour<CastBtn>  {
         #if UNITY_EDITOR
         #endif
         float pow=1.0f-(0.09f*TackleParams.Instance.tParams.Cast_WindFactor);
-
-
+		Debug.LogError("ここでアニメを設定する");
         LureController.Instance.CastLure((Player.Instance.gameObject.transform.forward+(Vector3.up/2.0f))* castPow,pow*LakeEnvironmentalParamas.Instance.weather.WindDirection);
         ZoomCamera.Instance.SetZoomCamera();
     }

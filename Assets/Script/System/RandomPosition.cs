@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 public class RandomPosition : MonoBehaviour {
 
+	void Awake(){
+		col=gameObject.GetComponent<BoxCollider>();
+	}
     public BoxCollider col;
     void DestroyCollider(){
         Destroy(col);

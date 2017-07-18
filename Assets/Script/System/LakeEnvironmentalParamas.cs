@@ -37,14 +37,23 @@ public class FieldWeather{
     public FieldConditions conditions;
     public int Kion=20;
 }
-[System.Serializable]
-public class PointWeather{
-    public int pointNum=0;
-    public int Suion=20;
-    public FieldConditions conditions;
 
-}
 public class LakeEnvironmentalParamas : PS_SingletonBehaviour<LakeEnvironmentalParamas> {
+
+	public bool GetIsCloudyForSky(){
+		if(weather.GetTodayWeather()==WeatherType.Sunny){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	public bool GetIsRainyForSky(){
+		if(weather.GetTodayWeather()==WeatherType.Rain || weather.GetTodayWeather()==WeatherType.HeavyRain){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
     public TimeOfDay GetTimeOfDayForSky(){
         TimeOfDay dat=TimeOfDay.NIGHT;;
@@ -74,11 +83,8 @@ public class LakeEnvironmentalParamas : PS_SingletonBehaviour<LakeEnvironmentalP
     public FieldWeather weather =new FieldWeather();
 
 
-    //現在のタックル情報
-    public PointWeather currentPointWeather;
 
-
-
+	//その日最初の起動で、天候の日数を進めスタートの風向きと気温を設定する
     public void InitWeather(bool isNewUser,bool isNewDay){
         weather =new FieldWeather();
         int[] rireki= ES2.LoadArray<int>(DataManger.DataFilename+"?tag=Field_weatherRireki");
@@ -136,14 +142,19 @@ public class LakeEnvironmentalParamas : PS_SingletonBehaviour<LakeEnvironmentalP
   
     //マップ画面に入るたびに呼ぶこと
     public void UpdateFieldTime(){
+
+		//フィールド一般の時刻　時間　気温　コンディションを設定
+
+		//現在の時間を取得する
         TimeManager.Instance.UpdateTime();
 
         Debug.Log("UpdateFieldTime"+TimeManager.Instance.time);
+		//朝から夜までの時間を設定する
         weather.fieldTime=GetFieldTime(TimeManager.Instance.time);
 
         //気温を設定する
         weather.Kion=GetKion();
-        //基づいてコンディションが決定する
+		//基づいてコンディションが決定する　TooBadーTooGoodへ
         weather.conditions=GetCondition(weather.Kion-2);
     }
 
@@ -186,7 +197,8 @@ public class LakeEnvironmentalParamas : PS_SingletonBehaviour<LakeEnvironmentalP
         //7-19;
         return UnityEngine.Random.Range(Constants.Params.MinStartKion[DateTime.Now.Month-1],Constants.Params.MaxStartKion[DateTime.Now.Month-1]);
     }
-    //風の初期値
+
+    //風の初期値（その日最初の起動で）の設定
     Vector3 GetStartWind(){
         //7-19;
         Vector3 vec=Vector3.zero;
