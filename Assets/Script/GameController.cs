@@ -297,58 +297,6 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 
 
-	//0-100 50は中間値 ルアーカラーに影響するパラメータ
-	public int GetInWaterBrightness(){
-		//水の色　1０％
-		int num=50;
-
-		//時間と天候　20％
-		int num3=0;
-		switch(GameController.Instance.skyParams.time){
-		case TimeOfDay.MORNIG:
-			//天気　10％ よければー　悪ければ＋に
-			if(GetCurrentWeather()==WeatherType.Sunny){
-				num=55;
-			}else{
-				num=60;
-			}
-			num3=40;
-			break;
-		case TimeOfDay.DAY:
-			num3=50;
-			break;
-		case TimeOfDay.YU:
-			//天気　10％ よければー　悪ければ＋に
-			if(GetCurrentWeather()==WeatherType.Sunny){
-				num=65;
-			}else{
-				num=70;
-			}
-			num3=30;
-			break;
-		case TimeOfDay.NIGHT:
-			num3=10;
-			num=90;
-			break;
-
-		}
-
-		float val=num3/100.0f;
-		//水の色　15％ よければー　悪ければ＋に
-		if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.SAND){
-			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
-		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.GREEN){
-			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
-		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.BLUE){
-			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
-		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.CLEAR){
-			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
-		}
-
-		num=PSGameUtils.ClampInte(num,0,100);
-
-		return num;
-	}
 
 	// Use this for initialization
 	public CastMoveBtn castMoveBtn;
@@ -656,7 +604,8 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			return instance;
 		}
 	}
-	public void SetControllers(bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode){
+	public void SetControllers(bool joystick,bool reel,bool cast,bool boat,bool castmoveMode,bool isMoveMode){
+		BoatControllers.Instance.Show(boat);
 		CastBtn.Instance.ShowCastBtn(cast);
 		JoystickFloat.Instance.Show(joystick);
 		Button_Float.Instance.Show(reel);
@@ -685,7 +634,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 				break;
 			}
 			HUD_LureParams.Instance.Hide();
-			owner.SetControllers(false,false,false,false,false);
+			owner.SetControllers(false,false,false,false,false,false);
 			owner.tackleBtn.SetState(true);
 
 			owner.currentMode=GameMode.Menu;
@@ -705,12 +654,10 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			switch(owner.currentMode){
 				case GameMode.Move:
 					break;
-				case GameMode.Cast:
-					break;
 			}
 			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
-			owner.SetControllers(false,false,false,false,false);
+			owner.SetControllers(false,false,false,true,false,false);
 			owner.tackleBtn.SetState(true);
 
 			owner.currentMode=GameMode.Boat;
@@ -730,12 +677,13 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 			if(owner.currentMode==GameMode.Cast)Player.Instance.SetPlayerState(true);
 			Debug.Log("Enter modeMove");
+
 			//ロッドとルアー　ラインを非表示
 			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
 			Player.Instance.ActiveBassEnabler(true);
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-			owner.SetControllers(true,false,false,true,false);
+			owner.SetControllers(true,false,false,false,true,false);
 			owner.tackleBtn.SetState(false);
 			owner.currentMode=GameMode.Move;
 		}
@@ -812,7 +760,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-			owner.SetControllers(false,false,true,true,true);
+			owner.SetControllers(false,false,true,false,true,true);
 			owner.tackleBtn.SetState(false);
 			if(owner.currentMode==GameMode.Throwing ){
 				ZoomCamera.Instance.BackCamera();
@@ -846,7 +794,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-			owner.SetControllers(false,false,false,false,false);
+			owner.SetControllers(false,false,false,false,false,false);
 			owner.tackleBtn.Hide();
 			HUD_LureParams.Instance.Show();
 			owner.currentMode=GameMode.Throwing;
@@ -877,7 +825,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 				//投げたらそのまま桟橋に
 				ZoomCamera.Instance.BackCamera();
 				//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-				owner.SetControllers(true,true,false,false,false);
+				owner.SetControllers(true,true,false,false,false,false);
 				owner.tackleBtn.Hide();
 			}
 
@@ -924,7 +872,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 			if(owner.currentMode==GameMode.Throwing){
 				//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-				owner.SetControllers(true,true,false,false,false);
+				owner.SetControllers(true,true,false,false,false,false);
 				owner.tackleBtn.Hide();
 				ZoomCamera.Instance.BackCamera();
 			}
@@ -957,7 +905,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 			if(owner.currentMode==GameMode.Throwing){
 				//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-				owner.SetControllers(true,true,false,false,false);
+				owner.SetControllers(true,true,false,false,false,false);
 				owner.tackleBtn.Hide();
 				ZoomCamera.Instance.BackCamera();
 			}
@@ -980,7 +928,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			HUD_LureParams.Instance.Hide();
 
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
-			owner.SetControllers(false,false,false,false,false);
+			owner.SetControllers(false,false,false,false,false,false);
 			owner.tackleBtn.Hide();
 		}
 		public override void Exit() {

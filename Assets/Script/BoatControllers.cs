@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoatControllers : MonoBehaviour {
+public class BoatControllers : PS_SingletonBehaviour<BoatControllers> {
 
-	// Use this for initialization
-	void Start () {
-	
+	public SteeringWheel steeringWeel;
+	public ButtonFloat_BoatLever lever;
+	void Awake(){
+		Show(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void Show(bool isShow){
+		if(isShow){
+			steeringWeel.gameObject.SetActive(true);
+			lever.Show(true);
+		}else{
+			steeringWeel.gameObject.SetActive(false);
+			lever.Show(false);
+		}
+
 	}
+
+	public float GetAngle(){
+		return steeringWeel.GetAngle();
+	}
+
 }

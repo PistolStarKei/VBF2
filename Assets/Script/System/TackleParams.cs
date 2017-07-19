@@ -241,7 +241,8 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
 				//ルアーをスポーン
                 LureSpawner.Instance.SpawnLure(Constants.LureDatas.itemTittles[currentTackle.lureNum]);
             }
-			//アビリティを設定する
+
+			//アビリティを設定する　ソフトの場合は、リグとの間でマージする
             UpdateLure();
         }
        
@@ -262,14 +263,7 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         //tParamsに反映
         yield return new WaitForSeconds(0.5f);
 
-        if(currentTackle.lureNum==-1){
-
-            Debug.LogWarning("ルアー装備なし　適切に対処する");
-        }else{
-            UpdateScaleFactor();
-        }
-       
-
+		UpdateAppealFactor();
 
     }
 
@@ -322,10 +316,15 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
     }
 
     //0.3-1.0f
-    public void UpdateScaleFactor(){
+    public void UpdateAppealFactor(){
+		if(currentTackle.lureNum==-1){
+
+			Debug.LogError("ルアー装備なし　適切に対処する");
+			return;
+		}
 
         int waterVisivility=0;//100ほど悪い
-        tParams.inwaterBrightNess=GameController.Instance.GetInWaterBrightness();
+        tParams.inwaterBrightNess=GetInWaterBrightness();
         waterVisivility=tParams.inwaterBrightNess;
 
         int miness=0;
@@ -344,8 +343,6 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         }
         waterVisivility=PSGameUtils.ClampInte( waterVisivility,0,100);
 
-        //以下
-
         //カラー相性 これで50 入ってくるので　0-100までになる
         int ColorFactor=ColorFitess(tParams.inwaterBrightNess);
         //100ほど悪い
@@ -360,6 +357,60 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         tParams.appealFactor=1.0f-val;
 
     }
+	//0-100 50は中間値 ルアーカラーに影響するパラメータ
+	 int GetInWaterBrightness(){
+		//水の色　1０％
+		int num=50;
+
+		//時間と天候　20％
+		int num3=0;
+		switch(GameController.Instance.skyParams.time){
+		case TimeOfDay.MORNIG:
+			//天気　10％ よければー　悪ければ＋に
+			if(GameController.Instance.GetCurrentWeather()==WeatherType.Sunny){
+				num=55;
+			}else{
+				num=60;
+			}
+			num3=40;
+			break;
+		case TimeOfDay.DAY:
+			num3=50;
+			break;
+		case TimeOfDay.YU:
+			//天気　10％ よければー　悪ければ＋に
+			if(GameController.Instance.GetCurrentWeather()==WeatherType.Sunny){
+				num=65;
+			}else{
+				num=70;
+			}
+			num3=30;
+			break;
+		case TimeOfDay.NIGHT:
+			num3=10;
+			num=90;
+			break;
+
+		}
+
+		float val=num3/100.0f;
+		//水の色　15％ よければー　悪ければ＋に
+		if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.SAND){
+			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
+		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.GREEN){
+			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
+		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.BLUE){
+			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
+		}else if(GameController.Instance.waveParams.waveType_color==WAVETYPE_COLOR.CLEAR){
+			num+=((int)((val-GameController.Instance.waveParams.waveClearness)*100.0f));
+		}
+
+		num=PSGameUtils.ClampInte(num,0,100);
+
+		return num;
+	}
+
+
 
     //ルアーの色との相性 50 基準　　100が最も悪い　
     int ColorFitess(int visibility){

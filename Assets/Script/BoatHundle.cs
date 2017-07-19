@@ -51,7 +51,7 @@ public class BoatHundle : MonoBehaviour {
 	void OnDrag (Vector2 delta){
 		// Executed when mouse/finger is dragged over the steering wheel
 
-		Debug.Log(""+Vector2.Angle(new Vector2(0.0f,1.0f),delta));
+		Debug.Log(""+delta);
 
 		hundle.transform.localEulerAngles = Vector3.back * wheelAngle;
 	}

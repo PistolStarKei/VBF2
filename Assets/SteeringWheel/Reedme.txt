@@ -1,0 +1,28 @@
+Enjoy simple to setup, touch steering wheel for your car mobile controls; 
+Usually car physics packages are using Horizontal axis to control steering angle, so all you need is 
+replace Horizontal axis with SteeringWheel.GetInput();
+-------------------------------------------------------------------------------------------------------
+For example:
+
+default PC controls:
+
+		steerInput = Input.GetAxis("Horizontal");
+
+Using steering wheel:
+
+		public SteeringWheel SW;
+		steerInput = SW.GetInput();
+
+Done.
+-------------------------------------------------------------------------------------------------------
+
+Also there is 2 more usefull functions: SteeringWheel.GetAngle()  - Returns rotation angle;
+										SteeringWheel.isPressed() - Is steering wheel pressed or not;
+
+Setting Up:
+1) Go to NGUI -> Create -> Sprite;
+2) Add collider to created sprite;
+3) Toogle on Collider auto-adjust to match;
+4) Add SteeringWheel script.
+
+See example scene to get started. If you have any difficulties you always can contact me with @: nbg_yalta@hotmail.com
