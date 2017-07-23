@@ -3,6 +3,12 @@ using System.Collections;
 
 public class RodController : PS_SingletonBehaviour<RodController>  {
 
+	public RodParameter rodParams;
+	public void ShowRod(bool isShow){
+		gameObject.GetComponent<MeshRenderer>().enabled=isShow;
+		rodParams.GetComponent<MeshRenderer>().enabled=isShow;
+	}
+
 
     public Transform rodlookTarget;
     public Transform rodTip;
@@ -31,9 +37,7 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
         return this.isRodEnable;
     }
 
-    public void ShowRod(bool isShow){
-        if(isShow!=gameObject.activeSelf)NGUITools.SetActive(gameObject,isShow);
-    }
+  
 
     public void InitRod(){
         bendingPower=0.0f;

@@ -49,7 +49,12 @@ public class ZoomCamera :  PS_SingletonBehaviour<ZoomCamera> {
 		isZoom = true;
 	}
 
-	
+	public Transform fishingPosition;
+	public Transform boatPosition;
+	public void SetCameraPosiion(bool isFishing){
+		
+		transform.position=isFishing?fishingPosition.position:boatPosition.position;
+	}
 
 
 }

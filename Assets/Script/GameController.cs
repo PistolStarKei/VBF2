@@ -218,9 +218,9 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		Debug.LogWarning("ここでプレイヤをボートに乗せる");
 		if(isPoolMode){
-			Player.Instance.SetPlayerState(true);
+			Player.Instance.ChangeRodState(true);
 		}else{
-			Player.Instance.SetPlayerState(true);
+			Player.Instance.ChangeRodState(true);
 		}
 		Debug.Log("終わり");
 		//プレイヤの腕にロッドを設置する
@@ -303,6 +303,16 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 	public void OnCast(bool isCast){
 		if(isCast){
 			ChangeStateTo(GameMode.Cast);
+		}else{
+			ChangeStateTo(GameMode.Move);
+		}
+	}
+
+	public BoatBtn boatBtn;
+	public void OnBoat(bool isBoat){
+		Debug.Log("On Boat"+isBoat);
+		if(isBoat){
+			ChangeStateTo(GameMode.Boat);
 		}else{
 			ChangeStateTo(GameMode.Move);
 		}
@@ -614,9 +624,6 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		}else{
 			castMoveBtn.Hide();
 		}
-
-
-
 	}
 	public TackleBtn tackleBtn;
 	public EquipLure tackleMenu;
@@ -636,7 +643,8 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			HUD_LureParams.Instance.Hide();
 			owner.SetControllers(false,false,false,false,false,false);
 			owner.tackleBtn.SetState(true);
-
+			//釣り　ボートボタンを出さない
+			owner.boatBtn.Hide();
 			owner.currentMode=GameMode.Menu;
 		}
 		public override void Exit() {
@@ -651,14 +659,18 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		public override void Enter() {
 			Debug.Log("Enter modeBoat");
-			switch(owner.currentMode){
-				case GameMode.Move:
-					break;
+			if(owner.currentMode==GameMode.Move){
+				Player.Instance.ChangePositionTo(false);
+				Player.Instance.PlayerConstrainsToBoat();
+				ZoomCamera.Instance.SetCameraPosiion(false);
 			}
+			RodController.Instance.ShowRod(false);
 			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
+			owner.tackleBtn.Hide();
+			//ボートボタン ステート foshingg
+			owner.boatBtn.SetState(false);
 			owner.SetControllers(false,false,false,true,false,false);
-			owner.tackleBtn.SetState(true);
 
 			owner.currentMode=GameMode.Boat;
 		}
@@ -675,9 +687,18 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		public override void Enter() {
 
-			if(owner.currentMode==GameMode.Cast)Player.Instance.SetPlayerState(true);
+			if(owner.currentMode==GameMode.Cast)Player.Instance.ChangeRodState(true);
+			if(owner.currentMode==GameMode.Boat){
+				Player.Instance.ChangePositionTo(true);
+				Player.Instance.PlayerConstrainsToFishing();
+				Player.Instance.FreePlayer();
+				ZoomCamera.Instance.SetCameraPosiion(true);
+			}
 			Debug.Log("Enter modeMove");
 
+			//ボートボタン ステート boat
+			owner.boatBtn.SetState(true);
+			RodController.Instance.ShowRod(true);
 			//ロッドとルアー　ラインを非表示
 			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
@@ -703,8 +724,10 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		public override void Enter() {
 			Debug.Log("Enter modeCast");
 
+			//ボートボタンを出さない
+			owner.boatBtn.Hide();
 
-			if(owner.currentMode==GameMode.Move)Player.Instance.SetPlayerState(false);
+			if(owner.currentMode==GameMode.Move)Player.Instance.ChangeRodState(false);
 			LineScript.Instance.HideLine();
 			RodController.Instance.InitRod();
 			LureController.Instance.SetToDefaultPosition(Player.Instance.lureDefaultPos);
@@ -787,11 +810,12 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 			JoystickFloat.Instance.guiMode=GUIMODE.NONE;
 			owner.isNegakariORFoockingState=false;
-
+			RodController.Instance.ShowRod(true);
 			owner.BassIsChasing(false,null);
 			Button_Float.Instance.isCovered=false;
 			LureController.Instance.SetToDefaultPosition(Player.Instance.lureDefaultPos);
-
+			//ボートボタンを出さない
+			owner.boatBtn.Hide();
 
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
 			owner.SetControllers(false,false,false,false,false,false);
@@ -812,7 +836,9 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			Debug.Log("Enter modeReelingOnLand");
 			if(! Button_Float.Instance.isCovered) RodController.Instance.RotateRodToDefault(false);
 			JoystickFloat.Instance.guiMode=GUIMODE.ROD;
-
+			//ボートボタンを出さない
+			owner.boatBtn.Hide();
+			RodController.Instance.ShowRod(true);
 			LureController.Instance.appeal.SetToDefaultState(true);
 			LureController.Instance.isOnLand=true;
 			LureController.Instance.OnWater(false);
@@ -873,10 +899,11 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			if(owner.currentMode==GameMode.Throwing){
 				//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
 				owner.SetControllers(true,true,false,false,false,false);
+				//ボートボタンを出さない
+				owner.boatBtn.Hide();
 				owner.tackleBtn.Hide();
 				ZoomCamera.Instance.BackCamera();
 			}
-
 
 			Player.Instance.bassEnable.AbleAllBass();
 			owner.currentMode=GameMode.Reeling;
@@ -907,6 +934,8 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 				//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
 				owner.SetControllers(true,true,false,false,false,false);
 				owner.tackleBtn.Hide();
+				//ボートボタンを出さない
+				owner.boatBtn.Hide();
 				ZoomCamera.Instance.BackCamera();
 			}
 
@@ -926,7 +955,8 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 			Player.Instance.bassEnable.AbleAllBass();
 			owner.currentMode=GameMode.Result;
 			HUD_LureParams.Instance.Hide();
-
+			//ボートボタンを出さない
+			owner.boatBtn.Hide();
 			//bool joystick,bool reel,bool cast,bool castmoveMode,bool isMoveMode
 			owner.SetControllers(false,false,false,false,false,false);
 			owner.tackleBtn.Hide();

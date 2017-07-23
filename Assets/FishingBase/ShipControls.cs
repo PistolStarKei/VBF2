@@ -8,38 +8,6 @@ using RootMotion.FinalIK;
 [RequireComponent (typeof (Rigidbody))]
 public class ShipControls : PS_SingletonBehaviour<ShipControls>
 {
-	public Animator playerAnimater;
-	public GameObject playerOBJ;
-	public FullBodyBipedIK playerIk;
-	public Vector3 boatPos;
-	public Vector3 castPos;
-	public Transform[] effecters_boat;
-	public Transform[] effecters_cast;
-	public HandPoser[] hands;
-	public void SetPlayerPositionAndIK(bool isBoat){
-
-		if(isBoat){
-			playerOBJ.transform.localPosition=boatPos;
-			playerIk.solver.leftHandEffector.target=effecters_boat[0];
-			playerIk.solver.leftArmChain.bendConstraint.bendGoal=effecters_boat[1];
-			playerIk.solver.rightHandEffector.target=effecters_boat[2];
-			playerIk.solver.rightArmChain.bendConstraint.bendGoal=effecters_boat[3];
-			playerIk.solver.leftFootEffector.target=effecters_boat[4];
-			playerIk.solver.rightFootEffector.target=effecters_boat[5];
-			hands[0].poseRoot=effecters_boat[0];
-			hands[1].poseRoot=effecters_boat[2];
-		}else{
-			playerOBJ.transform.localPosition=castPos;
-			playerIk.solver.leftHandEffector.target=effecters_cast[0];
-			playerIk.solver.leftArmChain.bendConstraint.bendGoal=effecters_cast[1];
-			playerIk.solver.rightHandEffector.target=effecters_cast[2];
-			playerIk.solver.rightArmChain.bendConstraint.bendGoal=effecters_cast[3];
-			playerIk.solver.leftFootEffector.target=effecters_cast[4];
-			playerIk.solver.rightFootEffector.target=effecters_cast[5];
-			hands[0].poseRoot=effecters_cast[0];
-			hands[1].poseRoot=effecters_cast[2];
-		}
-	}
 
 	public float hoverHeight = 3F;
 	public float hoverHeightStrictness = 1F;
@@ -84,7 +52,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 				transform.parent.position,
 				Quaternion.Euler(0, OrbitDegrees * Time.deltaTime, 0));*/
 
-        if( GameController.Instance.currentMode==GameMode.Move){
+		if( GameController.Instance.currentMode==GameMode.Boat){
 			if (Mathf.Abs(thrust) > 0.01F)
 			{
 				if (GetComponent<Rigidbody>().velocity.sqrMagnitude > sqrdSpeedThresholdForDrag)
@@ -166,7 +134,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 	}
 	void Update ()
 	{
-        if( GameController.Instance.currentMode==GameMode.Move){
+		if( GameController.Instance.currentMode==GameMode.Boat){
 			if(GetComponent<Rigidbody>().isKinematic)GetComponent<Rigidbody>().isKinematic=false;
 			theThrust = thrust;
 
@@ -195,6 +163,8 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 			GetComponent<Rigidbody>().AddForce(transform.forward * theThrust * Time.deltaTime);
 		}else{
 			if(!GetComponent<Rigidbody>().isKinematic)GetComponent<Rigidbody>().isKinematic=true;
+			if(transform.position.y!=-0.2952015f)transform.position=new Vector3(transform.position.x,-0.2952015f,transform.position.z);
+				;
 		}
 	}
 }
