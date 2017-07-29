@@ -54,8 +54,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 05197012142834cd6bdf703f8ae0f937, type: 2}
   mSprites:
   - name: Aishou_A
-    x: 1531
-    y: 1397
+    x: 1709
+    y: 1509
     width: 111
     height: 110
     borderLeft: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
     paddingTop: 15
     paddingBottom: 19
   - name: Aishou_B
-    x: 1932
+    x: 1597
     y: 1508
     width: 111
     height: 111
@@ -80,8 +80,8 @@ MonoBehaviour:
     paddingTop: 16
     paddingBottom: 17
   - name: Aishou_C
-    x: 666
-    y: 1200
+    x: 1886
+    y: 1387
     width: 107
     height: 93
     borderLeft: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
     paddingTop: 17
     paddingBottom: 34
   - name: Aishou_D
-    x: 282
-    y: 15
+    x: 565
+    y: 1226
     width: 97
     height: 94
     borderLeft: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
     paddingTop: 25
     paddingBottom: 25
   - name: baseShadow_01
-    x: 1948
-    y: 1322
+    x: 288
+    y: 19
     width: 90
     height: 90
     borderLeft: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: baseShadow_02
-    x: 1643
-    y: 1405
+    x: 1944
+    y: 1517
     width: 102
     height: 102
     borderLeft: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     paddingTop: 94
     paddingBottom: 93
   - name: bg_header
-    x: 1321
+    x: 986
     y: 1521
     width: 230
     height: 98
@@ -158,8 +158,8 @@ MonoBehaviour:
     paddingTop: 58
     paddingBottom: 33
   - name: bg_header_mini
-    x: 1285
-    y: 1644
+    x: 447
+    y: 1645
     width: 225
     height: 135
     borderLeft: 0
@@ -171,8 +171,8 @@ MonoBehaviour:
     paddingTop: 64
     paddingBottom: 50
   - name: bg_menu_mini
-    x: 447
-    y: 1645
+    x: 1285
+    y: 1644
     width: 225
     height: 135
     borderLeft: 23
@@ -197,8 +197,8 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 16
   - name: bg_scroll_more
-    x: 565
-    y: 1294
+    x: 1531
+    y: 1481
     width: 447
     height: 26
     borderLeft: 0
@@ -249,8 +249,8 @@ MonoBehaviour:
     paddingTop: 30
     paddingBottom: 23
   - name: btn_roundcorner
-    x: 159
-    y: 10
+    x: 1821
+    y: 1520
     width: 122
     height: 99
     borderLeft: 24
@@ -341,7 +341,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: FBFLOGO
     x: 0
-    y: 596
+    y: 794
     width: 149
     height: 197
     borderLeft: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
     paddingBottom: 3
   - name: FBFLOGOGRAY
     x: 0
-    y: 794
+    y: 596
     width: 149
     height: 197
     borderLeft: 0
@@ -379,18 +379,18 @@ MonoBehaviour:
     paddingTop: 38
     paddingBottom: 35
   - name: Hundle_GUI
-    x: 986
-    y: 1544
-    width: 334
-    height: 75
+    x: 1531
+    y: 1436
+    width: 253
+    height: 44
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 44
-    paddingRight: 22
-    paddingTop: 69
-    paddingBottom: 62
+    paddingLeft: 30
+    paddingRight: 17
+    paddingTop: 63
+    paddingBottom: 48
   - name: ic_acv
     x: 1554
     y: 1790
@@ -418,8 +418,8 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 13
   - name: ic_cloudy
-    x: 380
-    y: 5
+    x: 159
+    y: 24
     width: 128
     height: 85
     borderLeft: 0
@@ -587,8 +587,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: meisai1
-    x: 1746
-    y: 1407
+    x: 1531
+    y: 1335
     width: 100
     height: 100
     borderLeft: 2
@@ -600,8 +600,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: meisai2
-    x: 565
-    y: 1193
+    x: 1785
+    y: 1380
     width: 100
     height: 100
     borderLeft: 2
@@ -652,8 +652,8 @@ MonoBehaviour:
     paddingTop: 35
     paddingBottom: 17
   - name: patern_check
-    x: 1948
-    y: 1413
+    x: 565
+    y: 1131
     width: 94
     height: 94
     borderLeft: 1
@@ -678,8 +678,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: patern_stripe
-    x: 1847
-    y: 1407
+    x: 1632
+    y: 1335
     width: 100
     height: 100
     borderLeft: 1
@@ -691,7 +691,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: piramid_1
-    x: 1803
+    x: 1468
     y: 1508
     width: 128
     height: 111
@@ -756,8 +756,8 @@ MonoBehaviour:
     paddingTop: 8
     paddingBottom: 3
   - name: PowerGage
-    x: 1811
-    y: 1648
+    x: 0
+    y: 1219
     width: 158
     height: 400
     borderLeft: 0
@@ -769,8 +769,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: powerGageCover
-    x: 0
-    y: 1219
+    x: 1811
+    y: 1648
     width: 158
     height: 400
     borderLeft: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ribbon
-    x: 1552
+    x: 1217
     y: 1536
     width: 250
     height: 83
@@ -821,8 +821,8 @@ MonoBehaviour:
     paddingTop: 25
     paddingBottom: 24
   - name: sns_fb
-    x: 1746
-    y: 1322
+    x: 380
+    y: 6
     width: 84
     height: 84
     borderLeft: 0
@@ -834,8 +834,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: sns_twt
-    x: 1847
-    y: 1322
+    x: 465
+    y: 6
     width: 84
     height: 84
     borderLeft: 0
@@ -873,32 +873,6 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Tlog2
-    x: 946
-    y: 1367
-    width: 194
-    height: 140
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 4
-    paddingRight: 2
-    paddingTop: 41
-    paddingBottom: 19
-  - name: Tlogo1
-    x: 1336
-    y: 1367
-    width: 194
-    height: 140
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 4
-    paddingRight: 2
-    paddingTop: 41
-    paddingBottom: 19
-  - name: Tlogo3
     x: 1141
     y: 1367
     width: 194
@@ -911,8 +885,34 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 41
     paddingBottom: 19
-  - name: Tlogo4
+  - name: Tlogo1
     x: 751
+    y: 1367
+    width: 194
+    height: 140
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 2
+    paddingTop: 41
+    paddingBottom: 19
+  - name: Tlogo3
+    x: 946
+    y: 1367
+    width: 194
+    height: 140
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 2
+    paddingTop: 41
+    paddingBottom: 19
+  - name: Tlogo4
+    x: 1336
     y: 1367
     width: 194
     height: 140
@@ -938,8 +938,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: trophyBronze
-    x: 159
-    y: 110
+    x: 380
+    y: 1130
     width: 184
     height: 188
     borderLeft: 0
@@ -964,8 +964,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: trophySilver
-    x: 380
-    y: 1130
+    x: 159
+    y: 110
     width: 184
     height: 188
     borderLeft: 0

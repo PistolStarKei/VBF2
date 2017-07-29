@@ -162,6 +162,36 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
     }
 
 
+	IEnumerator SpawnRodInvoke(string name){
+
+
+		Debug.Log("SpawnRod"+name);
+
+		GameObject pre=Resources.Load("Rods/"+name) as GameObject;
+
+		yield return null;
+
+		if(pre!=null){
+			GameObject sp=Instantiate(pre) as GameObject;
+			if(sp!=null){
+				RodParameter mov=sp.gameObject.GetComponent<RodParameter>();
+				if(mov!=null){
+					this.rodParams=mov;
+					sp.gameObject.transform.parent=this.rodRootOBJ.transform;
+					sp.gameObject.transform.localPosition=mov.startLocalPosition;
+					sp.gameObject.transform.localRotation=Quaternion.Euler(mov.startLocalRotation);
+				}else{
+					Debug.LogError("Instatiated obj has no rodParams script");
+				}
+			}else{
+				Debug.LogError("Instantiate failed");
+			}
+
+		}else{
+			Debug.LogError("Instantiate failed");
+		}
+
+	}
    
   
 }
