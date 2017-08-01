@@ -207,7 +207,8 @@ public class TackleParams : PS_SingletonBehaviour<TackleParams> {
         if(currentTackle.name==""){
             Debug.LogError("タックル装備なし");
             yield break; 
-        }
+		}
+		StartCoroutine(RodController.Instance.SpawnRodInvoke(currentTackle.name));
 
         Debug.LogWarning("AffectCurrrentTackle ここでロッドを先にスポーンしろ");
 

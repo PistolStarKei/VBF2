@@ -9419,10 +9419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727bdbfea47044c90a2ef49e2ed9c784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: -0.25
+  hoverHeight: -0.1
   hoverHeightStrictness: 1
-  forwardThrust: 5000
-  backwardThrust: 2500
+  forwardThrust: 4000
+  backwardThrust: 1000
   bankAmount: 0.1
   bankSpeed: 0.2
   bankAxis: {x: -1, y: 0, z: 0}
@@ -9441,7 +9441,6 @@ MonoBehaviour:
   thrust: 0
   turn: 0
   boatWake: {fileID: 1022055290}
-  hundle: {fileID: 548827382}
 --- !u!54 &495800624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11354,7 +11353,7 @@ GameObject:
   - 33: {fileID: 623164801}
   - 65: {fileID: 623164800}
   - 23: {fileID: 623164799}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15609,7 +15608,7 @@ MonoBehaviour:
   rodBar: {fileID: 1985054196}
   currentChasingBass: {fileID: 0}
   currentFightingBass: {fileID: 0}
-  currentMode: 0
+  currentMode: 1
   tackleBtn: {fileID: 1758735490}
   tackleMenu: {fileID: 1835314482}
   isShowedFightToUser: 0
@@ -23490,7 +23489,7 @@ GameObject:
   - 33: {fileID: 1105093520}
   - 65: {fileID: 1105093519}
   - 23: {fileID: 1105093518}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24025,7 +24024,7 @@ GameObject:
   - 33: {fileID: 1128901481}
   - 65: {fileID: 1128901480}
   - 23: {fileID: 1128901479}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38222,6 +38221,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a45d4468b24d940afbc85ae6164012a4, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: a45d4468b24d940afbc85ae6164012a4, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: a45d4468b24d940afbc85ae6164012a4, type: 3}
@@ -40492,7 +40495,7 @@ GameObject:
   - 33: {fileID: 1826131673}
   - 65: {fileID: 1826131672}
   - 23: {fileID: 1826131671}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41971,7 +41974,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1888755960}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42644,7 +42647,7 @@ GameObject:
   - 33: {fileID: 1961277586}
   - 65: {fileID: 1961277585}
   - 23: {fileID: 1961277584}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

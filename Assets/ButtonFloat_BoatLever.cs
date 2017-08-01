@@ -22,9 +22,6 @@ public class ButtonFloat_BoatLever : MonoBehaviour {
 	Transform mTrans;
 
 	Vector2 prevDelta=Vector2.zero;
-	void OnButton(float power){
-		speed=power;
-	}
 
 	void Awake()
 	{
@@ -68,9 +65,8 @@ public class ButtonFloat_BoatLever : MonoBehaviour {
 	public float speed=0.0f;
 	void LateUpdate()
 	{
-		if (isPressed && JoystickFloat.Instance.guiMode==GUIMODE.ROD)
+		if (isPressed && JoystickFloat.Instance.guiMode==GUIMODE.BOAT)
 		{
-			rotater.Rotate( 0.0f,0.0f, -(Time.deltaTime*(500.0f+(speed*200.0f))));
 			if(cntFramePressed < cntFrame){
 				SendMessageOnFloatButton(prevPos);
 				cntFramePressed = cntFrame;
@@ -87,7 +83,9 @@ public class ButtonFloat_BoatLever : MonoBehaviour {
 		{
 			if (pressed && !isPressed)
 			{
+				Debug.Log("OnJoyStickUp");
 				speed=0.0f;
+
 				prevPos = Vector3.zero;
 				CalcPositionParent();
 				// Show btnParent
@@ -99,9 +97,10 @@ public class ButtonFloat_BoatLever : MonoBehaviour {
 			else if (pressed && isPressed)
 			{
 				CalcPositionCenter();
+				Debug.Log("OnJoyStick");
 			}
 			else{
-
+				ShipControls.Instance.OnJoyStickUp();
 				NGUITools.SetActive(btnParent.gameObject,false);
 				isPressed = false;
 			}
@@ -161,9 +160,7 @@ public class ButtonFloat_BoatLever : MonoBehaviour {
 		float x = newPos.x / btnParentRadius;
 		float y = newPos.y / btnParentRadius;
 		Vector2 delta = new Vector2(x > 1f ? 1f : x, y > 1f ? 1f : y);
-
-		OnButton(delta.y);
-
+		ShipControls.Instance.OnJoyStick(delta.y);
 		prevPos = newPos;
 	}
 	public Transform rotater;

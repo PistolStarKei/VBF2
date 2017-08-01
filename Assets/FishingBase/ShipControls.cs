@@ -53,6 +53,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 				Quaternion.Euler(0, OrbitDegrees * Time.deltaTime, 0));*/
 
 		if( GameController.Instance.currentMode==GameMode.Boat){
+			//推力
 			if (Mathf.Abs(thrust) > 0.01F)
 			{
 				if (GetComponent<Rigidbody>().velocity.sqrMagnitude > sqrdSpeedThresholdForDrag)
@@ -62,7 +63,7 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 			}
 			else
 				GetComponent<Rigidbody>().drag = superDrag;
-
+			//角度
 			if (Mathf.Abs(turn) > 0.01F)
 			{
 				if (GetComponent<Rigidbody>().angularVelocity.sqrMagnitude > sqrdAngularSpeedThresholdForDrag)
@@ -110,21 +111,19 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 	float theThrust=1.0f;
 
 	public void OnJoyStickUp(){
+		
 		thrust=0.0f;
-		turn=0.0f;
-		hundle.localRotation=Quaternion.Euler(new Vector3(hundle.localRotation.x,hundle.localRotation.y,0.0f));
 		NGUITools.SetActive(boatWake,false);
 		playerControl=false;
 		AudioController.Stop("boatLoop");
 		AudioController.Play("boatOutro");
 		AudioController.Stop("boatWave");
 	}
-	public Transform hundle;
-	public void OnJoyStick(Vector2 delta){
-		if(delta.x==0.0f && delta.y==0.0f)return;
-		hundle.localRotation=Quaternion.Euler(new Vector3(hundle.localRotation.x,hundle.localRotation.y,-(delta.x*60.0f)));
-		thrust=delta.y;
-		turn=delta.x*turnSpeed;
+
+	public void OnJoyStick(float delta){
+		
+		if(delta==0.0f)return;
+		thrust=delta;
 		if(!boatWake.activeSelf)NGUITools.SetActive(boatWake,true);
 		if(!playerControl){
 			AudioController.Play("boatLoop");
@@ -132,6 +131,12 @@ public class ShipControls : PS_SingletonBehaviour<ShipControls>
 			playerControl=true;
 		}
 	}
+
+
+	public  void SetHundle(float val){
+		turn=val*turnSpeed;
+	}
+
 	void Update ()
 	{
 		if( GameController.Instance.currentMode==GameMode.Boat){

@@ -60,6 +60,7 @@ public class Player : PS_SingletonBehaviour<Player> {
     void SetPlayerConstrains(Transform grip , Transform ReelHundleHand,Transform ReelHundleHandToRotate,Transform reelCenter){
         FreePlayer();
         if(!showPlayerModel||rodParams==null){
+			Debug.LogError("SetPlayerConstrains null Error");
             return;
         }
         bool error=false;
@@ -105,7 +106,6 @@ public class Player : PS_SingletonBehaviour<Player> {
     }
 
 	public void PlayerConstrainsToFishing(){
-		
         SetPlayerConstrains(RodController.Instance.rodParams.gripController,RodController.Instance.rodParams.reelHundleToGrab,RodController.Instance.rodParams.reelHundleToRotate,RodController.Instance.rodParams.reelCenter);
     }
 	public void PlayerConstrainsToBoat(){

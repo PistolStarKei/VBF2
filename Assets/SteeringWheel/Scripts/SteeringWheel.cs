@@ -49,7 +49,10 @@ public class SteeringWheel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        //Debug.Log("Current input value: " + GetInput().ToString("F1") + "  Current angle value: " + GetAngle() + " Is Pressed: " + isPressed());
+		if(GameController.Instance.currentMode!=GameMode.Boat)return;
+
+		ShipControls.Instance.SetHundle(GetInput());
+
 
 		if( isHold )
 		{

@@ -6,7 +6,7 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
 	public RodParameter rodParams;
 	public void ShowRod(bool isShow){
 		gameObject.GetComponent<MeshRenderer>().enabled=isShow;
-		rodParams.GetComponent<MeshRenderer>().enabled=isShow;
+		rodParams.gameObject.SetActive(isShow);
 	}
 
 
@@ -161,18 +161,22 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
         reelHand.localRotation=Quaternion.Euler(reelHandRot);
     }
 
-
-	IEnumerator SpawnRodInvoke(string name){
+	public IEnumerator SpawnRodInvoke(string name){
 
 
 		Debug.Log("SpawnRod"+name);
+		GameObject detroyGO=null;
+		if(rodParams!=null){
+			detroyGO=rodParams.gameObject;
 
+		}
 		GameObject pre=Resources.Load("Rods/"+name) as GameObject;
 
 		yield return null;
 
 		if(pre!=null){
 			GameObject sp=Instantiate(pre) as GameObject;
+
 			if(sp!=null){
 				RodParameter mov=sp.gameObject.GetComponent<RodParameter>();
 				if(mov!=null){
@@ -180,6 +184,14 @@ public class RodController : PS_SingletonBehaviour<RodController>  {
 					sp.gameObject.transform.parent=this.rodRootOBJ.transform;
 					sp.gameObject.transform.localPosition=mov.startLocalPosition;
 					sp.gameObject.transform.localRotation=Quaternion.Euler(mov.startLocalRotation);
+					if(detroyGO!=null)Destroy(detroyGO);
+					Player.Instance.rodParams=this.rodParams;
+					Player.Instance.PlayerConstrainsToFishing();
+					if(GameController.Instance.currentMode==GameMode.Move){
+						Player.Instance.FreePlayer();
+					}else{
+						
+					}
 				}else{
 					Debug.LogError("Instatiated obj has no rodParams script");
 				}

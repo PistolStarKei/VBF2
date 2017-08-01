@@ -213,8 +213,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		WaterController.Instance.SetWater(waveParams.waveClearness,waveParams.waveType_color, waveParams.waveSpeed, waveParams.waveType);
 
-		//現在のタックルを
-		StartCoroutine(TackleParams.Instance.AffectCurrrentTackle(true));
+
 
 		Debug.LogWarning("ここでプレイヤをボートに乗せる");
 		if(isPoolMode){
@@ -224,10 +223,18 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		}
 		Debug.Log("終わり");
 		//プレイヤの腕にロッドを設置する
-
+		//現在のタックルを
+		StartCoroutine(TackleParams.Instance.AffectCurrrentTackle(true));
 
 		//Moveステートへ移行する
+
 		ChangeStateTo(GameMode.Move);
+				
+
+
+
+			
+
 		WaitAndCover.Instance.StopWait();
 		WaitAndCover.Instance.UnCoverAll();
 	}
@@ -659,11 +666,10 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 		public override void Enter() {
 			Debug.Log("Enter modeBoat");
-			if(owner.currentMode==GameMode.Move){
 				Player.Instance.ChangePositionTo(false);
 				Player.Instance.PlayerConstrainsToBoat();
 				ZoomCamera.Instance.SetCameraPosiion(false);
-			}
+			
 			RodController.Instance.ShowRod(false);
 			LineScript.Instance.HideLine();
 			HUD_LureParams.Instance.Hide();
@@ -686,15 +692,13 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 		public modeMove(GameController owner) : base(owner) {}
 
 		public override void Enter() {
-
-			if(owner.currentMode==GameMode.Cast)Player.Instance.ChangeRodState(true);
-			if(owner.currentMode==GameMode.Boat){
+			Debug.Log("Enter modeMove");
+				Player.Instance.ChangeRodState(true);
 				Player.Instance.ChangePositionTo(true);
 				Player.Instance.PlayerConstrainsToFishing();
 				Player.Instance.FreePlayer();
 				ZoomCamera.Instance.SetCameraPosiion(true);
-			}
-			Debug.Log("Enter modeMove");
+
 
 			//ボートボタン ステート boat
 			owner.boatBtn.SetState(true);
@@ -726,8 +730,7 @@ public class GameController : SingletonStatefulObjectBase<GameController, GameMo
 
 			//ボートボタンを出さない
 			owner.boatBtn.Hide();
-
-			if(owner.currentMode==GameMode.Move)Player.Instance.ChangeRodState(false);
+			Player.Instance.ChangeRodState(false);
 			LineScript.Instance.HideLine();
 			RodController.Instance.InitRod();
 			LureController.Instance.SetToDefaultPosition(Player.Instance.lureDefaultPos);
