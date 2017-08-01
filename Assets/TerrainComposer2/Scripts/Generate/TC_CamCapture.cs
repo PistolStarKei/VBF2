@@ -12,25 +12,53 @@ namespace TerrainComposer2
         Transform t;
         public CollisionDirection collisionDirection;
 
+        RenderTexture rtCapture;
+
         void Start()
         {
             t = transform;
             cam = GetComponent<Camera>();
             cam.aspect = 1;
         }
-        
-        public void Capture(int collisionMask, CollisionDirection collisionDirection, int outputId)
+
+        private void OnDestroy()
+        {
+            DisposeRTCapture();
+        }
+
+        public void Capture(int collisionMask, CollisionDirection collisionDirection, int outputId, Vector2 resolution)
         {
             if (TC_Area2D.current.currentTerrainArea == null) return;
+            
+            bool create = false;
+            if (rtCapture == null) create = true;
+            else if (rtCapture.width != resolution.x || rtCapture.height != resolution.y)
+            {
+                TC_Compute.DisposeRenderTexture(ref rtCapture);
+                create = true;
+            }
+
+            if (create)
+            {
+                rtCapture = new RenderTexture((int)resolution.x, (int)resolution.y, 16, RenderTextureFormat.Depth, RenderTextureReadWrite.Linear);
+                cam.targetTexture = rtCapture;
+            }
+            
             // Debug.Log("Capture");
             this.collisionMask = collisionMask;
             terrain = TC_Area2D.current.currentTerrain;
             // this.collisionDirection = collisionDirection;
             cam.cullingMask = collisionMask;
-
+             
             SetCamera(collisionDirection, outputId);
 
             cam.Render();
+        }
+
+        public void DisposeRTCapture()
+        {
+            cam.targetTexture = null;
+            TC_Compute.DisposeRenderTexture(ref rtCapture);
         }
 
         public void SetCamera(CollisionDirection collisionDirection, int outputId)

@@ -47,6 +47,8 @@ namespace TerrainComposer2
                     }
                 }
                 else rtDisplay = selectNodeGroup.rtDisplay;
+
+                if (isPortalCount > 0) TC_Compute.instance.MakePortalBuffer(this, layerBuffer, method == Method.Lerp ? maskBuffer : null);
             }
             else TC_Reporter.Log("Layerbuffer " + listIndex + " = null, reporting from layer");
         }
@@ -71,7 +73,11 @@ namespace TerrainComposer2
 
                 TC_Compute.InitPreviewRenderTexture(ref selectNodeGroup.rtColorPreview, "rtNodeGroupPreview_" + TC.outputNames[outputId]);
 
-                if (outputId == TC.colorOutput) compute.RunColorCompute(selectNodeGroup, selectItemGroup, ref renderTextures[0], ref layerBuffer);
+                if (outputId == TC.colorOutput)
+                {
+                    if (selectItemGroup.itemList.Count == 1 && selectItemGroup.itemList[0].texColor != null) compute.RunColorTexCompute(selectNodeGroup, selectItemGroup.itemList[0], ref renderTextures[0], ref layerBuffer);
+                    else compute.RunColorCompute(selectNodeGroup, selectItemGroup, ref renderTextures[0], ref layerBuffer);
+                }
                 else compute.RunSplatCompute(selectNodeGroup, selectItemGroup, ref renderTextures, ref layerBuffer); 
 
                 compute.DisposeBuffer(ref layerBuffer);

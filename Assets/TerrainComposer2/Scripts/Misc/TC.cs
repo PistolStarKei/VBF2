@@ -12,6 +12,8 @@ namespace TerrainComposer2
         static public bool repaintNodeWindow;
         static public List<MessageCommand> messages = new List<MessageCommand>();
         static public float autoGenerateCallTimeStart;
+        public const int splatLimit = 16;
+        public const int grassLimit = 16;
 
         public const int heightOutput = 0;
         public const int splatOutput = 1;
@@ -42,7 +44,7 @@ namespace TerrainComposer2
 
         static public float GetVersionNumber()
         {
-            return 2.32f;
+            return 2.5f;
         }
         
         static public int OutputNameToOutputID(string outputName)
@@ -237,7 +239,7 @@ namespace TerrainComposer2
 
             GameObject go = GameObject.Find("TerrainComposer2");
 
-            Transform settingsT = go.transform.FindChild("Settings");
+            Transform settingsT = go.transform.Find("Settings");
             if (settingsT != null)
             {
                 TC_Settings settings = settingsT.GetComponent<TC_Settings>();
@@ -270,6 +272,16 @@ namespace TerrainComposer2
         {
             for (int i = 0; i < messages.Count; i++) if (messages[i].message.Contains(message)) return;
             messages.Add(new MessageCommand(message, delay, duration));
+        }
+
+        static public bool VerifyPortal(TC_ItemBehaviour item)
+        {
+            if (item == null) return false;
+            if (item.outputId == heightOutput) return true;
+            if (item is TC_Node || item is TC_NodeGroup) return true;
+            
+            AddMessage("This node cannot be used as a portal. All nodes in Height output can be used. And for the rest of the outputs only Nodes and NodeGroups can be used.");
+            return false;
         }
 
         public class MessageCommand

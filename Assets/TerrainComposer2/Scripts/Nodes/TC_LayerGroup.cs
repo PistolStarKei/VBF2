@@ -51,6 +51,10 @@ namespace TerrainComposer2
             }
 
             if (totalBuffer == null) TC_Reporter.Log("Layer buffer null");
+            else
+            {
+                if (isPortalCount > 0 && outputId == TC.heightOutput) TC_Compute.instance.MakePortalBuffer(this, totalBuffer, method == Method.Lerp ? maskBuffer : null);
+            }
 
             return maskBuffer;
         }

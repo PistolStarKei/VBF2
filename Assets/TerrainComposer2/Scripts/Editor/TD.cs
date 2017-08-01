@@ -20,7 +20,8 @@ namespace TerrainComposer2
         static public int countDrawTextures;
 
         static public Rect rectWindow;
-        static public Vector2 scrollOffset;
+        static public Vector2 scrollOffset, newScrollOffset;
+        static public bool setNewScrollOffset;
         static public float scale = 1;
         static public Vector2 scrollMax;
 
@@ -79,7 +80,7 @@ namespace TerrainComposer2
         static public Texture texOperandBG, texOperandAdd, texOperandSubtract, texOperandLerp, texOperandMultiply, texOperandDivide, texOperandDiff, texOperandAverage, texOperandMin, texOperandMax, texOperandEqual;
 
         static public Texture texSeparatorLeft, texSeparatorCenter, texSeparatorRight;
-        static public Texture texEye, texEyeClosed, texFoldout, texLocked, texUnlocked;
+        static public Texture texEye, texEyeClosed, texFoldout, texLocked, texUnlocked, texPortal;
         static public Texture texDragIconVertical, texDragIconHorizontal, texSelectCard, texSelectCardHeader;
         
         static public TC_Settings settings;
@@ -109,7 +110,7 @@ namespace TerrainComposer2
              
             editorSkinMulti = EditorGUIUtility.isProSkin ? 1 : 0.35f;
 
-            if (texShelfLinesConnectDown == null)
+            if (texPortal == null)
             {
                 buttonMinus = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Buttons/Button_Minus.psd", typeof(Texture));
                 buttonPlus = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Buttons/Button_Plus.psd", typeof(Texture));
@@ -162,6 +163,7 @@ namespace TerrainComposer2
                 texFoldout = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Cards/Foldout.png", typeof(Texture));
                 texLocked = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Cards/Lock_Closed.png", typeof(Texture));
                 texUnlocked = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Cards/Lock_Open.png", typeof(Texture));
+                texPortal = (Texture)AssetDatabase.LoadAssetAtPath(TC.installPath + "/GUI/Cards/Portal.png", typeof(Texture));
 
                 string shelfFolder = "Fixed/";
                 // string shelfFolder = "";
@@ -228,21 +230,21 @@ namespace TerrainComposer2
 
         static public float GetPosX(float offset)
         {
-            float center = Screen.width / 2;
+            float center = TC_NodeWindow.window.position.width / 2;
             offset += scrollOffset.x;
             return (scale * (offset - center)) + center;
         }
 
         static public Vector2 GetPositionScaled(Vector2 offset)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             offset += scrollOffset;
             return (scale * (offset - center)) + center;
         }
 
         static public Rect GetRectScaled(Rect rect)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             rect.x += scrollOffset.x;
             rect.y += scrollOffset.y;
 
@@ -255,7 +257,7 @@ namespace TerrainComposer2
 
         static public Rect GetRectScaled(float x, float y, float width, float height)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             x += scrollOffset.x;
             y += scrollOffset.y;
 
@@ -268,7 +270,7 @@ namespace TerrainComposer2
 
         static public Rect GetRectScaled(float x, float y, Texture tex, bool invert = false)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             x += scrollOffset.x;
             y += scrollOffset.y;
 
@@ -298,10 +300,10 @@ namespace TerrainComposer2
 
         static public Rect DrawTextureScaled(float x, float y, Texture tex, Color color, bool invert = false, StretchMode stretchHorizontal = StretchMode.None, StretchMode stretchVertical = StretchMode.None)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             float width, height;
 
-            if (stretchHorizontal == StretchMode.Screen) { x = 0; width = Screen.width; }
+            if (stretchHorizontal == StretchMode.Screen) { x = 0; width = TC_NodeWindow.window.position.width; }
             else
             {
                 x += scrollOffset.x;
@@ -309,10 +311,10 @@ namespace TerrainComposer2
                 width = tex.width * scale;
 
                 if (stretchHorizontal == StretchMode.Left) { width += x; x = 0; }
-                else if (stretchHorizontal == StretchMode.Right) { width = Screen.width - x; }
+                else if (stretchHorizontal == StretchMode.Right) { width = TC_NodeWindow.window.position.width - x; }
             }
             
-            if (stretchVertical == StretchMode.Screen) { y = 0; height = Screen.height; }
+            if (stretchVertical == StretchMode.Screen) { y = 0; height = TC_NodeWindow.window.position.height; }
             else
             {
                 y += scrollOffset.y;
@@ -320,7 +322,7 @@ namespace TerrainComposer2
                 height = tex.height * scale;
 
                 if (stretchVertical == StretchMode.Left) { height += y; y = 0; }
-                else if (stretchVertical == StretchMode.Right) { height = Screen.height - y; }
+                else if (stretchVertical == StretchMode.Right) { height = TC_NodeWindow.window.position.height - y; }
             }
             Rect rect;
             if (!invert) rect = new Rect(x, y, width, height); 
@@ -336,14 +338,14 @@ namespace TerrainComposer2
 
         static public Rect DrawTextureScaled(float x, float y, float width, Texture tex, Color color, bool invert = false, StretchMode stretchVertical = StretchMode.None)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             float height;
             
             x += scrollOffset.x;
             x = (scale * (x - center.x)) + center.x;
             width *= scale;
             
-            if (stretchVertical == StretchMode.Screen) { y = 0; height = Screen.height; }
+            if (stretchVertical == StretchMode.Screen) { y = 0; height = TC_NodeWindow.window.position.height; }
             else
             {
                 y += scrollOffset.y;
@@ -351,7 +353,7 @@ namespace TerrainComposer2
                 height = tex.height * scale;
 
                 if (stretchVertical == StretchMode.Left) { height += y; y = 0; }
-                else if (stretchVertical == StretchMode.Right) { height = Screen.height - y; }
+                else if (stretchVertical == StretchMode.Right) { height = TC_NodeWindow.window.position.height - y; }
             }
             Rect rect;
             if (!invert) rect = new Rect(x, y, width, height);
@@ -366,10 +368,10 @@ namespace TerrainComposer2
 
         static public Rect DrawTextureScaledV(float x, float y, float height, Texture tex, Color color, bool invert = false, StretchMode stretchHorizontal = StretchMode.None)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             float width;
 
-            if (stretchHorizontal == StretchMode.Screen) { x = 0; width = Screen.width; }
+            if (stretchHorizontal == StretchMode.Screen) { x = 0; width = TC_NodeWindow.window.position.width; }
             else
             {
                 x += scrollOffset.x;
@@ -377,7 +379,7 @@ namespace TerrainComposer2
                 width = tex.width * scale;
 
                 if (stretchHorizontal == StretchMode.Left) { width += x; x = 0; }
-                else if (stretchHorizontal == StretchMode.Right) { width = Screen.width - x; }
+                else if (stretchHorizontal == StretchMode.Right) { width = TC_NodeWindow.window.position.width - x; }
             }
             
             y += scrollOffset.y;
@@ -397,7 +399,7 @@ namespace TerrainComposer2
 
         static public Rect GetLeftRect(Rect rect)
         {
-            Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
+            Vector2 center = new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
             // rect.width += scrollOffset.x;
             rect.y += scrollOffset.y;
 
@@ -416,8 +418,8 @@ namespace TerrainComposer2
         static public void DrawCenter(Color color, int length, int width)
         {
             GUI.color = color;
-            GUI.DrawTexture(new Rect((Screen.width - length) / 2, (Screen.height - width) / 2, length, width), Texture2D.whiteTexture);
-            GUI.DrawTexture(new Rect((Screen.width - width) / 2, (Screen.height - length) / 2, width, length), Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect((TC_NodeWindow.window.position.width - length) / 2, (TC_NodeWindow.window.position.height - width) / 2, length, width), Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect((TC_NodeWindow.window.position.width - width) / 2, (TC_NodeWindow.window.position.height - length) / 2, width, length), Texture2D.whiteTexture);
             GUI.color = Color.white;
         }
 
@@ -449,7 +451,7 @@ namespace TerrainComposer2
             // rect = GetRect (new Rect(0,0,400,50));
             GUI.color = color;
             rect = GetLeftRect(rect);
-            if (rect.width > Screen.width) rect.width = Screen.width;
+            if (rect.width > TC_NodeWindow.window.position.width) rect.width = TC_NodeWindow.window.position.width;
             GUI.DrawTexture(rect, tex);
         }
         
@@ -913,7 +915,7 @@ namespace TerrainComposer2
         {
             // rect = GetRectScaled(rect);
 
-            if (rect.xMax >= 0 && rect.yMax >= 0 && rect.xMin < Screen.width && rect.yMin < Screen.height) return true; else return false;
+            if (rect.xMax >= 0 && rect.yMax >= 0 && rect.xMin < TC_NodeWindow.window.position.width && rect.yMin < TC_NodeWindow.window.position.height) return true; else return false;
         }
 
         static public Rect DrawNode(TC_ItemBehaviour item, Vector2 pos, Color color, Color previewColor, ref bool isCulled, float activeMulti, bool nodeFoldout, bool drawMethod, bool resultNode = false, bool drawPreview = true)
@@ -994,6 +996,12 @@ namespace TerrainComposer2
             //        }
             //    }
             //}
+
+            //if (Selection.activeTransform == item.t)
+            //{
+            //    newScrollOffset = pos;
+            //    setNewScrollOffset = true;
+            //}
             
             if (drawEye)
             {
@@ -1011,6 +1019,28 @@ namespace TerrainComposer2
             }
 
             Rect rectExclude = rectEyeScaled;
+
+            if (item.isPortalCount > 0)
+            {
+                rectEye.x -= 28;
+                mouseButton = Button(rectEye, texPortal, true, item.isPortalCount > 1 ? Color.white : new Color(0.5f, 1, 0.6f), Color.white, Color.black, item.isPortalCount > 1 ? false : true);
+                if (mouseButton == 0)
+                {
+                    Selection.activeTransform = item.usedAsPortalList[0].t;
+                    Event.current.Use();
+                }
+            }
+
+            if (item.portalNode != null)
+            {
+                rectEye.x -= 28;
+                mouseButton = Button(rectEye, texPortal, true, new Color(1, 0.3f, 0.3f, 1), Color.white, Color.black, true);
+                if (mouseButton == 0)
+                {
+                    Selection.activeTransform = item.portalNode.t;
+                    Event.current.Use();
+                }
+            }
             
             if (selectItemGroup == null && selectItem == null && (item.lockTransform || item.lockPosParent || item.lockPosChildren))
             {
@@ -1059,6 +1089,8 @@ namespace TerrainComposer2
                     else Selection.objects = Mathw.AddToArray(Selection.objects, item.gameObject);
                 }
                 else Selection.objects = new GameObject[] { item.gameObject };
+
+				// TC_ProjectPreview.instance.SetPreview(item);
                 //}
             }
 
@@ -1077,7 +1109,10 @@ namespace TerrainComposer2
                     // GUI.DrawTexture(rectPreview, Texture2D.whiteTexture);
                     Texture texPreview = null;
 
-                    if (item.outputId == TC.colorOutput && selectItem != null) texPreview = item.preview.tex;
+                    if (item.outputId == TC.colorOutput && selectItem != null)
+                    {
+                        if (selectItem.texColor == null || selectItem.parentItem.itemList.Count != 1) texPreview = item.preview.tex; else texPreview = item.rtDisplay;
+                    }
                     else
                     {
                         if (nodeGroup != null) texPreview = nodeGroup.rtColorPreview;
@@ -1174,7 +1209,11 @@ namespace TerrainComposer2
                     else if (nodeGroup != null) drawOpacity = false;
                     else if (selectItem != null || selectItemGroup != null)
                     {
-                        if (item.outputId == TC.splatOutput || item.outputId == TC.colorOutput || item.outputId == TC.grassOutput) drawOpacity = false;
+                        if (item.outputId == TC.splatOutput || item.outputId == TC.grassOutput) drawOpacity = false;
+                        if (item.outputId == TC.colorOutput)
+                        {
+                            if (selectItemGroup != null || selectItem != null) drawOpacity = false;
+                        }
                     }
 
                     if (drawOpacity)
@@ -1195,6 +1234,7 @@ namespace TerrainComposer2
             
             if (Mathw.ArrayContains(Selection.transforms, item.t))
             {
+                // Color colLerp = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 0, 0, 1), Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * 1.5f)));
                 if (nodeFoldout) DrawCommand.Add(new Rect(pos.x - 4f, pos.y - 4f, texSelectCard.width - 2, texSelectCard.height - 2), texSelectCard, Color.white, 1);
                 else DrawCommand.Add(new Rect(pos.x - 4f, pos.y - 4f, texSelectCardHeader.width - 2, texSelectCardHeader.height - 2), texSelectCardHeader, Color.white, 1);
             }
@@ -1481,7 +1521,7 @@ namespace TerrainComposer2
             Rect sRect = new Rect(sPos.x, sPos.y, size.x, size.y);
             rightMargin *= scale;
             
-            if (sRect.x + size.x + rightMargin > Screen.width) sRect.x = Screen.width - size.x - rightMargin;
+            if (sRect.x + size.x + rightMargin > TC_NodeWindow.window.position.width) sRect.x = TC_NodeWindow.window.position.width - size.x - rightMargin;
             float delta = sRect.x - GetPosX(leftPos);
             if (delta < 0) sRect.x -= delta;
 
@@ -1570,7 +1610,7 @@ namespace TerrainComposer2
             Rect sRect = GetRectScaled(rect);
 
             rightMargin *= scale;
-            if (sRect.x + rect.width + rightMargin > Screen.width) sRect.x = Screen.width - rect.width - rightMargin;
+            if (sRect.x + rect.width + rightMargin > TC_NodeWindow.window.position.width) sRect.x = TC_NodeWindow.window.position.width - rect.width - rightMargin;
             float delta = sRect.x - GetPosX(leftPos);
             if (delta < 0) sRect.x -= delta;
 

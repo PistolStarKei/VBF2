@@ -20,8 +20,7 @@ namespace TerrainComposer2
         [NonSerialized] public MeshTerrain currentMeshTerrain;
         public TC_TerrainArea currentTerrainArea;
         [NonSerialized] public TC_TerrainMeshArea currentMeshTerrainArea;
-        [NonSerialized] public ComputeBuffer layerGroupBuffer;
-
+        
         public TC_PreviewArea previewArea;
         public Rect area, totalArea;
         public Bounds totalTerrainBounds;

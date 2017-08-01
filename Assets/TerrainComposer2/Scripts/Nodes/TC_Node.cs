@@ -171,7 +171,7 @@ namespace TerrainComposer2
             else if (inputKind == InputKind.Shape) inputShape = (InputShape)popup;
             else if (inputKind == InputKind.File) inputFile = (InputFile)popup;
             else if (inputKind == InputKind.Current) inputCurrent = (InputCurrent)popup;
-            else if (inputKind == InputKind.Portal) inputPortal = (InputPortal)popup;
+            // else if (inputKind == InputKind.Portal) inputPortal = (InputPortal)popup;
         }
         
         public void Init()
@@ -231,7 +231,15 @@ namespace TerrainComposer2
                     if (stampTex == null) active = false;
                 }
             }
-            else if (inputKind == InputKind.Portal) { active = false; }
+            
+            else if (inputKind == InputKind.Portal)
+            {
+                if (portalNode != null)
+                {
+                    if (portalNode.isPortalCount > 0) active = true; else active = false;
+                }
+                else active = false;
+            }
         }
 
         public void UpdateVersion()

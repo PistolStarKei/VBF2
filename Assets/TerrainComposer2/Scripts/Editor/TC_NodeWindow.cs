@@ -11,7 +11,7 @@ namespace TerrainComposer2
         static public TC_NodeWindow window;
         static Event eventCurrent; 
 
-        bool onFocus;
+        //bool onFocus;
         
         TC_TerrainLayer terrainLayer;
                 
@@ -19,35 +19,37 @@ namespace TerrainComposer2
         public static void ShowWindow()
         {
             window = GetWindow(typeof(TC_NodeWindow)) as TC_NodeWindow;
-            window.titleContent = new GUIContent("TC2");
+            window.titleContent = new GUIContent("TC" + TC.GetVersionNumber());
         }
 
         void OnEnable()
         {
-            autoRepaintOnSceneChange = true;
+            window = this;// GetWindow(typeof(TC_NodeWindow)) as TC_NodeWindow;
+            autoRepaintOnSceneChange = true; 
             TD.scale = 2;
             
             Undo.undoRedoPerformed += UndoRedoPerformed;
-
+            
             // Debug.Log("Node Window OnEnable");
             // Debug.Log(Application.isPlaying);
 
-            // if (!Application.isPlaying) TC.RefreshOutputReferences(6);
+            // if (!Application.isPlaying) TC.RefreshOutputReferences(6); 
         }
 
-        void OnFocus()
-        {
-            onFocus = true;
-        }
+        //void OnFocus()
+        //{
+        //    onFocus = true;
+        //}
 
-        void OnLostFocus()
-        {
-            onFocus = false;
-        }
+        //void OnLostFocus()
+        //{
+        //    onFocus = false;
+        //}
 
         void OnDisable()
         {
             Undo.undoRedoPerformed -= UndoRedoPerformed;
+            correctSetup = 0;
         }
 
         void OnDestroy()
@@ -69,6 +71,30 @@ namespace TerrainComposer2
 
         void OnInspectorUpdate()
         {
+            if (TC_Settings.instance == null)
+            {
+                GameObject go = new GameObject();
+                go.AddComponent<TC_Settings>();
+
+                TC.GetInstallPath();
+                GameObject.DestroyImmediate(go); 
+            }
+            else TC.GetInstallPath();
+
+            if (TC_Settings.instance == null)
+            {
+                correctSetup = LoadDefault();
+            }
+            else if (TC_Settings.instance.global == null)
+            {
+                correctSetup = LoadDefault();
+            }
+            
+            if (correctSetup == -1)
+            {
+                correctSetup = -3;
+                window.Close();
+            }
             if (!TD.SelectionContainsItemBehaviour()) Repaint();
         }
 
@@ -93,37 +119,26 @@ namespace TerrainComposer2
             else if (eventCurrent.type == EventType.MouseUp) { TD.posClickMouseDown = new Vector2(-1000, -1000); TD.mouseDownButton = -1; }
         }
 
-        bool correctSetup = true;
+        int correctSetup = 0;
         TC_Settings settings;
-
+        
         void OnGUI()
         {
             ShowMessages();
 
-            if (!correctSetup)
+            if (correctSetup == -1)
+            {
+                TC.AddMessage("Close and re-open the TerrainComposer window.");
+                return;
+            }
+
+            if (correctSetup == -2)
             {
                 TC.AddMessage("Can't load default project.\nThis file is needed -> TerrainComposer2/Defaults/TerrainComposer2.prefab.\n\n Please try to close and re-open the TerrainComposer window.");
                 return;
             }
 
-            if (TC_Settings.instance == null)
-            {
-                GameObject go = new GameObject();
-                go.AddComponent<TC_Settings>();
-
-                TC.GetInstallPath();
-                GameObject.DestroyImmediate(go);
-            }
-            else TC.GetInstallPath();
-
-            if (TC_Settings.instance == null)
-            {
-                if (!LoadDefault()) { correctSetup = false; return; }
-            }
-            if (TC_Settings.instance.global == null)
-            {
-                if (!LoadDefault()) { correctSetup = false; return; }
-            }
+            if (correctSetup != 0) return;
 
             if (!TD.Init()) return;
 
@@ -134,7 +149,7 @@ namespace TerrainComposer2
 
             TD.hoverItem = null;
 
-            TD.rectWindow = new Rect(0, 0, Screen.width, Screen.height);
+            TD.rectWindow = new Rect(0, 0, TC_NodeWindow.window.position.width, TC_NodeWindow.window.position.height);
 
             settings.selectionOld = Selection.activeTransform;
 
@@ -145,7 +160,7 @@ namespace TerrainComposer2
 
             TD.eventCurrent = eventCurrent;
 
-            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), TD.texShelfBackground1);
+            GUI.DrawTexture(new Rect(0, 0, TC_NodeWindow.window.position.width, TC_NodeWindow.window.position.height), TD.texShelfBackground1);
 
             settings.HasMasterTerrain();
 
@@ -176,10 +191,14 @@ namespace TerrainComposer2
                     GUI.color = Color.white;
                 }
                 string fps = TC_Reporter.BenchmarkStop("| fps ", false);
-                EditorGUI.LabelField(new Rect((Screen.width / 2) - 200, 0, 250, 17), "Node Draw " + TD.countDrawNode + "| Nodes Culled " + TD.countDrawNodeCulled + fps);
+                EditorGUI.LabelField(new Rect((TC_NodeWindow.window.position.width / 2) - 200, 0, 250, 17), "Node Draw " + TD.countDrawNode + "| Nodes Culled " + TD.countDrawNodeCulled + fps);
             }
 
-            if (onFocus) Repaint();
+            //if (onFocus && correctSetup == 0 && ++frame == 20)
+            //{
+            //    frame = 0;
+            //    Repaint();
+            //}
         }
 
         void ShowMessages()
@@ -208,7 +227,7 @@ namespace TerrainComposer2
             if (TC_Area2D.current != null)
             {
                 if (TC_Area2D.current.showProgressBar)
-                    EditorGUI.ProgressBar(new Rect(0, Screen.height - 40, Screen.width - 82, 20), TC_Area2D.current.progress, TC_Area2D.current.currentTerrain.name + "    " + (TC_Area2D.current.progress * 100).ToString("F1") + "%");
+                    EditorGUI.ProgressBar(new Rect(0, TC_NodeWindow.window.position.height - 40, TC_NodeWindow.window.position.width - 82, 20), TC_Area2D.current.progress, TC_Area2D.current.currentTerrain.name + "    " + (TC_Area2D.current.progress * 100).ToString("F1") + "%");
             }
         }
 
@@ -287,9 +306,14 @@ namespace TerrainComposer2
             eventCurrent = Event.current;
 
             if (eventCurrent.type == EventType.keyUp)
-            {
-                if (eventCurrent.keyCode == KeyCode.D && eventCurrent.control) DuplicateKey();
-                if (eventCurrent.keyCode == KeyCode.Delete) DeleteKey();
+            {  
+                #if UNITY_EDITOR_OSX
+                    if (eventCurrent.keyCode == KeyCode.D && eventCurrent.control) DuplicateKey();
+                    if (eventCurrent.keyCode == KeyCode.Backspace) DeleteKey();
+                #else
+                    if (eventCurrent.keyCode == KeyCode.D && eventCurrent.control) DuplicateKey();
+                    if (eventCurrent.keyCode == KeyCode.Delete) DeleteKey();
+                #endif
                 keyDown = false;
             }
             else if (eventCurrent.type == EventType.keyDown)
@@ -310,7 +334,7 @@ namespace TerrainComposer2
         {
             TC_GlobalSettings g = TC_Settings.instance.global;
 
-            TD.scrollOffset = settings.scrollOffset + settings.scrollAdd;
+            TD.scrollOffset = settings.scrollOffset;
             TD.scale = settings.scale;
 
             if (TD.scrollOffset.x < 0) TD.scrollOffset.x = 0; 
@@ -319,6 +343,8 @@ namespace TerrainComposer2
             if (TD.scrollOffset.y > 0) TD.scrollOffset.y = 0;
             else if (TD.scrollOffset.y < TD.scrollMax.y && TD.scrollMax.y != 0) TD.scrollOffset.y = TD.scrollMax.y;
             // Vector2 deltaMouse = key.mousePosition-mousePositionOld;
+
+            TD.scrollOffset += settings.scrollAdd;
 
             bool doScroll = false;
             if (eventCurrent.alt && eventCurrent.control && eventCurrent.type == EventType.MouseDrag && eventCurrent.button == 0) doScroll = true;
@@ -330,13 +356,13 @@ namespace TerrainComposer2
                 TC.repaintNodeWindow = true;
                 eventCurrent.Use();
             }
-
+            
             if (eventCurrent.alt && eventCurrent.control && eventCurrent.type == EventType.mouseDown) eventCurrent.Use();
             
             // Debug.Log(TD.scrollOffset.y + " " + TD.scrollMax.y);
             
-            Vector2 deltaMouse = eventCurrent.mousePosition - new Vector2(Screen.width / 2, Screen.height / 2);
-
+            Vector2 deltaMouse = eventCurrent.mousePosition - new Vector2(TC_NodeWindow.window.position.width / 2, TC_NodeWindow.window.position.height / 2);
+            
             if (eventCurrent.type == EventType.ScrollWheel)
             {
                 if (eventCurrent.delta.y > 0)
@@ -357,6 +383,12 @@ namespace TerrainComposer2
 
                 TC.repaintNodeWindow = true;
             }
+
+            //if (TD.setNewScrollOffset)
+            //{
+            //    TD.setNewScrollOffset = false;
+            //    TD.scrollOffset = (new Vector2(-TD.newScrollOffset.x + TC_NodeWindow.window.position.width, -TD.newScrollOffset.y + TC_NodeWindow.window.position.height));
+            //}
 
             if (eventCurrent.type == EventType.keyDown)
             {
@@ -380,7 +412,7 @@ namespace TerrainComposer2
 
             GUI.color = EditorGUIUtility.isProSkin ? new Color(0.2f, 0.2f, 0.2f) : new Color(0.5f, 0.5f, 0.5f);
             
-            GUI.DrawTexture(new Rect(0, 0, Screen.width, 20), Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect(0, 0, TC_NodeWindow.window.position.width, 20), Texture2D.whiteTexture);
             GUI.color = Color.white;
 
             EditorGUILayout.BeginHorizontal();
@@ -419,9 +451,9 @@ namespace TerrainComposer2
                 }
                 GUI.color = Color.white;
 
-                GUILayout.Space(Screen.width - 620 - ((width * 2) + 45));
+                GUILayout.Space(TC_NodeWindow.window.position.width - 620 - ((width * 2) + 45));
             }
-            else GUILayout.Space(Screen.width - 449 - (width + 5));
+            else GUILayout.Space(TC_NodeWindow.window.position.width - 449 - (width + 5));
 
             GUI.changed = false;
             float labelWidthOld = EditorGUIUtility.labelWidth;
@@ -429,7 +461,17 @@ namespace TerrainComposer2
             settings.seed = EditorGUILayout.FloatField("Seed", settings.seed, GUILayout.Width(100));
             if (GUILayout.Button("Random", EditorStyles.miniButtonMid, GUILayout.Width(50)))
             {
-                if (eventCurrent.control) TC_Settings.instance.seed = 0; else TC_Settings.instance.seed = Random.Range(-20000.0f, 20000.0f);
+                if (eventCurrent.control) TC_Settings.instance.seed = 0;
+                else
+                {
+                    float oldSeed;
+                    do
+                    {
+                        oldSeed = TC_Settings.instance.seed;
+                        TC_Settings.instance.seed = Random.Range(-20000.0f, 20000.0f);
+                    }
+                    while (oldSeed == TC_Settings.instance.seed);
+                }
                 GUI.changed = true;
             }
             if (GUI.changed)
@@ -473,10 +515,10 @@ namespace TerrainComposer2
 
         void DropDownMenuMain()
         {
-            float x = (Screen.width / 2) + TD.scrollOffset.x * TD.scale;
-            float width = Screen.width - x;
+            float x = (TC_NodeWindow.window.position.width / 2) + TD.scrollOffset.x * TD.scale;
+            float width = TC_NodeWindow.window.position.width - x;
             
-            if (TD.ClickRect(new Rect(x, 0, width, Screen.height)) != 1) return;
+            if (TD.ClickRect(new Rect(x, 0, width, TC_NodeWindow.window.position.height)) != 1) return;
             
             GenericMenu menu = new GenericMenu();
 
@@ -652,15 +694,27 @@ namespace TerrainComposer2
             EditorApplication.RepaintHierarchyWindow();
         }
 
-        static bool LoadDefault()
+        static bool NewScene()
         {
+            if (EditorUtility.DisplayDialog("New TerrainComposer2 Project", "Do you want to start a new TerrainComposer2 project?", "Yes", "Cancel"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        static int LoadDefault()
+        {
+            if (!NewScene()) return -1;
+            
             GameObject defaultGo = AssetDatabase.LoadAssetAtPath(TC.installPath + "/Defaults/TerrainComposer2.prefab", typeof(GameObject)) as GameObject;
 
             if (defaultGo != null)
             {
                 GameObject go = Instantiate(defaultGo, Vector3.zero, Quaternion.identity) as GameObject;
                 
-                if (go == null) return false;
+                if (go == null) return -2;
                 else
                 {
                     go.transform.hideFlags = HideFlags.HideInInspector;
@@ -668,20 +722,20 @@ namespace TerrainComposer2
                     go.transform.SetAsFirstSibling();
                     DebugMode();
 
-                    if (!TC.LoadGlobalSettings()) return false;
+                    if (!TC.LoadGlobalSettings()) return -2;
 
-                    Transform generateT = go.transform.FindChild("Generate");
+                    Transform generateT = go.transform.Find("Generate");
                     if (generateT != null)
                     {
                         TC_Compute compute = generateT.GetComponent<TC_Compute>();
 
                         if (compute != null) compute.enabled = true;
-                        else return false;
+                        else return -2;
                     }
-                    else return false;
+                    else return -2;
                 }
             }
-            else return false;
+            else return -2;
 
             if (GameObject.Find("Terrain Area") == null)
             {
@@ -710,7 +764,7 @@ namespace TerrainComposer2
 
             TC.AddMessage("Loading default TerrainComposer project.");
 
-            return true;
+            return 0;
         }
     }
 }
